@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Synthèse et reconnaissance vocale sur Raspberry Pi</title>
+    <meta name="description" content="Syntèse et reconnaissance vocale sur Raspberry Pi">
+    <meta name="author" content="Jaguar Network - Team IoT">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="assets/css/reveal.css">
+    <link rel="stylesheet" href="assets/css/reveal-jn.css">
+    <script type="text/javascript" src="build/js/main.min.js"></script>
+  </head>
+  <body>
+    <div class="reveal" id="pagecontent">
+      <div class="slides">
+<section>
+  <h2>Synthèse et reconnaissance vocale</h2>
+  <h2>sur Raspberry Pi</h2>
+</section>
+
+
+<section>
+  <h2>En fait on va parler d'interface</h2>
+</section>
+
+<section>
+    <section>
+        <h1>Un peu d'histoire</h2>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/punch_card.jpg"/>
+    </section>
+    <section>
+        <img  width="600" height="400" src="assets/img/lisa.jpg"/>
+    </section>
+    <section>
+        <img  width="600" height="400" src="assets/img/swordfish.png"/>
+    </section>
+    <section>
+        <img  width="600" height="400" src="assets/img/reality_desk.jpg"/>
+    </section>
+    <section>
+        <img  width="600" height="400" src="assets/img/virtual-reality-suit.jpg"/>
+    </section>
+    <section>
+        <img  width="600" height="400" src="assets/img/virtual_sex.jpg"/>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h2>Un saut dans le futur</h2>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/iron_man_vr_hd.jpg"/>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/jarvis.jpg"/>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/wargames.jpg"/>
+    </section>
+    <section>
+        <img width="645" height="545" src="assets/img/HAL.jpg"/>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/speech_recognition_smartphone.jpg"/>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/cortana.jpg"/>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/OK-Google.png"/>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/speech_hawkins.jpg"/>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/speech_amstrad.jpg"/>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/hud.jpg"/>
+    </section>
+    <section>
+        <img width="645" height="545" src="assets/img/HAL.jpg"/>
+    </section>
+    <section>
+        <img width="600" height="400" src="assets/img/raspberry-control.jpg"/>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h2>Donnons une voix au Raspberry</h2>
+    </section>
+    <section>
+        <h2> Festival </h2>
+        <p>L’ancêtre, simple à installer, simpe à utiliser</p>
+
+        <pre>
+        <code class="bash">
+        # apt-get install festival
+
+        $ cat “Hello I am festival” | festival --tts
+        $ uname | festival -tts
+        </code>
+        </pre>
+
+        Voix métallique on peut améliorer avec mbrolla
+        http://tcts.fpms.ac.be/synthesis/mbrola.html
+    </section>
+    <section>
+        <h2>Espeak</h2>
+        <p>Espeak (voix d’alien dans un haut parleur) simple a installer plus d’options</p>
+        <pre>
+        <code>
+        # apt-get install espeak
+
+        $ espeak -vfr+m2 -k5 -s150 "Bonjour je suis la voix de votre IA"
+        </code>
+        </pre>
+    </section>
+    <section>
+        <h2>Google</h2>
+        <p>Google text to speech (bonne qualité nécessite une connection et un player audio)<p>
+        <pre>
+        <code>
+        # apt-get install mplayer
+
+        $ cat <a href="gspeech.sh">gspeech.sh</a> 
+        #!/bin/bash
+        say() { 
+            local IFS=+;
+            /usr/bin/mplayer -ao alsa -really-quiet -noconsolecontrols \ 
+                "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=$*&tl=Fr-fr"; 
+        }
+        say $*
+
+        $ ./speech.sh "Bonjour tout le monde"
+        </code>
+        </pre>
+
+        latence sensible…
+    </section>
+    <section>
+        <h2>Pico</h2>
+        <p>La synthèse vocale d’android</p>
+
+        <pre>
+        <code>
+        sudo apt-get install libttspico-utils
+        pico2wave -lfr-FR -w french.wav "En français c'est pas mal." && aplay french.wav
+        </code>
+        </pre>
+
+    </section>
+    <section>
+        <h2>Nexmo</h2>
+        <ul>
+        <li>La synthèse vocale as a (VoiP) service</li>
+        <li>+33 6 44 63 73 37</li>
+        </ul>
+
+        <pre>
+        <code>
+  const app = require('express')();
+  const bodyParser = require('body-parser');
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
+  const server = app.listen(process.env.PORT || 4001, () => {
+    console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
+  });
+
+  app.get('/answer', (req, res) => {
+
+    // Let's pretend here we have computed day, month, year, hour, minute, seconds from new Date();
+    let now_french = "Nous sommes le "+day+" "+month+" "+year+" et il est "+hour+" heure "+minute+" minutes "+seconde+" secondes. ";
+    let load = require('child_process').execSync("uptime \| cut -d' ' -f 14", {encoding: 'utf8'} )
+    let load_text = ' La charge de la machine est de '+load;
+
+    let text = 'Bonjour, Je suis votre assistante vocale Jaguar Network. '+now_french+load_text;
+
+    const ncco = [    {
+                        action: 'talk',
+                        voiceName: 'Chantal',
+                        text: text
+                        }  ];
+
+    res.json(ncco);
+  });
+
+  app.post('/event', (req, res) => {
+    res.status(204).end();
+  });
+
+        </code>
+        </pre>
+
+    </section>
+</section>
+
+<section>
+    <section>
+    <h2>Puis une oreille et un (demi)cerveau</h2>
+    </section>
+    <section>
+        <h2>cmusphynx</h2>
+        <ul>
+        <li>Fait pour l'embarqué</li>
+        <li>Relativement simple à utiliser</li>
+        <ul>
+                <li>sudo apt-get install pocketsphinx</li>
+                <li>Création d'un fichier language.txt</li>
+                <li>upload vers <a href"http://www.speech.cs.cmu.edu/tools/lmtool-new.html">ce site</a> pour récupérer un modèle</li>
+            </ul>
+
+        </ul>
+        <pre>
+        <code>
+        [TXT] 2029.dic                248    Pronunciation Dictionary
+        [   ] 2029.lm                 2.0K   Language Model
+        [   ] 2029.log_pronounce      196    Log File
+        [   ] 2029.sent               204    Corpus (processed)
+        [   ] 2029.vocab               75    Word List
+        
+        $ pocketsphinx_continuous -fwdflat no -bestpath no -maxwpf 5 -maxhmmpf 1000 -topn 2 -pl_window 7  -dict 2029.dic -lm 2029.lm -inmic yes
+        </code>
+        </pre>
+    </section>
+    <section>
+        <h2>snowboy</h2>
+        <ul>
+        <li>Voice <strong>commands</strong></li>
+        <li>Puissant et peu gourmand</li>
+        <li>Modèle entrainé en ligne, puis déployé</li>
+        </ul>
+        <pre>
+        <code>
+        </code>
+        </pre>
+    </section>
+    <section>
+        <h2>voiceid</h2>
+        <p>Voice <strong>identification</strong></p>
+        <pre>
+        <code>
+        https://code.google.com/archive/p/voiceid/  (reconnaissance viométrique)
+        </code>
+        </pre>
+    </section>
+    <section>
+        <h2>Watson speech to text</h2>
+        <ul>
+        <li>L'API en ligne d'IBM</li>
+        <li>Simple à utiliser (nodejs, python)</li>
+        <li>Payante à partir d'un certain volume</li>
+        <li>Imparfaite, mais bluffante</li>
+        </ul>
+        <pre>
+        <code>
+        https://speech-to-text-demo.mybluemix.net/
+        </code>
+        </pre>
+    </section>
+    <section>
+        <h2>Jarvis</h2>
+        <ul>
+        <li>Plusieurs logiciels packagés</li>
+        </ul>
+        <pre>
+        <code>
+        </code>
+        </pre>
+    </section>
+    <section>
+        <h2>Wit.ai</h2>
+        <ul>
+            <li><a href='https://wit.ai/'>Wit.ai</a> analyse le texte et l'audio pour en extraire le sens</li>
+        </ul>
+        <pre>
+        <code>
+        </code>
+        </pre>
+    </section>
+    <section>
+        <h2>Houndify</h2>
+        <ul>
+            <li><a href='https://www.houndify.com/'>Houndify</a> l'audio pour en extraire le sens</li>
+            <li>Gratuit 100crédit à répartir en domaine</li>
+            <li>Anglais uniquement</li>
+        </ul>
+        <pre>
+        <code>
+        </code>
+        </pre>
+    </section>
+    <section>
+        <h2>Google speech</h2>
+        <ul>
+            <li><a href='https://cloud.google.com/speech'>Google speech</a></li>
+            <li>60 premières minutes gratuites</li>
+            <li>Supporte de nombreuses langues dont le Français</li>
+        </ul>
+        <pre>
+        <code>
+        </code>
+        </pre>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h2>Quelques astuces</h2>
+    </section>
+    <section>
+	<h2>Configuration du wifi</h2>
+    <pre>
+	<code>
+        $ iwlist wlan0 list # obtenir les ssid et le modes de chiffrement
+        $ cat /etc/wpa_supplicant/wpa_supplicant.conf
+           ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+           update_config=1
+           country=GB
+
+           network={
+            ssid="JAGN-GUEST"
+            psk="lemotdepasse"
+            key_mgmt=WPA-PSK
+           }
+        # ifdown wlan0 && ifup wlan0
+	</code>
+    </pre>
+    </section>
+    <section>
+        <h2>Config du son</h2>
+        <p>Le format du fichier ~/.asoundrc</p>
+        <pre>
+        <code>
+            pcm.!default {
+            type asym
+            playback.pcm {
+                type hw
+                card 0
+            }
+            capture.pcm {
+                type plug
+                slave.pcm "hw:1,0"
+            }
+            }
+        </code>
+        </pre>
+    </section>
+    <section>
+	<p>Commandes utiles</p>
+	<ul>
+		<li>aplay -l</li>
+		<li>arecord -l</li>
+		<li>alsamixer</li>
+		<li>mpg123/mplayer</li>
+	</ul>
+    </section>
+    <section>
+        <h2>RPI...connecter...maison</h2>
+        <pre>
+        <code>
+            # On se connecte sur remote_server (en tant que remote_user) 
+            # pour y ouvrir le port 6842 qui redirigera les connexions ssh vers le port local 22
+            /usr/bin/ssh -N -R 6842:localhost:22 remote_user@remote_server
+        </code>
+        </pre>
+        <p> Maintenant toute connection ssh sur remote_server port 6842,<br/> se connectera en fait sur le raspberry (port 22) !</p>
+        <p>On peut mettre un <a href="hold_ssh_tunnel.sh">script</a> dans la crontab pour maintenir la connection</p>
+    </section>
+</section>
+
+<section>
+  <h2>Question ?</h2>
+</section>
+
+    <section>
+        <h2>Amazon</h2>
+	<ul>
+		<li>Des périphériques</li>
+        <li>
+        <ul>
+            <li>Echo</li>
+            <li>Dot</li>
+            <li>Tap</li>
+        </ul>
+        </li>
+		<li>Alexa</li>
+		<li>Un écosystème</li>
+        <li>
+        <ul>
+            <li>https://github.com/blocke/ha-local-echo</li>
+        </ul>
+        </li>
+        
+	</ul>
+    </section>
+    <section>
+        <h2>Google</h2>
+	<ul>
+		<li>Des périphériques</li>
+        <li>
+        <ul>
+            <li>Google Home</li>
+        </ul>
+        </li>
+		<li>Google Asssitant</li>
+		<li>L'écosystème Googgle</li>
+	</ul>
+    </section>
+    <section>
+        <h2>DIY</h2>
+	<ul>
+		<li>Des périphériques</li>
+        <li>
+        <ul>
+            <li>Raspberry Pi</li>
+            <li>Google Home</li>
+            <li><a href="https://www.kickstarter.com/projects/aiforeveryone/mycroft-an-open-source-artificial-intelligence-for">MyCroft</a></li>
+            <li><a href="https://www.indiegogo.com/projects/matrix-voice-open-source-voice-platform-for-all#/">MATRIX Voice (65$))</a></li>
+        </ul>
+        </li>
+		<li>Des solutions</li>
+        <li>
+        <ul>
+            <li><a href="https://www.kickstarter.com/projects/aiforeveryone/mycroft-an-open-source-artificial-intelligence-for">MyCroft</a></li>
+            <li>Jasper</li>
+            <li>Alexa</li>
+        </ul>
+        </li>
+		<li>L'écosystème Googgle</li>
+	</ul>
+    </section>
+    <section>
+        <h2>Links</h2>
+	<ul>
+		<li>https://diyhacking.com/best-voice-recognition-software-for-raspberry-pi/</li>
+		<li>https://aws.amazon.com/iot/sdk/</li>
+		<li>https://thecattlecrew.net/2016/06/15/first-experience-with-aws-iot-amazon-iot-hackathon/</li>
+        <li>
+        <ul>
+            <li>Google Home</li>
+        </ul>
+        </li>
+		<li>Google Asssitant</li>
+		<li>L'écosystème Googgle</li>
+	</ul>
+    </section>
+      </div>
+    </div>
+
+
+        <script src="assets/js/reveal.js"></script>
+
+<script>
+Reveal.initialize({
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+	theme: Reveal.getQueryHash().theme, 	transition: Reveal.getQueryHash().transition || 'linear', 	width: "90%",
+	height: "100%",
+
+	});
+</script>
+  </body>
+</html>

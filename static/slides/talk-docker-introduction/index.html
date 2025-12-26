@@ -1,0 +1,510 @@
+<!-- vim: set ts=4 sw=4 smartindent expandtab:  --> 
+
+<!doctype html>
+<html> <head>
+        <meta charset="utf-8">
+        <title>Introduction to Docker</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/league.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+.reveal  {
+    background-size: 50% auto;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-image: url("img/gopher2.png")
+}
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>Introduction to Docker</h2>
+                        <img src="img/docker-logo.png" style="background:none; border:none; box-shadow:none; width: 25%; height: 25%" />
+                    <br />
+                    <br />
+                    <small>Arnaud "Arhuman" Assad (arhuman@gmail.com)
+                        <br>
+                        Also on 
+                        <a href="https://www.linkedin.com/in/arnaudassad/">Linkedin</a> - 
+                        <a href="https://github.com/arhuman">Github</a> - 
+                        <a href="https://blog.assad.fr">Blog</a> 
+                        <br>
+                    </small>
+                    </p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Agenda</h2>
+                        <ul class="small_list">
+                            <small>
+                            <li>What is docker?</li>
+                            <li>Why using docker?</li>
+                            <li>Getting started</li>
+                            <li>Resources and ecosystem</li>
+                            <li>Questions</li>
+                            </small>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>What is Docker?</h2>
+                        <small>
+                        <quote>
+                            "Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. -- Docker official site"
+                        </quote>
+                        </small>
+                    </section>
+
+                    <section>
+                        <h2>What is Docker?</h2>
+                            <h3>The logo tells it all</h3>
+                        <img src="img/docker-container-carrier.png" style="background:none; border:none; box-shadow:none; width: 60%; height: 60%" />
+                    </section>
+
+                    <section>
+                        <h2>A container based system</h2>
+                            <h3>It's a real world analogy</h3>
+                        <img src="img/container-boat.jpg" style="background:none; border:none; box-shadow:none; width: 80%; height: 80%" />
+                    </section>
+
+
+                    <section>
+                        <h2>A container based system (2)</h2>
+                        <ul>
+                            <li><a href="https://opencontainers.org/posts/blog/2023-07-21-oci-runtime-spec-v1-1/">A standard format</a></li>
+                            <li class="fragment">With standard tools</li>
+                            <li class="fragment">Enabling efficient storage</li>
+                            <li class="fragment">And easy delivery</li>
+                        </ul>
+                    </section>
+
+
+                    <section>
+                        <h2>A tool written in Golang</h2>
+                        <ul>
+                            <li>Efficient (speed/memory)</li>
+                            <li>Stable</li>
+                            <li>Build for concurrency</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Why using docker?</h2>
+                        <ul>
+                            <li>Enable devops</li>
+                            <ul>
+                                <li>Simplify everybody's life</li>
+                                <li>Package an application</li>
+                                <li>Handle multiple environment</li>
+                            </ul>
+                            <li>Add a layer of Security(?)</li>
+                            <li>Optimize resources handling/provisioning</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Essential tool of devops movement</h3>
+                        <img src="img/devops_benefits.png" style="background:none; border:none; box-shadow:none; width: 80%; height: 80%" />
+                    </section>
+
+                    <section>
+                        <h3>Ease (almost) every devops step</h3>
+                        <ul class="small_list">
+                            <small>
+                            <li>Code - Portable reproductible dev env</li>
+                            <li>Build - Reproductible simple automated build</li>
+                            <li>Test - Easy Continuous Integrations</li>
+                            <li>Release - Easy Continuous Deployment</li>
+                            <li>Deploy - Easy Continuous Deployment</li>
+                            <li>Operate - Normalized set of tools/commands</li>
+                            <li>Monitor - Built-in monitoring for automated scaling/remediation</li>
+                            </small>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Make programmer's life easier</h3>
+                        <ul class="small_list">
+                            <small>
+                            <li>Portable reproductible dev/test env</li>
+                            <li>Easy build</li>
+                            <li>System independence (no security/upgrade constraint)</li>
+                            <li>Portability (works everywhere!)</li>
+                            <li>Tooling</li>
+                            </small>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Makes SysAdmin's life easier</h3>
+                        <ul class="small_list">
+                            <small>
+                            <li>Security contained</li>
+                            <li>No more coupling with developer requirements</li>
+                            <li>Ease of administration</li>
+                            <li>Cheap multiple environment (test/staging/prod)</li>
+                            <li>Efficiency performance wise</li>
+                            <li>Portability (works everywhere!)</li>
+                            <li>Tooling</li>
+                            </small>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Makes CTO/CEO's life easier</h2>
+                        <ul class="small_list">
+                            <small>
+                            <li>More Security</li>
+                            <li>Less frictions between dev/sysadmin</li>
+                            <li>Efficiency performance wise (money!)</li>
+                            <li>Scalability (support business growth)</li>
+                            <li>VC credibility (State of the art)</li>
+                            <li>Shorter Time to market</li>
+                            </small>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Fix: "Works on my machine!" issue</h2>
+                        <ul>
+                            <li>Coder: Why is the system call failing?</li>
+                            <li>SysAdm: Why is there 2 JSON libraries?</li>
+                            <li>Everybody: What version is installed?</li>
+                            <li>Boss: Is it ok to deploy to production?</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Cheaper, faster than VM</h2>
+                        <img src="img/container_vs_vm3.jpg" style="background:none; border:none; box-shadow:none; width: 80%; height: 80%" />
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Getting Started</h2>
+                        <ul>
+                            <li>Dockerfile</li>
+                            <li>Layer</li>
+                            <li>Image</li>
+                            <li>Container</li>
+                            <li>Hub/Registry</li>
+                            <li>docker-compose</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Container basis</h3>
+                        <img src="img/dockerfile-image-container.png" style="background:none; border:none; box-shadow:none; width: 80%; height: 80%" />
+                    </section>
+
+                    <section>
+                        <h2>Dockerfile</h2>
+                        <small>
+                        <pre>
+                          <code class="docker" data-trim>
+FROM golang:1.21
+
+# setup the working directory
+WORKDIR /api
+
+# install dependencies
+COPY go.*  /api/
+RUN go mod download
+
+# add source code
+COPY . .
+
+# build the source
+RUN CGO_ENABLED=0 GOOS=linux GOFLAGS="-ldflags=-s -ldflags=-w" go build -o server ./cmd/api/
+
+CMD ["/api/server"]
+                    </code>
+                      </pre>
+                        </small>
+                    </section>
+
+                    <section>
+                        <h2>Dockerfile</h2>
+                        <small>
+                        <small>
+                        <pre>
+                          <code class="docker" data-trim>
+# STEP 1: Build
+FROM golang:1.21 as builder
+
+# setup the working directory
+WORKDIR /api
+
+# install dependencies
+COPY go.*  /api/
+RUN go mod download
+
+# add source code
+COPY . .
+
+# build the source
+RUN CGO_ENABLED=0 GOOS=linux GOFLAGS="-ldflags=-s -ldflags=-w" go build -o server ./cmd/api/
+
+# STEP 2: app
+FROM debian:bookworm-slim
+
+ENV TZ=Europe/Zurich
+
+# add ca-certificates in case you need them
+RUN apt-get update && apt-get install ca-certificates jq -y && rm -rf /var/cache/apk/*
+
+RUN groupadd devop && \
+    useradd -r --uid 1001 -g devop devop
+
+# set working directory
+RUN mkdir -p /home/devop/data
+WORKDIR /home/devop
+
+# copy the binary from builder
+COPY --from=builder /api/server /home/devop/server
+COPY assets/i18n/ /home/devop/i18n
+COPY docs docs/
+
+# Ownership so that these folders can be written when running in K8S
+RUN chgrp -R 0 /home/devop && chmod -R g=u /home/devop
+
+USER 1001
+CMD ["/home/devop/server"]
+                        </code>
+                      </pre>
+                        </small>
+                        </small>
+                    </section>
+
+                    <section>
+                        <h3>Immutable layers for better caching</h3>
+                        <img src="img/reordered-layers.png" style="background:none; border:none; box-shadow:none; width: 80%; height: 80%" />
+                    </section>
+                    <section>
+                        <h3>Building an image</h3>
+                        <small>
+                        <small>
+                      <pre>
+                          <code class="bash" data-trim>
+docker build . # Build an image from the Dockerfile in current directory
+
+[+] Building 4.8s (24/24) FINISHED
+ => [internal] load .dockerignore                                                                                                                      0.0s
+ => => transferring context: 45B                                                                                                                       0.0s
+ => [internal] load build definition from Dockerfile                                                                                                   0.0s
+ => => transferring dockerfile: 1.09kB                                                                                                                 0.0s
+ => [internal] load metadata for docker.io/library/golang:1.21-bookworm                                                                                4.6s
+ => [internal] load metadata for docker.io/library/golang:1.21                                                                                         4.6s
+ => [internal] load build context                                                                                                                      0.0s
+ => => transferring context: 532.92kB                                                                                                                  0.0s
+ => [builder 1/8] FROM docker.io/library/golang:1.21@sha256:57bf74a970b68b10fe005f17f550554406d9b696d10b29f1a4bdc8cae37fd063                           0.0s
+ => => resolve docker.io/library/golang:1.21@sha256:57bf74a970b68b10fe005f17f550554406d9b696d10b29f1a4bdc8cae37fd063                                   0.0s
+ => [stage-1  1/10] FROM docker.io/library/golang:1.21-bookworm@sha256:85aacbed94a248f792beb89198649ddbc730649054b397f8d689e9c4c4cceab7                0.0s
+ => => resolve docker.io/library/golang:1.21-bookworm@sha256:85aacbed94a248f792beb89198649ddbc730649054b397f8d689e9c4c4cceab7                          0.0s
+ => CACHED [stage-1  2/10] RUN apt-get update && apt-get install ca-certificates jq -y && rm -rf /var/cache/apk/*                                      0.0s
+ => CACHED [stage-1  3/10] RUN groupadd devop &&     useradd -r --uid 1001 -g devop devop                                                              0.0s
+ => CACHED [stage-1  4/10] RUN mkdir -p /home/devop/data                                                                                               0.0s
+ => CACHED [stage-1  6/10] WORKDIR /home/devop                                                                                                         0.0s
+ => CACHED [builder 2/8] WORKDIR /api                                                                                                                  0.0s
+ => CACHED [builder 3/8] COPY go.*  /api/                                                                                                              0.0s
+ => CACHED [builder 4/8] RUN go mod download                                                                                                           0.0s
+ => CACHED [builder 5/8] COPY cmd cmd/                                                                                                                 0.0s
+ => CACHED [builder 6/8] COPY internal internal/                                                                                                       0.0s
+ => CACHED [builder 7/8] COPY docs docs/                                                                                                               0.0s
+ => CACHED [builder 8/8] RUN CGO_ENABLED=0 GOOS=linux GOFLAGS="-ldflags=-s -ldflags=-w" go build -o server ./cmd/api/                                  0.0s
+ => CACHED [stage-1  7/10] COPY --from=builder /api/server /home/devop/server                                                                          0.0s
+ => CACHED [stage-1  8/10] COPY assets/i18n/ /home/devop/i18n                                                                                          0.0s
+ => CACHED [stage-1  9/10] COPY docs docs/                                                                                                             0.0s
+ => CACHED [stage-1 10/10] RUN chgrp -R 0 /home/devop && chmod -R g=u /home/devop                                                                      0.0s
+ => exporting to image                                                                                                                                 0.0s
+ => => exporting layers                                                                                                                                0.0s
+ => => writing image sha256:f6a049d275ee3a5ffb2b9ea03bb5c9f026575750cc48d6c03c3eb700416213fb
+                        </code>
+                      </pre>
+                        </small>
+                        </small>
+                    </section>
+
+                    <section>
+                        <h3>Running/stopping a container</h3>
+                      <pre>
+                          <code class="bash" data-trim>
+# Run a container from the hash of the previously built image
+docker run f6a049d275ee3a5ffb2b9ea03bb5c9f026575750cc48d6c03c3eb700416213fb 
+
+# Run a container from an image (automagically pulled from docker hub/registry)
+docker run hello-world
+
+# Run a container from a mysql:8.2.0 image
+docker run -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:8.2.0
+
+# Run a golang:1.19 compiler with the current directory mounted
+docker run --rm -it -v $PWD:/app golang:19
+
+# Stop a container
+docker stop f6a049d275ee3a5ffb
+
+# Stop a container by name
+docker stop mysql_1
+                        </code>
+                      </pre>
+                    </section>
+
+                    <section>
+                        <h3>Docker-compose.yml</h3>
+                      <small>
+                      <pre>
+                          <code class="docker-compose" data-trim>
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - "3308:3306"
+    volumes:
+      - './data/db:/data/db'
+      - './data/mysql:/var/lib/mysql'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: MyDB
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+    - 8088:8080
+                        </code>
+                      </pre>
+                      </small>
+                    </section>
+                </section>
+
+                <section>
+                        <h3>Useful commands</h3>
+                      <small>
+                      <pre>
+                          <code class="bash" data-trim>
+# List image
+docker image ls
+
+# List container
+docker ps
+
+# Get into a container
+docker exec -it containername bash
+
+# Copy from a container
+docker cp containername:path .
+
+# Get Memory/CPU/Net/Disk information about running containers
+docker stats
+
+# Clean useless layers/containers/images
+docker system prune
+
+# Start all services (from docker-compose.yml)
+docker-compose up -d
+
+# Get information about current services (from docker-compose.yml)
+docker-compose ps
+
+# Stop all services (from docker-compose.yml)
+docker-compose stop
+
+# Get logs from all services (from docker-compose.yml)
+docker-compose logs -f
+                        </code>
+                      </pre>
+                      </small>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Ecosystem</h2>
+                        <img src="img/docker-ecosystem.jpg" style="background:none; border:none; box-shadow:none; width: 75%; height: 75%" />
+                    </section>
+
+                    <section>
+                        <h2>Resources</h2>
+                        <ul class="small_list">
+                            <small>
+                                <li><a href="https://www.docker.com/101-tutorial">Docker tutorial</a></li>
+                                <li><a href="https://hub.docker.com/">Docker hub</a></li>
+                                <li><a href="https://www.docker.com/products/docker-desktop/">Docker desktop</a></li>
+                                <li><a href="https://docs.docker.com/compose/">Docker-compose</a></li>
+                                <li><a href="https://www.cloudbees.com/blog/running-1000-containers-in-docker-swarm">1000 containers with 10G RAM</a></li>
+                            </small>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Demo time</h2>
+                        <img src="img/murphy.jpg" style="background:none; border:none; box-shadow:none; width: 55%; height: 55%" />
+                    </section>
+                </section>
+
+                <section>
+                    <h1>Thanks</h1>
+                    <br />
+                    <p>Questions ?</p>
+                    <br />
+                    <br />
+                    <small>Don't hesitate to join my network on <a href="https://www.linkedin.com/in/arnaudassad/">Linkedin</a></small>
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>Bonus Slides</h2>
+                    </section>
+
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList;  }  },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]'  );  }  },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]'  );  }  },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();  }  },
+                    { src: 'plugin/search/search.js', async: true  },
+                    { src: 'plugin/zoom-js/zoom.js', async: true  },
+                    { src: 'plugin/notes/notes.js', async: true  }
+                ]
+            });
+
+        </script>
+    </body>
+</html>
+

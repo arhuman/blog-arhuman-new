@@ -1,0 +1,745 @@
+<!-- vim: set ts=4 sw=4 smartindent expandtab:  --> 
+
+<!doctype html>
+<html> <head>
+        <meta charset="utf-8">
+        <title>A la découverte de Go</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/league.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+.reveal  {
+    background-size: 50% auto;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-image: url("img/gopher2.png")
+}
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <img src="img/gdg_aixmarseille_talk.jpg" style="background:none; border:none; box-shadow:none; width: 100%; height: 100%">
+                </section>
+                <section data-background="img/gopher2.png" data-background-size="50%" data-background-position="bottom left">
+                    <h2>A la découverte du Go</h2>
+                    <br />
+                    <br />
+                    <small>Arnaud "Arhuman" Assad (arhuman@gmail.com)
+                        <br>
+                        Aussi sur 
+                        <a href="http://twitter.com/aassad">Twitter</a>
+                        <a href="https://www.linkedin.com/in/arnaudassad/">Linkedin</a>
+                        <a href="https://github.com/arhuman">Github</a>
+                        <br>
+                    </small>
+                    </p>
+
+                </section>
+                <section>
+                    <section>
+                        <h2>Le langage Go</h2>
+                        <ul>
+                            <li>Créé en 2009 par Google<br />
+                                (Robert Griesemer, Rob Pike et Ken Thompson)</li>
+                            <li>Inspiré du C et de Pascal</li>
+                            <li>Langage compilé</li>
+
+                            <li>Récupérateur de mémoire (garbage-collected)
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>OSCON 2010</h2>
+                        <blockquote>
+                            <small>
+                                <p>Go aims to combine the safety and performance of a statically typed compiled language with the expressiveness and convenience of a dynamically typed interpreted language.</p>
+
+                                <p>It also aims to be suitable for modern systems - large scale - programming.</p>
+
+                                <p>-- Rob Pike</p>
+                            </small>
+                        </blockquote>
+                    </section>
+                    <section>
+                        <h2>Go(lang) exemple</h2>
+                        <pre><code class="hljs" data-trim>
+package main
+
+import "fmt"
+
+func main() {
+    list := []int{31, 41, 59, 26, 53, 58, 97, 93, 23, 84}
+    fmt.Println("unsorted:", list)
+
+    bubblesort(list)
+    fmt.Println("sorted!  ", list)
+}
+
+func bubblesort(a []int) {
+    for itemCount := len(a) - 1; ; itemCount-- {
+        hasChanged := false
+        for index := 0; index < itemCount; index++ {
+                                   if a[index] > a[index+1] {
+                a[index], a[index+1] = a[index+1], a[index]
+                hasChanged = true
+            }
+        }
+        if hasChanged == false {
+            break
+        }
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Le langage Go!</h2>
+                        <ul>
+                            <li>Créé en 2003 par Keith Clark et Francis McCabe.</li>
+                            <li>Programmation concurrentielle</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Go! - exemple</h2>
+                        <pre><code class="hljs" data-trim>
+Gender::= male | female.
+
+person <˜ {dayOfBirth:[]=>day. age:[]=>integer.
+           gender:[]=>Gender. name:[]=>string.
+           home:[]=>string. lives:[string]{}}.
+
+person:[string,day,Gender,string]$=person.
+
+person(Nm,Born,Sx,Hm)..{
+  dayOfBirth()=>Born.
+  age() => yearsBetween(now(),Born).
+  gender()=>Sx.
+  name()=>Nm.
+  home()=>Hm.
+  lives(Pl) :- Pl=home().
+  yearsBetween:[integer,day]=>integer.
+  yearsBetween(...) => ..
+}.
+
+newPerson:[string,day,Gender,string]=>person.
+
+newPerson(Nm,Born,Sx,Hm)=>$person(Nm,Born,Sx,Hm).
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Mais aussi</h2>
+                        <img src="img/Go_game.jpg" style="background:none; border:none; box-shadow:none; width: 70%; height: 70%">
+                    </section>
+                    <section>
+                        <h2>Et aussi</h2>
+                        <ul>
+                            <li>Go Go Power Rangers!!!</li>
+                            <li>Python is the way to go</li>
+                            <li>Go sport / Go voyages</li>
+                            <li>Pokemon Go</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Et donc Golang...</h2>
+                        <ul>
+                            <li>Uniquement pour le SEO</li>
+                            <li>Assez répandu</li>
+                            <li>Pas recommandé par Rob Pike</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h2> Pourquoi Go ?  </h2>
+                    <ul>
+                        <li>La simplicité</li>
+                        <li>Les interfaces</li>
+                        <li>Les goroutines / channels</li>
+                        <li>La toolchain</li>
+                        <li>La librairie standard</li>
+                        <li>Rapidité de compilation</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2>Go un langage simple</h2>
+                        <pre><code class="go">
+    package main
+
+    import "fmt"
+
+    func main() {
+        // L'Unicode ça doit être simple...
+        fmt.Println("Hello 世界")
+    }
+                        </code></pre>
+                        <small>
+                            <a href="https://godoc.org/fmt">fmt Documentation</a>
+                        </small>
+                    </section>
+                    <section>
+                        <h2>Une seule boucle</h2>
+                        <pre><code class="go">
+sum := 0
+for i := 0; i < 10; i++ {
+    sum += i
+}
+
+for ; sum > 0; {
+    sum -= 1
+}
+
+for sum < 1000 {
+    sum += 1
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Types de base</h2>
+                        <pre>
+bool
+
+string
+
+int  int8  int16  int32  int64
+uint uint8 uint16 uint32 uint64 uintptr
+
+byte // alias pour uint8
+
+rune // alias pour int32
+     // représente un "code point" Unicode
+
+float32 float64
+
+complex64 complex128
+
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Des types composés</h2>
+                        <pre><code class="go">
+package main
+
+import "fmt"
+
+type Sommet struct {
+    X int
+    Y int
+}
+
+func main() {
+    v := Sommet{1, 2}
+    v.X = 4
+    fmt.Println(v.X)
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Des slices (et des tableaux)</h2>
+                        <pre><code class="go">
+// Array : taille fixe
+var a [10]int
+
+
+// Slice : taille variable
+var b[]int
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Des slices</h2>
+                        <pre><code class="go">
+// Des slices de slices
+game := [][]string{
+        []string{"_", "_", "_"},
+        []string{"_", "_", "_"},
+        []string{"_", "_", "_"},
+}
+
+// Morceau de slice retourne un slice
+game[1:3] // ou game[1:]
+
+// Ajout
+game = append(game, []string{" ", " "," "});
+
+// Boucle for avec range
+for i, v := range game {
+    fmt.Printf("index=%d valeur=%v\n", i, v)
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Des maps</h2>
+                        <pre><code class="go">
+type Sommet struct {
+    Lat, Long float64
+}
+
+var m map[string]Sommet
+
+func main() {
+    m = make(map[string]Sommet)
+    m["Bell Labs"] = Sommet{
+        40.68433, -74.39967,
+    }
+    fmt.Println(m["Bell Labs"])
+}
+
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Des maps</h2>
+                        <pre><code class="go">
+// Affectation
+m[key] = elem
+
+// Récupération
+elem = m[key]
+
+// Suppression
+delete(m, key)
+
+// Test existence
+elem, ok = m[key]   //  _, ok = m[key]
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>First class functions</h2>
+                        <pre><code class="go">
+func compute(fn func(float64, float64) float64) float64 {
+    return fn(3, 4)
+}
+
+func main() {
+    hypot := func(x, y float64) float64 {
+        return math.Sqrt(x*x + y*y)
+    }
+    fmt.Println(hypot(5, 12))
+
+    fmt.Println(compute(hypot))
+    fmt.Println(compute(math.Pow))
+}
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Programation Orientée Objet</h2>
+                        <ul>
+                            <li>Héritage</li>
+                            <li>Encapsultation</li>
+                            <li>Polymorphisme</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>POO en Go ?</h2>
+                        <ul>
+                            <li>Go pas d'héritage (interface)</li>
+                            <li>Pas de classe (struct)</li>
+                            <li>Polymorphisme</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Interfaces</h2>
+                        <ul>
+                            <li>Pour principe de substitution de Liskov<br/>(pas d'héritage)</li>
+                            <li>Implicites<br />(pas besoin de modifier les packages externes)</li>
+                            <li>Peuvent être déroutantes</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Struct + fonction => Méthode</h2>
+                        <pre><code class="go">
+type Sommet struct {
+    X, Y float64
+}
+
+func (s Sommet) Abs() float64 {
+    return math.Sqrt(s.X*s.X + s.Y*s.Y)
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Interface = liste de méthodes</h2>
+                        <pre><code class="go">
+package main
+
+import (
+        "fmt"
+        "math"
+)
+
+type cercle struct {
+        rayon float64
+}
+
+func (c cercle) aire() float64 {
+        return math.Pi * c.rayon * c.rayon
+}
+func (c cercle) perimetre() float64 {
+        return 2 * math.Pi * c.rayon
+}
+
+type rectangle struct {
+        largeur, hauteur float64
+}
+
+func (r rectangle) aire() float64 {
+        return r.largeur * r.hauteur
+}
+func (r rectangle) perimetre() float64 {
+        return 2*r.largeur + 2*r.hauteur
+}
+
+type surface interface {
+        aire() float64
+        perimetre() float64
+}
+
+func affiche(s surface) {
+    fmt.Println(s)
+    fmt.Println(s.aire())
+    fmt.Println(s.perimetre())
+}
+
+func main() {
+    c := cercle{rayon: 3}
+    r := rectangle{largeur: 1, hauteur: 2}
+
+    affiche(r)
+    affiche(c)
+}
+
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Goroutines</h2>
+                        <ul>
+                            <li><a href="https://www.youtube.com/watch?v=cN_DpYBzKso">Concurrency != parallelism</a> </li>
+                            <li>Plus légers que les thread</li>
+                            <li>Usage de la stack optimisé</li>
+                            <li>Switchs peu couteux</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Goroutines</h2>
+                        <ul>
+                            <li>Des millions de goroutines possible</li>
+                            <li>50 fois plus rapide à lancer qu'un thread</li>
+                            <li>2-4K vs 2M sur la stack</li>
+                            <li>Changement de contexte peu couteux</li>
+                            <li>Un thread système gère plusieurs goroutines</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Goroutine - Exemple</h2>
+              <pre><code class="go">
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func longTraitement(d int, s string) {
+    time.Sleep(time.Duration(d) * time.Second)
+    fmt.Println(s)
+
+}
+
+func main() {
+    go longTraitement(3, "Premier long Traitement")
+    go longTraitement(2, "Deuxième long Traitement")
+    go longTraitement(1, "Troisième long Traitement")
+    fmt.Println("Dans main()")
+
+    // Laissons le temps aux goroutines de se terminer
+    time.Sleep(time.Duration(4) * time.Second)
+}
+
+// Affiche :
+// Dans main()
+// Troisième long Traitement
+// Deuxième long Traitement
+// Premier long Traitement
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Channels</h2>
+                        <blockquote>
+                            "Don't communicate by sharing memory, share memory by communicating." <br />-- Rob Pike
+                        </blockquote>
+                    </section>
+                    <section>
+                        <h2>Channels</h2>
+                        <ul>
+                            <li>Vont de paire avec les goroutines</li>
+                            <li>First class elements</li>
+                            <li>Bufferisés ou pas</li>
+                            <li>Pas de callback !</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Channels</h2>
+                        <pre><code class="go">
+package main
+
+import "fmt"
+
+func sum(s []int, c chan int) {
+    sum := 0
+    for _, v := range s {
+        sum += v
+    }
+    c <- sum // send sum to c
+}
+
+func main() {
+s := []int{7, 2, 8, -9, 4, 0}
+
+c := make(chan int)
+go sum(s[:len(s)/2], c)
+go sum(s[len(s)/2:], c)
+x, y := <-c, <-c // receive from c
+
+fmt.Println(x, y, x+y)
+}
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Toolchain</h2>
+                        <ul>
+                            <li>Point d'entrée unique</li>
+                            <li>GOPATH</li>
+                            <ul>
+                                <li>go get</li>
+                                <li>go build</li>
+                                <li>go run</li>
+                                <li>go ...</li>
+                                <li>go test</li>
+                            </ul>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Toolchain</h2>
+                        <ul>
+                            <li>Intégrable à l'éditeur</li>
+                            <ul>
+                                <li>go import</li>
+                                <li>go format</li>
+                            </ul>
+                            <li>Cross compilation</li>
+                            <li>Temps de compilation</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h2>Temps de compilation</h2>
+                    <ul>
+                        <li>Analyse plus simple</li>
+                        <li><ul>
+                                <li>Pas de dépendances inutilisées</li>
+                                <li>Pas de dépendances cycliques</li>
+                                <li>Syntaxe régulière</li>
+                            </ul>
+                        </li>
+                        <li>Un import => un fichier à charger</li>
+                        <li>Format objet avec les exports en début de fichier</li>
+                    </ul>
+                </section>
+                <section>
+                <section>
+                    <h2>Librairie standard bien fournie</h2>
+                    <ul>
+                        <li>Liste des <a href="https://golang.org/pkg/">packages standards</a></li>
+                        <li><a href="https://godoc.org/">GoDoc</a> - Index et moteur de recherche des packages</a></li>
+                        <li><a href="http://go-search.org/">Go Search</a> - Moteur de recherche de code</li>
+                        <li><a href="http://www.github.com/">And github...</a></li>
+                    </ul>
+                </section>
+                    <section>
+                        <h2>HTTP server</h2>
+                        <pre><code class="go" data-trim>
+package main
+
+import (
+    "net/http"
+)
+
+func main() {
+
+    fs := http.FileServer(http.Dir("static/"))
+
+    http.Handle("/", fs)
+ // http.Handle("/static/", http.StripPrefix("/static/", fs))
+
+    http.ListenAndServe(":8080", nil)
+}
+                        </code></pre>
+                        <small>
+                            <a href="https://godoc.org/net/http">net/http Documentation</a>
+                        </small>
+                    </section>
+                </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>La killer App ?</h2>
+                        <img src="img/logo_docker.png" style="background:none; border:none; box-shadow:none; width: 70%; height: 70%">
+                    </section>
+                <section>
+                    <h2>Tout un écosytème</h2>
+                    <ul>
+                        <li><a href="https://kubernetes.io/">Kubernetes</a></li>
+                        <li><a href="https://traefik.io/">Traefik</a></li>
+                        <li><a href="https://gogs.io/">Gogs</a>/<a href="https://gitea.io/en-us/">Gitea</a></li>
+                        <li><a href="https://drone.io/">Drone</a></li>
+                        <li><a href="https://rook.io/">Rook</a></li>
+                        <li><a href="https://grafana.com/">Grafana</a></li>
+                        <li><a href="https://prometheus.io/">Prometheus</a></li>
+                        <li>...</li>
+                    </ul>
+                </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Communauté</h2>
+                        <ul>
+                            <li><a href="https://golang.org/">Site officiel Golang</a> (blog, documentation, tour...)</li>
+                            <li><a href="http://tour.golang.org/">Go Tour</a></li>
+                            <li><a href="http://go-proverbs.github.io/">Go proverbs</a></li>
+                            <li><a href="https://frenchgo.fr/">French Go</a></li>
+                            <li><a href="https://www.meetup.com/fr-FR/Golang-Marseille/">Meetup GolangMarseille</a></li>
+                            <li>**Autopromotion éhontée**</li>
+                            <ul>
+                                <li><a href="https://soundcloud.com/arnaud-assad/sets/gofr">Gofr Podcast</a></li>
+                                <li><a href="https://www.linkedin.com/groups/8673257/">Groupe Golang France sur Linkedin</a></li>
+                            </ul>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Un langage en constante amélioration</h2>
+                        <ul>
+                            <li>Release fréquentes</li>
+                            <ul>
+                                <li>Modules</li>
+                                <li>Webassembly</li>
+                            </ul>
+                            <li>Go 2</li>
+                            <ul>
+                                <li>Generics avec contrat</li>
+                                <li>Gestion des erreurs moins fastidieuse</li>
+                            </ul>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Une chouette mascotte</h2>
+                        <img src="img/left_down_arrow.png" style="background:none; border:none; box-shadow:none;">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Go pourquoi faire ?</h2>
+                        <ul>
+                            <span class="fragment"><li>Backend/Système</li></span>
+                            <span class="fragment"><li>Application avec GUI</li></span>
+                            <span class="fragment"><li>Browser</li></span>
+                            <span class="fragment"><li>Embarqué</li></span>
+                            <span class="fragment"><li>Presque tout sauf du bas niveau</li></span>
+                        </ul>
+                    </section>
+                    <section>
+                    <h2>Application avec GUI</h2>
+                    <ul>
+                        <li><a href="https://github.com/asticode/go-astilectron">astilectron</a></li>
+                        <li><a href="https://github.com/therecipe/qt">Qt</a></li>
+                        <li><a href="https://github.com/andlabs/ui">Ui</a></li>
+                        <li><a href="https://github.com/golang-ui/nuklear">Nuklear</a></li>
+                    </ul>
+                    </section>
+                    <section>
+                        <h2>Même des jeux 3D</h2>
+                        <img src="img/gokoban.gif" style="background:none; border:none; box-shadow:none; height: 80%; width: 80%;">
+                    </section>
+                    <section>
+                    <h2>Browser</h2>
+                    <ul>
+                        <li>Webassembly<br/><small><code class="bash">GOOS=js GOARCH=wasm go build -o main.wasm</code></small></li>
+                        <li><a href="https://github.com/gopherjs/gopherjs">Gopher.js</a></li>
+                    </ul>
+                    </section>
+                    <section>
+                    <h2>Embarqué</h2>
+                    <ul>
+                        <li>Raspberry (arm)</li>
+                        <li><a href="https://gobot.io/">Gobot</a></li>
+                        <li><a href="https://embd.kidoman.io/">Embd</a></li>
+                    </ul>
+                    </section>
+                </section>
+                <section>
+                    <h2>Credits</h2>
+                    <ul>
+                        <li> <a href="https://github.com/kljensen/go-is-awesome">kljensen/go-is-awesome</a> pour l'idée du Gopher sur les slides</li>
+                        <li> <a href="https://revealjs.com/">Reveal.js</a> pour le bonheur de ne plus utiliser PowerPoint</li>
+                    </ul>
+                    <br />
+                    <br />
+                    <br />
+                    <small>
+                        Vous êtes libre de modifier/copier/redistribuer librement cette présentation.
+                    </small>
+                </section>
+                <section>
+                    <h1>Merci</h1>
+                    <br />
+                    <br />
+                    <p><small>Des questions ?</small></p>
+                </section>
+                <section>
+                    <h2>Tout n'est pas parfait</h2>
+                    <ul>
+                        <li>La gestion des erreurs</li>
+                        <li>Les générics</li>
+                        <li>Manque de packages dans certains domaines<br />(Machine Learning...)</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList;  }  },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]'  );  }  },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]'  );  }  },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();  }  },
+                    { src: 'plugin/search/search.js', async: true  },
+                    { src: 'plugin/zoom-js/zoom.js', async: true  },
+                    { src: 'plugin/notes/notes.js', async: true  }
+                ]
+            });
+
+        </script>
+    </body>
+</html>
+

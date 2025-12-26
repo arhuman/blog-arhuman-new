@@ -1,0 +1,131 @@
+baseurl = "https://blog.assad.fr"
+title = "Arhuman's Blog"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+theme = "mainroad"
+googleAnalytics = "UA-4648696-5"
+
+[languages]
+  [languages.en]
+    languageCode = "en-us"
+    languageName = "English"
+    weight = 1
+    title = "Arhuman's Blog"
+    contentDir = "content/en"
+    [languages.en.Params]
+      subtitle = "Ideas, rants, tutorials for those interested"
+
+  [languages.fr]
+    languageCode = "fr-fr"
+    languageName = "Français"
+    weight = 2
+    title = "Le Blog d'Arhuman"
+    contentDir = "content/fr"
+    [languages.fr.Params]
+      subtitle = "Idées, tutoriels, diatribes pour ceux que ça intéresse"
+
+[pagination]
+pagerSize = 10 # Number of posts per page
+disqusShortname = "" # Enable comments by entering your Disqus shortname
+googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+
+[Params]
+  description = "Ideas, rants, tutorials for those interested" # Description of your site
+  opengraph = true
+  twitter_cards = false
+  readmore = false # Show "Read more" button in list if true
+  authorbox = true
+  pager = true
+  post_meta = ["date", "categories"] # Order of post meta information
+  mainSections = ["post"]
+  customCSS = ["css/custom.css"] # Include custom CSS
+
+[Params.Author]
+  name = "Arnaud (Arhuman) ASSAD"
+  bio = "Software engineer, tech enthusiast, and passionate about programming languages and development practices."
+  avatar = "img/photo.jpg"
+
+[Params.logo]
+  subtitle = "Arhuman's Blog" # Logo subtitle
+
+[Params.sidebar]
+  home = "right"   # Configure layout for home page
+  list = "right"   # Configure layout for list pages
+  single = "right" # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+
+[Params.widgets]
+  recent_num = 5 # Set the number of articles in the "Recent articles" widget
+  tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)
+
+[Params.widgets.social]
+  github = "arhuman"
+  linkedin = "arnaudassad"
+  facebook = "TheArhuman"
+  reddit = "arhuman"
+  instagram = "assadarnaud"
+  twitter = "aassad"
+  email = "arhuman@gmail.com"
+
+# English menu
+[[languages.en.menu.main]]
+  name = "Home"
+  url = "/en/"
+  weight = 1
+
+[[languages.en.menu.main]]
+  name = "About"
+  url = "/en/about/"
+  weight = 2
+
+[[languages.en.menu.main]]
+  name = "Blog"
+  url = "/en/post/"
+  weight = 3
+
+[[languages.en.menu.main]]
+  name = "Presentations"
+  url = "/en/pres/"
+  weight = 4
+
+[[languages.en.menu.main]]
+  name = "Now"
+  url = "/en/now/"
+  weight = 5
+
+[[languages.en.menu.main]]
+  name = "Categories"
+  url = "/en/categories/"
+  weight = 6
+
+# French menu
+[[languages.fr.menu.main]]
+  name = "Accueil"
+  url = "/fr/"
+  weight = 1
+
+[[languages.fr.menu.main]]
+  name = "À propos"
+  url = "/fr/about/"
+  weight = 2
+
+[[languages.fr.menu.main]]
+  name = "Blog"
+  url = "/fr/post/"
+  weight = 3
+
+[[languages.fr.menu.main]]
+  name = "Présentations"
+  url = "/fr/pres/"
+  weight = 4
+
+[[languages.fr.menu.main]]
+  name = "Actuellement"
+  url = "/fr/now/"
+  weight = 5
+
+[[languages.fr.menu.main]]
+  name = "Catégories"
+  url = "/fr/categories/"
+  weight = 6

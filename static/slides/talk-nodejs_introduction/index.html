@@ -1,0 +1,547 @@
+<!-- vim: set ts=4 sw=4 smartindent expandtab:  --> 
+
+<!doctype html>
+<html> <head>
+        <meta charset="utf-8">
+        <title>Introduction à Node.js</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/league.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+.reveal  {
+}
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+
+                <section>
+                    <h2>Introduction à Node.js</h2>
+                    <br />
+                    <br />
+                    <small>Arnaud "Arhuman" Assad (arhuman@gmail.com)
+                        <br>
+                        Aussi sur 
+                        <a href="http://twitter.com/aassad">Twitter</a> -
+                        <a href="https://www.linkedin.com/in/arnaudassad/">Linkedin</a> -
+                        <a href="https://github.com/arhuman">Github</a> -
+                        <a href="https://blog.assad.fr">Blog</a> 
+                        <br>
+                    </small>
+                    </p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Au commencement il y a Javascript </h2>
+                        <ul>
+                            <li>Créé en 1995 par Brendan Eich</li>
+                            <li>standardisé sous le nom d'ECMAScript en juin 1997</li>
+                            <li>Fait pour concurrencer les applet Java</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <img src="img/javascript_era.png" style="background:none; border:none; box-shadow:none; width: 100%; height: 100%">
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Node.js c'est quoi ? </h2>
+                        <ul>
+                            <li>Un super moteur (V8)</li>
+                            <li>La killer-app de Javascript </li>
+                            <li>Des performances et de la simplicité </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>A la base un moteur puissant (V8)</h2>
+                        <ul>
+                            <li>Projet de Lars Bak (2008)</li>
+                            <li>Ecrit en C++</li>
+                            <li>Moteur de Chrome (et Node.js) </li>
+                            <li>Mais aussi dans CouchDB, MongoDB... </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Un outil révolutionnaire</h2>
+                        <ul>
+                            <li> Projet de Ryan Lienhart Dahl (2009) </li>
+                            <li> Implémente <a href="http://www.commonjs.org/">Common.js</a>
+                            <li> Import de module </li>
+                            <li> Plusieurs fois forké (io.js, ayo.js...)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Node.js la killer-app de Javascript</h2>
+                        <ul>
+                            <li>Le pendant de Ruby On Rail </li>
+                            <li>Utilisation de Javascript coté Serveur </li>
+                            <li>Asynchronisme</li>
+                            <li>Boucle d'événements</li>
+                            <li>Gestion de la mémoire (Ramasse miette)</li>
+                            <li>Expressivité</li>
+                            <li>Toolchain (trop?) riche</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Des performances</h2>
+                        <ul>
+                            <li>Des IO ultra-rapides car asynchrones </li>
+                            <li>Consommation mémoire réduite</li>
+                            <li>Rapidité d'écriture (Ex. <a href="https://neoteric.eu/blog/famous-apps-built-with-node-js/">Paypal</a>) </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Node.js une solution scalable</h2>
+                        <ul>
+                            <li>Netflix</li>
+                            <li>Twitter</li>
+                            <li>Paypal</li>
+                            <li>Uber</li>
+                            <li>Linkedin</li>
+                            <li>Ebay</li>
+                            <li>Medium</li>
+                        </ul>
+                    </section>
+                </section>
+
+
+
+                <section>
+                    <section>
+                        <h2>Node.js pour quoi faire ?</h2>
+                        <ul>
+                            <li>Javascript coté serveur</li>
+                            <li>Javascript en ligne de commande</li>
+                            <li>Un framework polyvalent</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Javascript coté serveur</h2>
+                        <ul>
+                            <li>"Javascript Fullstack"</li>
+                            <li>Serveur Web dynamique</li>
+                            <li>API</li>
+                            <li>Application mobile</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Node.js en ligne de commande 1/2</h2>
+                        <ul>
+                            <li>Portable</li>
+                            <li>Polyvalent</li>
+                            <li>Performant</li>
+                            <li>Simple</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Node.js en ligne de commande 2/2</h2>
+                        <ul>
+                            <li>NPM, Yarn, Yeoman...</li>
+                            <li><a href="https://github.com/eslint/eslint">ESLint</a></li>
+                            <li><a href="https://github.com/atom/atom">Atom</a></li>
+                            <li>...</li>
+                            <!-- <li><a href="https://github.com/TryGhost/Ghost">Ghost</a></li> -->
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Node.js un framework polyvalent</h2>
+                        <ul>
+                            <li>Plus d'un million de modules (juin 2019)</li>
+                            <li>Tous les secteurs</li>
+                            <li>Multi paradigmes</li>
+                            <li>Multi langages</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Node.js multi-paradigmes </h2>
+                        <ul>
+                            <li>Comme Javascript :</li>
+                            <ul>
+                                <li>Programmation orientée objet</li>
+                                <li>Programmation fonctionnelle </li>
+                            </ul>
+                            <li>Programmation Evénementielle</li>
+                            <li>MVC et toutes ses déclinaisons </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Multi langages </h2>
+                        <ul>
+                            <li>Essentiellement des déclinaisons de Javascripts </li>
+                            <li>Utilisation de transpiler </li>
+                            <li>Intégré à la toolchain </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Application Node.js simple </h2>
+                        <pre><code class="hljs" data-trim>
+
+var http = require('http');
+
+var server = http.createServer(function(req, res) {
+
+  res.writeHead(200);
+
+  res.end('Node est super!');
+
+});
+
+server.listen(8080);
+                            </code>
+                    </section>
+                    <section>
+                        <h2>Application Node.js (aussi) simple </h2>
+                        <pre><code class="hljs" data-trim>
+
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Node est super!');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+                            </code>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h2> Des modules pour tout faire </h2>
+                        <ul>
+                            <li>Utilitaires </li>
+                            <li>Sécurité </li>
+                            <li>Programmation fonctionelle </li>
+                            <li>IA/Machine Learning</li>
+                            <li>Web</li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Utilitaires</h2>
+                        <ul>
+                            <li><a href="https://underscorejs.org/"> Underscore </a> </li>
+                            <li><a href="https://github.com/mzabriskie/axios"> Axios </a> </li>
+                            <li><a href="https://github.com/foliojs/pdfkit"> PDFKit </a> </li>
+                            <li><a href="https://github.com/bitcoinjs/bitcoinjs-lib"> BitcoinJS </a> </li>
+                            <li><a href="https://github.com/webtorrent/webtorrent"> WebTorrent</a>  </li>
+                            <li><a href="https://github.com/bestiejs/benchmark.js"> Benchmark</a>  </li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Sécurité</h2>
+                        <ul>
+                            <li><a href="https://nodejs.org/api/crypto.html"> Crypto </a> </li>
+                            <li><a href="https://nodejs.org/api/https.html"> HTTPS </a> </li>
+                            <li><a href="https://github.com/validatorjs/validator.js"> Validator </a> </li>
+                            <li><a href="https://github.com/lirantal/npq"> npq </a>, <a href="https://www.npmjs.com/package/snyk"> snyk </a>, <a href="https://github.com/sonatype-nexus-community/auditjs"> auditJS </a> </li>
+                            <li><a href="https://www.npmjs.com/package/csurf"> CSuRF </a> </li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Programmation fonctionnelle</h2>
+                        <ul>
+                            <li><a href="https://lodash.com/">Lodash </a> </li>
+                            <li><a href="https://ramdajs.com/"> Ramda </a> </li>
+                            <li><a href="https://immutable-js.github.io/"> Immutable </a> </li>
+                            <li><a href="https://github.com/baconjs/bacon.js"> Bacon </a> </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>IA/Machine Learning </h2>
+                        <ul>
+                            <li><a href="https://github.com/mljs"> ML.JS </a> </li>
+                            <li><a href="https://github.com/BrainJS/brain.js"> BrainJS</a> </li>
+                            <li><a href="http://compromise.cool/"> Compromise </a> </li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2> Des Frameworks Web puissants</h2>
+                        <ul>
+                            <li><a href="https://hapi.dev/"> HAPI (Disney, Paypal) </a> </li>
+                            <li><a href="https://sailsjs.com/"> Sail.JS </a> </li>
+                            <li><a href="https://www.meteor.com/"> Meteor </a> </li>
+                            <li><a href="https://docs.nestjs.com/"> Nest (Next, Nust, Nuxt..)</a> </li>
+                            <li><a href="https://expressjs.com/"> Express.JS</a> </li>
+                            <li><a href="https://koajs.com/"> Koa</a> </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2> Un tooling (trop?) riche </h2>
+                        <ul>
+                            <li> Task manager </li>
+                            <li> Transpilers </li>
+                            <li> Linters </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>NPM</h2>
+                        <ul>
+                            <li>Outil pour gérer les packages</li>
+                            <li>Lié à Node</li>
+                            <li>Des alternatives existes</li>
+                            <li><ul>
+                                    <li>yarn</li>
+                                    <li>bower</li>
+                                </ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Utilité de NPM</h2>
+                        <ul>
+                            <li>Gestion des dépendances </li>
+                            <li>package.json et node_modules/</li>
+                            <li>Administration application</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>npm : Administration application</h2>
+                        <ul>
+                            <li>npm init</li>
+                            <li>npm start</li>
+                            <li>npm stop</li>
+                            <li>npm test</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>npm : Gestion dépendance/packet</h2>
+                        <ul>
+                            <li>npm install</li>
+                            <li>npm uninstall</li>
+                            <li>npm list</li>
+                            <li>npm login && npm publish</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>npm (un)install</h2>
+                        <ul>
+                            <li>npm install <nom_du_paquet> </li>
+                            <li><ul>
+                                    <li>npm install &lt;nom_du_paquet&gt; <strong>--save</strong> </li>
+                                    <li>npm install &lt;nom_du_paquet&gt;<strong>@&lt;version&gt;</strong> --save </li>
+                                    <li>npm install <strong>&lt;url archive git&gt;</strong> --save </li>
+                                    <li>...</li>
+                                </ul></li>
+                            <li>npm uninstall <nom_du_paquet> </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>npm update</h2>
+                        <ul>
+                            <li>npm update <nom_du_paquet> </li>
+                            <li><ul>
+                                    <li>npm install &lt;nom_du_paquet&gt; <strong>--save</strong> </li>
+                                    <li>npm install &lt;nom_du_paquet&gt;<strong>@&lt;version&gt;</strong> --save </li>
+                                    <li>...</li>
+                                </ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Versions</h2>
+                        <ul>
+                            <li>Semantic Versioning </li>
+                            <li>Major.Minor.Patch </li>
+                            <li>Les raccourcis Node.js</li>
+                            <li><ul>
+                                    <li>* correspond à  >=0.0.0<br />(dernière version disponible)</li>
+                                    <li> ~1.2.3 correspond à  >=1.2.3 et <1.3.0</li>
+                                    <li> ^1.2.3 correspond à  >=1.2.3 et <2.0.0</li>
+                                    <li> 1.* correspond à  >=1.0.0 et <2.0.0 </li>
+                                    <li> 1.2.3 – 2.3.4  correspond à >=1.2.3 et <=2.3.4 </li>
+                                <ul></li>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Commandes Node.js de base</h2>
+                        <ul>
+                            <li>node fichier.js</li>
+                            <li>node --version</li>
+                            <li>node --help</li>
+                            <li>npm init && npm start/stop</li>
+                        </ul>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h2>Les critiques : </h2>
+                        <ul>
+                            <li>Monothread (scalabilité verticale pas terrible)</li>
+                            <li>Fragilité</li>
+                            <li>Cycle d'obsolescence trop rapide</li>
+                            <li>Gestion des dépendances</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Node.js monothread </h2>
+                        <ul>
+                            <li>Ne tire pas parti des architectures multi-coeurs </li>
+                            <li>Fragile par design </li>
+                            <li>Asynchronisme / parallélisme / Concurrentiel </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Javascript est fragile</h2>
+                        <ul>
+                            <li>Faiblement typé</li>
+                            <li>Gestion d'erreur optionnelle</li>
+                            <li>Dépendance importante aux modules</li>
+                            <li> <ul>
+                                    <li>Sécurité</li>
+                                    <li>Fiabilité (monothread)</li>
+                                    <li>incompatibilité</li>
+                                    <li>pas propre à node.js</li>
+                                 </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Gestion des dépendances</h2>
+                        <ul>
+                            <li>taille de node_modules</li>
+                            <li>redondance dans node_modules</li>
+                            <li>lenteur</li>
+                            <li>Incidents globaux
+                                <ul>
+                                    <li>Is-Promise (avril 2020)</li>
+                                    <li>left-pad (mars 2016)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Et après ? </h2>
+                        <ul>
+                            <li><a href="https://deno.land/">Deno</a> </li>
+                            <li>Contribuer à <a href="https://github.com/arhuman/jntar">un projet simple </a> </li>
+                            <li>Devenir un Javascript ninja<br />(Async/Await, Spread, Promise...)</li>
+                            <li>Etudier le tooling<br /> (Transpiler, TaskRunner, Test framework...)</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Questions ? </h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Prêts pour essayer ? </h2>
+                    </section>
+                    <section>
+                        <h2>Application Node.js simple </h2>
+                        <ul>
+                            <li> EXERCICE </li>
+                            <li> Afficher une page HTML avec </li>
+                            <li> 
+                                <ul>
+                                     <li> Titre de la page : "Ma page"</li>
+                                     <li> Titre H1 : "Node c'est super"</li>
+                                     <li> Un paragraphe contenant un texte avec un caractère accentué (éàèê...)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Un serveur web en quelques lignes</h2>
+                        <ul>
+                            <li> EXERCICE </li>
+                            <li> Ecrire un serveur web en utilisant Node.js et express</li>
+                            <li> 
+                                <ul>
+                                     <li> Qui sert le contenu d'un répertoire statiquement via HTTP</li>
+                                     <li> Sur le port 2020</li>
+                                     <li> Le contenu doit contenir une page html</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Une API simple</h2>
+                        <ul>
+                            <li> EXERCICE </li>
+                            <li> Ecrire un serveur d'API retournant l'heure de bangkok et celle de Paris sur 2 endpoints</li>
+                            <li> 
+                                <ul>
+                                     <li> Retourne l'heure courante à Paris sur le endpoint /paris (GET)</li>
+                                     <li> Retourne l'heure courante à Bangkok sur le endpoint /bangkok (GET) </li>
+                                     <li> Ecoute sur le port 2021</li>
+                                     <li> Retourne le résultat au format json </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList;  }  },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]'  );  }  },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]'  );  }  },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();  }  },
+                    { src: 'plugin/search/search.js', async: true  },
+                    { src: 'plugin/zoom-js/zoom.js', async: true  },
+                    { src: 'plugin/notes/notes.js', async: true  }
+                ]
+            });
+
+        </script>
+    </body>
+</html>
+

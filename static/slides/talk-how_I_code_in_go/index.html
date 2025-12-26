@@ -1,0 +1,809 @@
+<!-- vim: set ts=4 sw=4 smartindent expandtab:  --> 
+
+<!doctype html>
+<html> <head>
+        <meta charset="utf-8">
+        <title>How I code in Go</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/league.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+.reveal  {
+    background-size: 50% auto;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-image: url("img/gopher2.png")
+}
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <!-- <section> -->
+                <!--     <img src="img/gdg_aixmarseille_talk.jpg" style="background:none; border:none; box&#45;shadow:none; width: 100%; height: 100%"> -->
+                <!-- </section> -->
+
+                <section data-background="img/gopher2.png" data-background-size="50%" data-background-position="bottom left">
+                    <h2>How I code in Go in 2019</h2>
+                    <br />
+                    <br />
+                    <small>Arnaud "Arhuman" Assad (arhuman@gmail.com)
+                        <br>
+                        Aussi sur 
+                        <a href="http://twitter.com/aassad">Twitter</a> - 
+                        <a href="https://www.linkedin.com/in/arnaudassad/">Linkedin</a> - 
+                        <a href="https://github.com/arhuman">Github</a> 
+                        <a href="https://blog.assad.fr">Blog</a> 
+                        <br>
+                    </small>
+                    </p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Things change...</h2>
+                        <ul>
+                            <li>I don't code in Go as I used to do it 2 years ago<br />
+                            <li>I don't code as I used to do it 5 years ago</li>
+                            <li>My programming environment/constraint is very different from what it used to be 30 years ago</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Good old days</h2>
+                        <img src="img/old_days.jpg" style="background:none; border:none; box-shadow:none; width: 80%; height: 80%">
+                    </section>
+                    <section>
+                        <h2>In 1985</h2>
+                        <ul class="small_list">
+                            <small>
+                            <li>Computer resources were scarse (RAM, CPU, language, documentation, expertise)<br />
+                            <li>Computer where rare</li>
+                            <li>A good program was a working one</li>
+                            <li>Basic was so COOL</li>
+                            <li>Self-modifying code was even cooler</li>
+                            </small>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>In 1995</h2>
+                        <ul>
+                            <li>The web was the new eldorado</li>
+                            <li>Object oriented was the way to Go</li>
+                            <li>PHP and Java were invented</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>In 2005</h2>
+                        <ul>
+                            <li>MVC (popularized in 1998) architecture was the state of the art</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>In 2009</h2>
+                        <ul>
+                            <li>Go</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2> Paradigms change</h2>
+                        <ul>
+                            <li>Machine Code</li>
+                            <li>Procedural languages</li>
+                            <li>Object Oriented languages</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2> Even more paradigms</h2>
+                        <ul>
+                            <li>Functionnal programming (Haskell)</li>
+                            <li>Symbolic Programming (Lisp)</li>
+                            <li>Logic programming (Fril, Planner)</li>
+                            <li>Constraint programming (Prolog)</li>
+                            <li>Event-driven programming (Fril, Planner)</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>How is Go different?</h2>
+                        <small>
+                        <ul>
+                            <li>Not Object Oriented</li>
+                                <ul>
+                                    <li>Interface instead of inheritance</li>
+                                    <li>Struct instead of Class</li>
+                                    <li>Polymorphism</li>
+                                </ul>
+                            <li>Multiple return values</li>
+                            <li>Simple</li>
+                            <li>Opiniated</li>
+                                <ul>
+                                    <li>Coding Style</li>
+                                    <li>Community values</li>
+                                    <li>Programming values</li>
+                                </ul>
+                        </ul>
+                        </small>
+                    </section>
+                    <section>
+                        <h2>Coding Style</h2>
+                        <ul>
+                            <li>gofmt</li>
+                            <ul>
+                                <li>Enforced by tooling</li>
+                                <li>The good coding style is the one used by everybody</li>
+                                <li>Freed from details we can focus on what matters</li>
+                            </ul>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Community values</h2>
+                        <ul>
+                            <li> <font color="5DC9EE">Concise</font> and <font color="red">NOT Verbose</font> </li>
+                            <li> <font color="5DC9EE">Genuine</font> and <font color="red">NOT Dubious</font> </li>
+                            <li> <font color="5DC9EE">Friendly</font> and <font color="red">NOT Exclusive</font> </li>
+                            <li> <font color="5DC9EE">Direct</font> and <font color="red">NOT Ambiguous</font> </li>
+                            <li> <font color="5DC9EE">Thoughtful</font> and <font color="red">NOT Reactive</font></li>
+                            <li> <font color="5DC9EE">Humble</font> and <font color="red">NOT Haughty</font> </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Programming values</h2>
+                        <ul>
+                            <li> <font color="5DC9EE">Thoughtful</font> (Deliberate and considerate) </li>
+                            <li> <font color="5DC9EE">Simple</font> (Clear and precise) </li>
+                            <li> <font color="5DC9EE">Efficient</font> (Do more with less) </li>
+                            <li> <font color="5DC9EE">Reliable</font> (It just works) </li>
+                            <li> <font color="5DC9EE">Productive</font> (Realize your vision, faster) </li>
+                            <li> <font color="5DC9EE">Friendly</font> (Accessible and welcoming) </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Programming the Go way</h2>
+                        <ul>
+                            <li>Simple things</li>
+                            <li>Consise things</li>
+                            <li>Non ambiguous things</li>
+                            <li>Do more with less</li>
+                            <li>In a productive way</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Simple things</h2>
+                        <h4>Definitely not like this</h4>
+                        <small>
+                        <pre><code class="docker" data-trim>
+#!/usr/bin/perl
+
+$|=1;$N=shift||100;$M=int(3.3*$N)
+;$t[0]=2;$s[0]=2;sub z{$a=$r=00};
+for(                         $k=1
+;$k<$M   ;$k++){$a=$r=0;   };for(
+$k=01;   $k<$M;$k++){&z;   for($i
+=$N;$i   >=0;$i--){$a=$t   [$i]*(
+$k)+$r   ;$t[$i]=int($a%   10);${
+r}=int   ($a/10);}$K=($k   <<1)+1
+;&{z};   map{$a=$t[$_]+(   10)*((
+$r));;   ${t}[$_]=int($a   /($K))
+;${r}=   int(($a)%($K))}   (0..$N
+);if((   $r>=(int(($K)/2   )))){;
+;;${t}   [$N]++}while($t   [$N]>9
+){${t}   [$N]-=10;;$t[$N   -1]++}
+&z();   for($i=$N;$i>=0   ;$i--){
+$a=    ($t[$i]+$s[$i]+   $r);${s}
+[$i]=int($a%10);$r=int($a/10)}if(
+$k>$x+3){${x}=$k;;print"$s[$y++]"
+;};}for($y..${N}){print"$s[$_]";}
+                        </code></pre>
+                        </small>
+                    </section>
+                    <section>
+                        <h3>Simple things</h3>
+                        <h4>Happy path</h4>
+                        <pre><code class="go" data-trim>
+if !something.OK() {  // flipped
+        return errors.New("something not ok")
+}
+err := something.Do()
+if err != nil {       // flipped
+        return err
+}
+doWork()
+log.Println("finished")
+return nil
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Simple things</h3>
+                        <h4>Complex path</h4>
+                        <pre><code class="go" data-trim>
+if something.OK() {
+        err := something.Do()
+        if err == nil {
+                doWork()
+                log.Println("finished")
+                return nil
+        } else {
+                return err
+        }
+} else {
+        return errors.New("something not ok")
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Non ambiguous things</h2>
+                        <h4>Now</h2>
+                        <pre><code class="go" data-trim>
+err := doSomething()
+if err != nil {
+        return err
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Non ambiguous things</h2>
+                        <h4>Now</h2>
+                        <pre><code class="go" data-trim>
+err := doSomething()
+if err != nil {
+        log.Error("[functionName] Can't do something: "+ err.Error())
+        return err
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Do more with less</h2>
+                        <ul>
+                            <li><strike>What is the recommended framework?</strike></li>
+                            <li>What is the recommended standard module?</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>The big question</h2>
+                        <h4>What is the recommended Architecture for Go projects?</h4>
+                    </section>
+                    <section>
+                        <quote>Make it as simple as possible but not simpler -- Albert Einstein</quote>
+                    </section>
+                    <section>
+                        <h2>Code layout</h2>
+                        <ul>
+                            <li>Base <a href="https://github.com/golang-standards/project-layout">Go project layout</a> </li>
+                            <li>Clean architecture</li>
+                            <li>Devops in mind</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Project layout</h2>
+                        <small>
+                        <ul>
+                            <li>Executables in /cmd (daemon, server, command line tools)</li>
+                            <li>Documentation in /docs (daemon, server, command line tools)</li>
+                            <li>One README.md file</li>
+                            <li>Dependencies in /vendor</li>
+                            <li>Configuration in /configs</li>
+                            <li>System and container orchestration deployment configurations /deployments</li>
+                        </ul>
+                        </small>
+                    </section>
+                    <section>
+                        <h2>Go 1.13 and modules</h2>
+                        <ul>
+                            <li><strike>dependencies in /vendor</strike></li>
+                            <li>go.mod and go.sum (both) versionned</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Documentation</h2>
+                        <ul>
+                            <li><strike>Documentation in /docs</strike></li>
+                            <li>Documentation in /doc</li>
+                            <li>One README.md file</li>
+                            <li>One INSTALL.md file</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>What is a good architecture</h2>
+                        <ul>
+                            <li>Uniform</li>
+                            <li>Natural, easy to understand</li>
+                            <li>Easy to modify, loose coupling</li>
+                            <li>Easy to test</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Good architecture</h2>
+                        <small>
+                        <ul>
+                            <li> 
+                                <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC Reenskaug (1978)</a> </li>
+                            </li>
+                            <li>
+                                <a href="https://cdiese.fr/domain-driven-design-en-5-min/#architecture_in_layers">Domaine Driven Design, Eric Evans (2004)</a>
+                            <li>
+                            </li>
+                                <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean architecture, Robert (Uncle Bob) Martin (2012)</a>
+                            <li>
+                            </li>
+                                <a href="https://www.amazon.com/Lean-Architecture-Agile-Software-Development/dp/0470684208/">Lean Architecture, Coplien & Reenskaug (2010)</a>
+                            <li>
+                            </li>
+                        </ul>
+                        </small>
+                    </section>
+                    <section>
+                        <h2>Clean Architecture</h2>
+                        <ul>
+                            <li>
+                                <a href="http://jeffreypalermo.com/blog/the-onion-architecture-part-1/">Onion architecture, Palermo</a>
+                            </li>
+                            <li>
+                                Layered architecture
+                            </li>
+                            <li>
+                                Hex architecture, Allistair Cockburn
+                            </li>
+                            <li>
+                                Port architecture
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Clean Architecture concept</h2>
+                        <ul>
+                            <li>Code in layers</li>
+                            <li>Change in one layer should not affect another layer</li>
+                            <li>Contract between layers</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Clean Golang Architecture</h2>
+                        <ul>
+                            <li>Use of model layer</li>
+                            <li>Use of repositorylayer</li>
+                            <li>Use of usecase layer</li>
+                            <li>Interfaces are the contract between layer</li>
+                            <li>Use of dependency injection</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Directory layout</h2>
+                        <pre>
+                        <small>
+go.mod
+go.sum
+config/
+      db/
+        project-tables.sql
+models/
+      init.go
+      alias.go
+      links.go
+alias/
+     repository.go
+     repository/
+               gorm_alias.go
+               gorm_alias_test.go
+               pg_alias.go
+               pg_alias_test.go
+     usecase.go
+     usecase/
+            alias_usecase.go
+            alias_usecase_test.go
+link/
+     repository.go
+     repository/
+               gorm_link.go
+               gorm_link_test.go
+               pg_link.go
+               pg_link_test.go
+     usecase.go
+     usecase/
+            link_usecase.go
+            link_usecase_test.go
+                        </small>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Model</h2>
+                        <ul>
+                            <li>Lowest layer</li>
+                            <li>Data definition</li>
+                            <li>Can't call any layer</li>
+                            <li>Struct definition</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Model example: models/alias.go</h3>
+                        <small>
+                        <pre><code class="go" data-trim>
+package models
+
+import "time"
+
+// Alias structure holds the information about email aliases
+type Alias struct {
+    ID           int64     `json:"id"`
+    IDAccount    int64     `json:"id_account"`
+    Email        string    `json:"email"`
+    DstEmail     string    `json:"dst_email"`
+    Class        string    `json:"class"`
+    Permanent    bool      `json:"permanent"`
+    DateCreation time.Time `json:"date_creation"`
+    Active       bool      `json:"active"`
+    DateEnd      time.Time `json:"date_end"`
+}
+                        </code></pre>
+                        </small>
+                    </section>
+                    <section>
+                        <h3>Model specificity: models/init.go</h3>
+                        <small>
+                        <pre><code class="go" data-trim>
+...
+
+// Init initializes a connection to the database and returns a database handle and an error
+func Init(l *logrus.Logger) (*gorm.DB, error) {
+    log = l
+ 
+    err := godotenv.Load(".env")
+    if err != nil {
+        log.Infof("INFO: unable to load .env file: %s", err)
+        return nil, err
+    }
+ 
+    db, err := gorm.Open("postgres", getConnectString())
+    // db, err := gorm.Open("sqlite3", "/tmp/project.db")
+    if err != nil {
+        return nil, err
+    }
+ 
+    log.Infof("Successfully connected to 'database' %s on host %s as user '%s'", name, host, user)
+ 
+    return db, err
+}
+
+...
+                        </code></pre>
+                        </small>
+                    </section>
+                    <section>
+                        <h2>Repository</h2>
+                        <ul>
+                            <li>Data access</li>
+                            <li>Use models</li>
+                            <li>No business logic</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Repository interface: alias/repository.go</h3>
+                        <small>
+                        <pre><code class="go" data-trim>
+package alias
+
+import (
+    "mailcape/models"
+)
+
+// Repository represent the alias repository contract
+type Repository interface {
+    GetAll() ([]*models.Alias, error)
+    GetByID(id int64) (*models.Alias, error)
+    GetByEmail(title string) (*models.Alias, error)
+    Update(a *models.Alias) error
+    Store(a *models.Alias) error
+    Delete(id int64) error
+}
+
+                        </code></pre>
+                        </small>
+                    </section>
+                    <section>
+                        <h3>Repository implementation: alias/repository/gorm_alias.go</h3>
+                        <small>
+                        <small>
+                        <pre><code class="go" data-trim>
+package models
+package repository
+
+import (
+    "mailcape/alias"
+    "mailcape/models"
+
+    "github.com/jinzhu/gorm"
+)
+
+type gormAliasRepository struct {
+    db *gorm.DB
+}
+
+// NewGormAliasRepository will create an object that represent the alias.Repository interface
+func NewGormAliasRepository(db *gorm.DB) alias.Repository {
+    return &gormAliasRepository{db}
+}
+
+func (repo *gormAliasRepository) Delete(id int64) error {
+    alias := new(models.Alias)
+    alias.ID = id
+    if err := repo.db.First(&alias).Error; err != nil {
+        return err
+    }
+
+    if err := repo.db.Delete(alias).Error; err != nil {
+        return err
+    }
+
+    return nil
+}
+
+func (repo *gormAliasRepository) GetAll() ([]*models.Alias, error) {
+    var aliases []*models.Alias
+    if err := repo.db.Find(&aliases).Error; err != nil {
+        return nil, err
+    }
+    return aliases, nil
+}
+
+...
+                        </code></pre>
+                        </small>
+                        </small>
+                    </section>
+                    <section>
+                        <h2>Usecase</h2>
+                        <ul>
+                            <li>Business logic</li>
+                            <li>Also called service</li>
+                            <li>Use repository</li>
+                            <li>Use models</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Usecase interface: alias/usecase.go </h3>
+                        <pre><code class="go" data-trim>
+package alias
+
+import (
+    "mailcape/models"
+)
+
+// Usecase for alias
+type Usecase interface {
+    Delete(id int64) error
+    GetAll() ([]*models.Alias, error)
+    GetByID(int64) (*models.Alias, error)
+    GetByEmail(string) (*models.Alias, error)
+    Store(*models.Alias) error
+    Update(*models.Alias) error
+    Special(*models.Alias) error
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Usecase implementation: alias/usecase/alias_usecase.go</h3>
+                        <small>
+                        <pre><code class="go" data-trim>
+package usecase
+
+import (
+    "mailcape/alias"
+    "mailcape/models"
+)
+
+type aliasUsecase struct {
+    repo alias.Repository
+}
+
+// NewAliasUsecase returns a service to manipulate Alias
+func NewAliasUsecase(r alias.Repository) alias.Usecase {
+    return &aliasUsecase{repo: r}
+
+}
+
+func (a *aliasUsecase) Delete(id int64) error {
+    return a.repo.Delete(id)
+}
+
+func (a *aliasUsecase) Special(id int64) error {
+   // Do whatever you wan using alias repository here
+   return nil
+}
+                        </code></pre>
+                        </small>
+                    </section>
+                    <section>
+                        <h4>Finally inject dependencies to use</h4>
+                        <small>
+                        <pre><code class="go" data-trim>
+import (
+    aliasRepoF "mailcape/alias/repository"
+    aliasServiceF "mailcape/alias/usecase"
+    goalRepoF "mailcape/goal/repository"
+    goalServiceF "mailcape/goal/usecase"
+    objectiveRepoF "mailcape/objective/repository"
+    objectiveServiceF "mailcape/objective/usecase"
+    projectRepoF "mailcape/project/repository"
+    projectServiceF "mailcape/project/usecase"
+
+    "github.com/jinzhu/gorm"
+    "github.com/sirupsen/logrus"
+)
+
+// In my program/API
+func Init(d *gorm.DB, l *logrus.Logger) {
+    db = d
+    log = l
+
+    aliasRepo := aliasRepoF.NewGormAliasRepository(db)
+    aliasService = aliasServiceF.NewAliasUsecase(aliasRepo)
+
+    goalRepo := goalRepoF.NewGormGoalRepository(db)
+    goalService = goalServiceF.NewGoalUsecase(goalRepo)
+
+    objectiveRepo := objectiveRepoF.NewGormObjectiveRepository(db)
+    objectiveService = objectiveServiceF.NewObjectiveUsecase(objectiveRepo)
+
+    projectRepo := projectRepoF.NewGormProjectRepository(db)
+    projectService = projectServiceF.NewProjectUsecase(projectRepo)
+}
+
+                        </code></pre>
+                        </small>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Why Devops?</h2>
+                        <ul>
+                            <li>Inline of Go objective</li>
+                                <ul>
+                                   <li> Bring order to the complexity of creating and running software at scale </li>
+                                </ul>
+                            <li>Many tools written in Go</li>
+                            <li>Ease scaling</li>
+                            <li>Ease administration</li>
+                            <li>It's the 21st Century</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Go / Devops affinity</h2>
+                        <ul>
+                            <li>Many devops tools written in Go</li>
+                            <ul>
+                                <li>Docker/Traefik</li>
+                                <li>Gitea</li>
+                                <li>Drone</li>
+                            </ul>
+                            <li>Go compile to a single easy to deploy binary</li>
+                            <li>Better dependencies</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Multistage docker file</h2>
+                        <small>
+                        <pre><code class="docker" data-trim>
+                        FROM golang:1.11 as builder         # build stage
+
+                        WORKDIR /api                        # setup the working directory
+
+                        COPY go.*  /api/                    # install dependencies
+                        RUN go mod download                 # in a specific layer (cache optimisation)
+
+                        ADD . .                             # add source code
+                        RUN CGO_ENABLED=0 GOOS=linux go build -a  -o server ./cmd/daemon/main.go
+                        # build the source
+
+                        FROM alpine:3.7                     # use a minimal alpine image
+                        # FROM gcr.io/distroless/base       # In prod use distroless
+
+                        RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+
+                        WORKDIR /root                       # set working directory
+
+                        COPY --from=builder /api/server .   # copy the binary from builder
+
+                        EXPOSE 8080                         # expose the port
+
+                        CMD ["./server"]                    # run the binary
+                        </code></pre>
+                        </small>
+                    </section>
+                    <section>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>What I don't do (properly) yet</h2>
+                        <ul>
+                            <li>Error wrapping</li>
+                            <li>Proper testing</li>
+                            <li>Documentation generation</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>What I will have to do</h2>
+                        <ul>
+                            <li>Handle generics</li>
+                            <li>Adapt change layout/namespaces</li>
+                            <li>Functional programming (immutability)</li>
+                            <li>Publish modules</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h1>Thanks</h1>
+                    <br />
+                    <p>Questions ?</p>
+                    <br />
+                    <br />
+                    <small>Don't hesitate to join my network on <a href="https://www.linkedin.com/in/arnaudassad/">Linkedin</a></small>
+                </section>
+                <section>
+                    <section>
+                        <h2>Community</h2>
+                        <ul>
+                            <li><a href="https://golang.org/">Official Golang Site</a> (blog, documentation, tour...)</li>
+                            <li><a href="http://tour.golang.org/">Go Tour</a></li>
+                            <li><a href="http://go-proverbs.github.io/">Go proverbs</a></li>
+                            <li><a href="https://frenchgo.fr/">French Go</a></li>
+                            <li><a href="https://www.meetup.com/fr-FR/Golang-Marseille/">Meetup GolangMarseille</a></li>
+                            <li>**Shameless Publicity**</li>
+                            <ul>
+                                <li><a href="https://soundcloud.com/arnaud-assad/sets/gofr">Gofr Podcast</a></li>
+                                <li><a href="https://www.linkedin.com/groups/8673257/">'Golang France' group on Linkedin</a></li>
+                            </ul>
+                        </ul>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList;  }  },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]'  );  }  },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]'  );  }  },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();  }  },
+                    { src: 'plugin/search/search.js', async: true  },
+                    { src: 'plugin/zoom-js/zoom.js', async: true  },
+                    { src: 'plugin/notes/notes.js', async: true  }
+                ]
+            });
+
+        </script>
+    </body>
+</html>
+
