@@ -3,6 +3,7 @@ title = "Le supplément d'Art du programmeur"
 date = '2026-03-10T02:38:37+01:00'
 categories = ["Article"]
 tags = ["AI", "Programming"]
+translationKey = "extra-touch-of-art"
 +++
 
 Face à une IA capable de compiler nos intentions en programmes fonctionnels, je m'interroge : notre métier se réduit-il à l'assemblage de syntaxe, ou cache-t-il une dimension qui échappe par nature au calcul ?
