@@ -1,6 +1,8 @@
 +++
 date = '2026-03-16T11:05:26+01:00'
 title = 'Et si votre dette technique n’était pas un problème technique ?'
+categories = ["Article"]
+tags = ["Software Development", "Communication", "Psychology"]
 +++
 
 Alors que les méthodes se font toujours plus nombreuses, les livres toujours plus prescriptifs, les outils toujours plus performants, la démarche toujours plus industrielle, l’industrie du logiciel continue à produire autant de dette, de retard et de bugs qu’auparavant.  
