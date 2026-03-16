@@ -1,5 +1,5 @@
 +++
-date = '2026-03-16T11:05:26+01:00'
+date = '2026-03-15T11:05:26+01:00'
 title = 'Et si votre dette technique n’était pas un problème technique ?'
 categories = ["Article"]
 tags = ["Software Development", "Communication", "Psychology"]
