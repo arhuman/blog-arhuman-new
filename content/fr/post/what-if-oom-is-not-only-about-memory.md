@@ -1,5 +1,5 @@
 +++
-date = '2026-03-21T00:24:26+01:00'
+date = '2026-03-20T20:24:26+01:00'
 title = "Et si votre OOM n’était pas qu’un problème de mémoire ?"
 categories = ["Article"]
 tags = ["Software Development", "Go", "Bug"]
@@ -27,7 +27,7 @@ L'oubli est ici impactant dans un cas particulier, resp ET err non nuls, ce qui 
 
 Un io.ReadAll sans limite :
 
-```
+```go
 resBytes, err := io.ReadAll(resp.Body)
 ```
 
@@ -35,7 +35,7 @@ Des allocations inutiles sur le heap
 
 Des allocations inutiles dues à la sérialisation de structures complexes pour le logging  :
 
-```
+```go
 // claimsRoot est une structure complexe qui va être encodée pour le log
 Log.Info("", zap.Any("claims", claimsRoot))
 ```
@@ -128,7 +128,7 @@ Pour casser cette boucle d’amplification, il fallait agir sur trois leviers :
 2. mieux limiter la durée de vie des traitements,
 3. limiter la concurrence.
 
-Concrètement :
+Concrètement, voici les actions mises en oeuvre :
 
 - Supprimer le double `ctx.Next()`
 - Filtrer correctement les données
