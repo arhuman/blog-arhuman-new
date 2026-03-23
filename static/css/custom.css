@@ -1,11 +1,11 @@
-/* Make post title links bigger on list pages */
+/* Post title size on list pages */
 .list__item .list__title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     line-height: 1.3;
 }
 
 .list__item .list__title a {
-    font-size: 3rem;
+    font-size: 1.4rem;
 }
 
 /* Hide all heading tags (h1-h4) in post previews on list pages */
