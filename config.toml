@@ -1,7 +1,7 @@
 baseurl = "https://blog.assad.fr"
 title = "Arhuman's Blog"
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguage = "fr"
+defaultContentLanguageInSubdir = false
 theme = "mainroad"
 googleAnalytics = "UA-4648696-5"
 
@@ -102,30 +102,30 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 # French menu
 [[languages.fr.menu.main]]
   name = "Accueil"
-  url = "/fr/"
+  url = "/"
   weight = 1
 
 [[languages.fr.menu.main]]
   name = "À propos"
-  url = "/fr/about/"
+  url = "/about/"
   weight = 2
 
 [[languages.fr.menu.main]]
   name = "Blog"
-  url = "/fr/post/"
+  url = "/post/"
   weight = 3
 
 [[languages.fr.menu.main]]
   name = "Présentations"
-  url = "/fr/pres/"
+  url = "/pres/"
   weight = 4
 
 [[languages.fr.menu.main]]
   name = "Actuellement"
-  url = "/fr/now/"
+  url = "/now/"
   weight = 5
 
 [[languages.fr.menu.main]]
   name = "Catégories"
-  url = "/fr/categories/"
+  url = "/categories/"
   weight = 6
