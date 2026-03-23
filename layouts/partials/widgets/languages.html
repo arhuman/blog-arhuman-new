@@ -1,14 +1,22 @@
-{{- $translations := .Site.Home.AllTranslations }}
-{{- if and hugo.IsMultilingual (gt (len $translations) 0) }}
+{{- if hugo.IsMultilingual }}
+{{- $page := . }}
+{{- $pageTranslations := .AllTranslations }}
 <div class="widget-languages widget">
 	<h4 class="widget__title">{{ T "languages_title" }}</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			{{- range $translations }}
+			{{- range .Site.Languages }}
+			{{- $lang := . }}
+			{{- $href := printf "/%s/" $lang.Lang }}
+			{{- range $pageTranslations }}
+				{{- if eq .Language.Lang $lang.Lang }}
+				{{- $href = .RelPermalink }}
+				{{- end }}
+			{{- end }}
 			<li class="widget__item">
-				<a class="widget-languages__link widget__link" href="{{ .RelPermalink }}">
-					<span class="widget-languages__link-btn widget__link-btn btn">{{ .Language | upper }}</span>
-					{{- with .Language.LanguageName }}
+				<a class="widget-languages__link widget__link" href="{{ $href }}">
+					<span class="widget-languages__link-btn widget__link-btn btn">{{ $lang.Lang | upper }}</span>
+					{{- with $lang.LanguageName }}
 					<span class="widget-languages__link-text widget__link-text">{{ . | title | humanize }}</span>
 					{{- end }}
 				</a>
