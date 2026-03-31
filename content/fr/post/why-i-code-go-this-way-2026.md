@@ -164,29 +164,29 @@ On y retrouve plusieurs conventions assez répandues dans l’écosystème Go :
 
 Le problème apparaît vite dès qu’on laisse deux packages métier se référencer mutuellement :
 
-    ```go
-    package user
+```go
+package user
 
-    import "myapp/internal/organization"
+import "myapp/internal/organization"
 
-    type User struct {
-        ID            string
-        Email         string
-        Organizations []organization.Organization
-    }
-    ```
+type User struct {
+    ID            string
+    Email         string
+    Organizations []organization.Organization
+}
+```
 
-    ```go
-    package organization
+```go
+package organization
 
-    import "myapp/internal/user"
+import "myapp/internal/user"
 
-    type Organization struct {
-        ID      string
-        Name    string
-        Members []user.User
-    }
-    ```
+type Organization struct {
+    ID      string
+    Name    string
+    Members []user.User
+}
+```
 
 
 Ce choix s'inscrit aussi pour moi dans la même logique de regroupement (cf. `routes.go`) qui facilite la navigation dans le code.
