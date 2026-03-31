@@ -3,7 +3,7 @@ title = "Qui suis-je ?"
 date = "2020-06-23"
 +++
 
-Je suis un Français de 52,5 ans, père de 2 garçons et d'une princesse.
+Je suis un Français de 54 ans, père de 2 garçons et d'une princesse.
 
 Je suis un [entrepreneur](https://www.doolta.com) payé pour résoudre des problèmes complexes impliquant des ordinateurs, généralement en concevant des outils (logiciels) ou en manipulant d'énormes quantités de données, ou parfois en coachant ou gérant d'autres personnes.
 Sur mon temps libre, j'aime faire exactement la même chose, comme c'est ma passion.
