@@ -11,7 +11,7 @@ tags = ["jj", "Programming", "git"]
 En informatique, l’aphorisme “Less is More” revient souvent.
 Avec Jujutsu (jj), il prend une forme très concrète : un modèle mental plus simple peut réduire la friction quotidienne dans la gestion de versions.
 
-Dans cet article[^1], je ne vais pas chercher à “prouver” que jj est supérieur à git. Je vais montrer, sur un cas concret, pourquoi certaines opérations courantes : interrompre un travail, réorganiser ses modifications, corriger un commit non atomique ou résoudre un conflit, deviennent plus naturelles avec jj.
+Dans cet article[^1], je ne vais pas chercher à “prouver” que `jj` est supérieur à `git`. Je vais montrer, sur un cas concret, pourquoi certaines opérations courantes : interrompre un travail, réorganiser ses modifications, corriger un commit non atomique ou résoudre un conflit, deviennent plus naturelles avec jj.
 
 ## Jujutsu
 
@@ -29,7 +29,7 @@ Dans un souci de brièveté, j'utiliserai ici indistinctement `jj` pour parler d
 Pour être à l’aise avec `git`, il faut généralement jongler avec plusieurs concepts distincts :
 
 * L’index (staging area) pour préparer un commit
-* Les branches et HEAD pour savoir où l’on travaille
+* Les branches[^3] et HEAD pour savoir où l’on travaille
 * Le stash pour mettre de côté un travail en cours
 * Le rebase, reset ou reflog quand il faut réécrire ou récupérer une situation
 
@@ -129,15 +129,6 @@ Mais attention, une bonne gestion du .gitignore est donc encore plus à l'ordre 
 Après ce commit on voit bien un changeset enfant ajouté avec une description correspondant au message de commit.
 
 ![](/img/jj_log_after_api_minimal_commit.png)
-```
-@  nloxqvts arhuman@gmail.com 2026-04-06 01:43:20 3355af0e
-│  (empty) (no description set)
-○  kxupqzzp arhuman@gmail.com 2026-04-06 01:43:20 git_head() c34d52da
-│  ajout API minimale
-◆  mknymppu arhuman@gmail.com 2026-04-05 16:25:30 main main@origin 756e0c3e
-│  Initial commit
-~
-```
 
 Au passage, notez que certaines parties du changeid (**n**loxqvts) et du hash (**3**355af0e) sont en gras, c'est le préfixe minimal qui garantit l'unicité de l'identifiant.
 Dis autrement vous allez pouvoir manipuler vos changesets avec des (parties d') identifiants de quelques caractères seulement.
@@ -328,7 +319,7 @@ type Task struct {
 }
 ```
 
-Je finis mon refactoring de `store.go` et je profite pour supprimer un commentaire inutile.
+Je finis mon refactoring de `store.go`.
 
 ```go
 // store.go 
@@ -610,7 +601,7 @@ Un conflit n'est pas un état bloquant, mais un changeset comme un autre, que l'
 
 Je peux réorganiser mon historique, scinder un commit, en changer la description, tout cela après coup, sans craindre de tout casser. Le code devient malléable, l'historique aussi.
 
-Bien sûr, `jj` n'est pas parfait. Il est plus jeune que git, son écosystème est plus petit et les bonnes pratiques restent à définir. Mais sur le plan du confort quotidien, il change vraiment la donne.
+Bien sûr, `jj` n'est pas parfait. Il est plus jeune que `git`, son écosystème est plus petit et les bonnes pratiques restent à définir. Mais sur le plan du confort quotidien, il change vraiment la donne.
 
 Car si Git est pratique quand vous ne faites pas d'erreur, Jujutsu l'est surtout quand vous vous trompez.
 
