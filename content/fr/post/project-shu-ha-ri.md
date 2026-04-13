@@ -102,3 +102,4 @@ Attention à ne pas appeler « adaptation » ce qui n’est qu’impatience ou r
 ## Conclusion
 
 La ceinture noire ne ferme que le kimono. Scrum, Kanban, PRINCE2 ne sont que des ceintures : elles maintiennent une forme, mais ne font pas le maître. La méthode n’est jamais un but, seulement un rappel de principes à intégrer.
+La prochaine fois que vous hésiterez à bousculer un rituel, demandez-vous : est-ce que je cherche à protéger la méthode, ou à sauver le projet ? La réponse vous dira si vous êtes encore dans le `Shu` ou déjà dans le `Ha`.
