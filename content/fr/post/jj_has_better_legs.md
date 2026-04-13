@@ -56,15 +56,15 @@ Dans le répertoire du projet, taper `jj` vous donnera la marche à suivre :
 Hint: Use `jj -h` for a list of available commands.
 Error: There is no jj repo in "."
 Hint: It looks like this is a git repo. You can create a jj repo backed by it by running this:
-jj git init --colocated
+jj git init --colocate
 ```
 
-`jj` nous indique qu'il a bien détecté le répertoire `.git/` mais pas le `.jj/` associé à un répertoire géré par `jj` et nous donne la commande pour initialiser ce répertoire `jj git init --colocated`[^2]
+`jj` nous indique qu'il a bien détecté le répertoire `.git/` mais pas le `.jj/` associé à un répertoire géré par `jj` et nous donne la commande pour initialiser ce répertoire `jj git init --colocate`[^2]
 
 Vous noterez, ici quelque chose qui n'est pas propre à `jj`, mais caractéristique des outils pensés pour leur utilisateur :
 un message d'erreur qui ne se contente pas d'expliquer le problème, mais qui donne en plus la solution.
 
-Une fois `jj git init --colocated` exécuté, le répertoire `.jj/` apparaîtra et vous pourrez utiliser `jj` pour gérer ce répertoire.
+Une fois `jj git init --colocate` exécuté, le répertoire `.jj/` apparaîtra et vous pourrez utiliser `jj` pour gérer ce répertoire.
 
 Exécuter à nouveau `jj` produira alors un tout autre résultat :
 
@@ -607,7 +607,7 @@ Car si Git est pratique quand vous ne faites pas d'erreur, Jujutsu l'est surtout
 
 [^1]: Article qui est une réécriture d'une présentation un peu trop sommaire à mon goût donnée à mes collègues de l'EPFL.
 
-[^2]: Certaines versions indiquent toujours `jj git init` mais `jj git init --colocated` est souvent le meilleur choix : il permet de transformer votre dossier Git actuel en dépôt Jujutsu sans changer vos habitudes de navigation ou vos outils d'édition.
+[^2]: Avec les dernières versions `jj git init` suffit car l'option `--colocate` est activée par défaut.
 
 [^3]: Voire la notion de Directed Acyclic Graph, si on veut comprendre certaines contraintes.
 
