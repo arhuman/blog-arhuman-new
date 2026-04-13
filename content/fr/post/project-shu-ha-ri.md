@@ -1,7 +1,7 @@
 +++
 title = "Suivre la méthode, rater le projet"
 type = "post"
-date = '2026-04-12:00:07+01:00'
+date = '2026-04-12T02:00:07+01:00'
 categories = ["Article"]
 tags = ["Scrum", "Project management"]
 +++
