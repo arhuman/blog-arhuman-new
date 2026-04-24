@@ -129,7 +129,7 @@ La compression classique a atteint un niveau impressionnant,  mais la metacompre
   
 En éliminant la redondance en amont ou en transformant les données à compresser nous pouvons obtenir, sur certains corpus très redondants, de meilleurs résultats, tout en restant comparables sur les cas plus généraux.  
   
-Si le sujet vous intéresse, installez Metarc, testez son efficacité sur vos répertoires, proposez vos idées de metacompression, ou partagez vos cas d’usage en commentaire. Le domaine reste largement ouvert et attend vos contributions.
+Si le sujet vous intéresse, installez Metarc, testez son efficacité sur vos répertoires, proposez vos idées de metacompression, ou partagez vos cas d’usage via une [issue github](https://github.com/arhuman/metarc-go/issues). Le domaine reste largement ouvert et attend vos contributions.
 
 [^1]: Le détail des versions, et le moyen de reproduire ces benchmarks est disponible dans la documentation du [dépôt github de Metarc](https://github.com/arhuman/metarc-go)
 

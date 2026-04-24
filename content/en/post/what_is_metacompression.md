@@ -131,7 +131,7 @@ Classical compression has reached an impressive level, but metacompression allow
   
 By eliminating redundancy upstream or by transforming the data to be compressed, we can obtain, on certain highly redundant corpora, better results, while remaining comparable on more general cases.  
   
-If the subject interests you, install `Metarc`, test its effectiveness on your directories, propose your metacompression ideas, or share your use cases in the comments. The field remains wide open and awaits your contributions.
+If the subject interests you, install `Metarc`, test its effectiveness on your directories, propose your metacompression ideas, or share your use cases through a [github issue](https://github.com/arhuman/metarc-go/issues). The field remains wide open and awaits your contributions.
 
 [^1]: The details of versions and the way to reproduce these benchmarks are available in the documentation of the [Metarc GitHub repository](https://github.com/arhuman/metarc-go)
 
