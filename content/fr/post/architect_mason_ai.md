@@ -14,7 +14,7 @@ Des années à avoir une multitude d’idées
 
 - sur des systèmes d’analyse (Blockchain, Productivité)
 - sur des méthodes de développement personnel (Mémoire, Discipline, Apprentissage)
-- des algorithmes (routage, \[metacompression\](https://blog.assad.fr/post/what_is_metacompression/), chiffrement)
+- des algorithmes (routage, [metacompression](https://blog.assad.fr/post/what_is_metacompression/), chiffrement)
 - des outils (conversion de formats, gestion de projet, administration système)
 - des produits
 - des business
@@ -43,7 +43,7 @@ L’idée de la pertinence de ces outils aurait sans aucun doute mérité plus d
 
 Non, l’action ne fait pas tout.
 
-Pour moi l’action efficace est l’action inspirée : c’est une action qui sert un pourquoi clair et réfléchi.
+Pour moi l’action efficace est l’action inspirée : Une action qui sert efficacement un objectif sensé.
 
 ## Les 2 archétypes
 
@@ -71,7 +71,7 @@ Nous pouvons tour à tour incarner
 
 Le problème n’est donc pas d’être Architecte ou Maçon. Le problème, c’est de rester coincé à une seule extrémité de l’axe.
 
-Et si l’IA nous permettait,  de recréer le lien oublié, lier action et réflexion dans une action inspirée ?
+Et si l’IA nous permettait, de recréer ce lien oublié : unir action et réflexion dans une action inspirée ?
 
 ## L’IA pour l’Architecte
 
@@ -139,13 +139,13 @@ L’IA ne m’a pas rendu moins *Architecte*.
 
 Elle m’a surtout obligé à devenir un peu Maçon : transformer mes plans en murs, mes idées en livrables, mes intuitions en preuves.
 
-Pendant dix ans, la metacompression est restée une idée élégante dans mes notes.  
-En un week-end avec l’IA, elle est devenue un prototype, une expérimentation, et surtout des résultats mesurables.
+Pendant dix ans, la [metacompression](https://blog.assad.fr/post/what_is_metacompression/) est restée une idée élégante dans mes notes.  
+En un week-end avec l’IA, elle est devenue un [prototype](https://github.com/arhuman/metarc-go), une expérimentation, et surtout [des résultats mesurables](https://github.com/arhuman/metarc-go/blob/main/docs/benchmarks.md).
 
 Et c’est peut-être là son vrai pouvoir : non pas produire à notre place, mais réduire la distance entre ce que nous comprenons et ce que nous osons construire.
 
-Et vous, où en êtes-vous sur votre chemin vers plus d'actions inspirées ?
+Et vous : l’IA vous aide-t-elle surtout à mieux penser, à mieux agir, ou enfin à relier les deux ?
 
-\[^1\]: Dans la typologie du \[Myers Briggs Type Indicator\](https://fr.wikipedia.org/wiki/Myers_Briggs_Type_Indicator)
+\[^1\]: Dans la typologie du [Myers Briggs Type Indicator](https://fr.wikipedia.org/wiki/Myers_Briggs_Type_Indicator)
 
 \[^2\]:  Dans Lettres à Lucilius, lettre 16. Il utilise le mot Philosophie qui était utilisé à l'époque pour toute pensée réfléchie. 
