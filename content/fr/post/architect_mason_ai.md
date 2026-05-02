@@ -8,28 +8,24 @@ tags = ["AI", "Psychology"]
 
 ## ...et comment l'IA l'a fait maçon
 
-Mon profil psychologique est INTJ\[^1\] aussi appelé Architecte, et j’ai passé une bonne partie de ma vie à prouver que cette étiquette était adaptée…de la pire des manières.
+Mon profil psychologique est INTJ[^1] aussi appelé Architecte, et j’ai passé une bonne partie de ma vie à prouver que cette étiquette était adaptée...de la pire des manières.
 
 Des années à avoir une multitude d’idées
 
 - sur des systèmes d’analyse (Blockchain, Productivité)
 - sur des méthodes de développement personnel (Mémoire, Discipline, Apprentissage)
-- des algorithmes (routage, [metacompression](https://blog.assad.fr/post/what_is_metacompression/), chiffrement)
+- des algorithmes (routage, compression, chiffrement)
 - des outils (conversion de formats, gestion de projet, administration système)
-- des produits
-- des business
 
-Des années à produire des centaines d’idées à la chaîne pour rien, ou pire pour en voir certaines réalisées par d’autres des années plus tard.
+Des années à produire des centaines d’idées à la chaîne pour rien ou pire pour en voir certaines réalisées par d’autres des années plus tard.
 
-Avec le recul, je crois que c’est l’un des effets les plus sous-estimés de l’IA : elle ne sert pas seulement à produire plus vite.  
-  
-Pour certains profils, elle sert surtout à franchir la distance entre l’idée et l’action.
+Avec le recul, je crois que c’est l’un des effets les plus sous-estimés de l’IA : elle ne sert pas seulement à produire plus vite. Pour certains profils, elle sert surtout à franchir la distance entre l’idée et l’action.
 
 ## Le lien oublié
 
 Comme beaucoup, j’avais oublié le lien qui doit exister entre l’idée et l’action.
 
-Actuellement, le mantra de la Silicon Valley est “Execution beats ideas”, mais Sénèque disait déjà, il y a près de 2000 ans, “La philosophie n’est pas affaire de mots, mais de faits.”\[^2\]
+Actuellement, le mantra de la Silicon Valley est “Execution beats ideas”, mais Sénèque disait déjà, il y a près de 2000 ans, “La philosophie n’est pas affaire de mots, mais de faits.”[^2]
 
 Parce qu’une idée sans aucune action n’a aucune valeur. Une idée sans aucune action est en fait indifférenciable de l’absence d’idée.
 
@@ -54,22 +50,22 @@ La plupart d’entre nous oscillons entre deux archétypes :
 
 Aucun n’est supérieur à l’autre. Ce n’est pas une hiérarchie, mais une dynamique : l’un conçoit, l’autre construit. Sans plan, les briques s’empilent au hasard. Sans briques, le plan reste une fiction.
 
-On trouve des *Architectes* chez les ouvriers, et des *Maçons* chez les CEO. Ce n’est pas une question de métier, mais plutôt un mode de fonctionnement privilégié; deux archétypes ni mutuellement exclusifs, ni immuables dans le temps. Juste deux extrémités d’un axe.
+On trouve des *Architectes* chez les ouvriers et des *Maçons* chez les CEO. Ce n’est pas une question de métier, mais plutôt un mode de fonctionnement privilégié ; deux archétypes ni mutuellement exclusifs, ni immuables dans le temps. Juste deux extrémités d’un axe.
 
 Sur cet axe, nous oscillons entre deux risques : l’inertie de la pensée pure et l’agitation de l’action sans direction.
 
 Nous pouvons tour à tour incarner
 
-- l’Architecte
+- *L’Architecte*
   - Celui qui a une vision, un sens de l’élégance et de la structure.
   - Mais qui peut se retrouver paralysé dans une forme de procrastination intellectuelle.
-  - Il produit alors des algorithmes brillants qui ne quittent jamais le tableau blanc, ou des systèmes si complexes qu'ils ne sont jamais implémentés. C'est l'intelligence qui tourne à vide, une cathédrale de papier qui ne logera jamais personne.
-- le Maçon
+  - Il produit alors des algorithmes brillants qui ne quittent jamais le tableau blanc ou des systèmes si complexes qu'ils ne sont jamais implémentés. C'est l'intelligence qui tourne à vide, une cathédrale de papier qui ne logera jamais personne.
+- *Le Maçon*
   - Plein d’énergie, il excelle dans l'exécution et la matérialisation immédiate.
   - Mais il peut parfois perdre le sens du pourquoi et sombrer dans l'agitation.
-  - Il produit alors des lignes de code à la chaîne, des outils robustes mais inutiles, ou des fonctionnalités que personne n'a demandées. C'est le syndrome de Sisyphe : beaucoup de sueur pour un résultat sans impact.
+  - Il produit alors des lignes de code à la chaîne, des outils robustes, mais inutiles ou des fonctionnalités que personne n'a demandées. C'est le syndrome de Sisyphe : beaucoup de sueur pour un résultat sans impact.
 
-Le problème n’est donc pas d’être Architecte ou Maçon. Le problème, c’est de rester coincé à une seule extrémité de l’axe.
+Le problème n’est donc pas d’être *Architecte* ou *Maçon*. Le problème, c’est de rester coincé à une seule extrémité de l’axe.
 
 Et si l’IA nous permettait, de recréer ce lien oublié : unir action et réflexion dans une action inspirée ?
 
@@ -79,7 +75,7 @@ Pour un Architecte l'IA est un piège délicieux : un outil pour manipuler les i
   
 Mal utilisée, l’IA devient une chambre d’écho et d'amplification : elle aide à raffiner encore une idée qui n’avait peut-être pas besoin d’être raffinée. Elle produit des plans, des variantes, des frameworks, des systèmes, des architectures. Bref : elle permet à l’Architecte de procrastiner avec une élégance industrielle.
 
-Mais bien utilisée elle fait exactement l'inverse : Les idées vagues ou déconnectées du contexte s’effondrent sous les premières questions. Les idées solides, elles, se précisent, s’affinent, prennent une forme finale de plus en plus efficace.  Chaque  interaction affine et matérialise un peu plus cette idée qui devient de plus en plus concrète dans le code et les documents produits.
+Mais bien utilisée elle fait exactement l'inverse : Les idées vagues ou déconnectées du contexte s’effondrent sous les premières questions. Les idées solides, elles, se précisent, s’affinent, prennent une forme finale de plus en plus efficace. Chaque interaction affine et matérialise un peu plus cette idée qui devient de plus en plus concrète dans le code et les documents produits.
 
 Pour l’Architecte, le vrai pouvoir de l’IA n’est donc pas de penser plus, mais de faciliter la matérialisation des idées en action.
 
@@ -109,29 +105,36 @@ Pour le Maçon, le vrai pouvoir de l’IA n’est donc pas de produire plus.
   
 C’est de produire moins d’inutile.
 
+## L’IA comme pont
+
+L’IA ne garantit ni la pensée juste, ni l’action efficace.
+
+Mal utilisée, elle amplifie nos travers :
+l’*Architecte* produit plus d’idées stériles ;
+le *Maçon* construit plus vite des choses inutiles.
+
+Bien utilisée, elle devient un pont :
+elle aide l’*Architecte* à poser des briques,
+et le *Maçon* à construire des ouvrages qui ont du sens.
+
 | | L'Architecte (sans IA) | Le Maçon (sans IA) | Avec IA (bien utilisée) |
 | :--- | :--- | :--- | :--- |
 | **Risque** | Procrastination intellectuelle (cathédrale de papier) | Agitation sans direction (labyrinthe d'actions) | → Les deux amplifiés si on ne corrige pas |
 | **Avec IA (mal utilisée)** | 200 pages de spécifications jamais codées | 2x plus de fonctionnalités inutiles | → Le pire des deux mondes |
-| **Avec IA (bien utilisée)** | Un prototype lancé en 2h | Seulement les tâches à fort impact | → **L'action inspirée** |
+| **Avec IA (bien utilisée)** | Un prototype lancé en 2 h | Seulement les tâches à fort impact | → **L'action inspirée** |
 
-## L’IA comme pont
+Elle ne remplace ni la direction, ni l’effort.
 
-Si l’IA ne garantit ni la pensée juste, ni l’action efficace, elle offre la possibilité à celui qui le souhaite d’être plus efficient à travers “des actions inspirées”.
+Elle réduit la distance entre l’idée juste et l’action concrète.
 
-Elle n’empêchera pas certains Architectes de produire toujours plus d’idées stériles.  
-Elle n’empêchera pas certains Maçons de réaliser encore plus de choses inutiles.  
-Mais elle permet à l’\*Architecte\* qui le souhaite de poser plus de briques, et au Maçon qui le désire de mieux construire des ouvrages qui ont du sens.
-
-Ou dit plus simplement, elle ne nous empêchera pas de parfois trop réfléchir et parfois d’agir inconsidérément, mais vous permettra à la fois de mieux réfléchir et d’agir plus si vous le désirez.
-
-L’IA ne transforme pas un penseur en bâtisseur, ni un exécutant en stratège. Elle amplifie ce qu’il est déjà. Mais bien utilisée, elle peut devenir le pont entre l’idée juste et l’action concrète et vous aider à produire l'action qui sert un pourquoi clair et réfléchi.
+C’est là que naît l’action inspirée :
+une action qui sert efficacement un objectif sensé.
 
 ## Poser enfin les bonnes briques
 
 J’utilise de plus en plus l’IA, j’ai commencé pour affiner mes idées, les challenger à travers des points de vue différents (“tu es un spécialiste du marketing/expert des ventes en ligne, évalue…”) mais maintenant je systématise son usage pour produire plus :
 
-- En déléguant, en supervisant et personnalisant , les travaux auxquels je rechignais (frontend, marketing…)
+- En déléguant, en supervisant et personnalisant, les travaux auxquels je rechignais (frontend, marketing…)
 - En m’aidant à organiser les tâches prioritaires indépendamment de mes biais/préférences
 - En automatisant des tâches pour lesquelles j’ai formalisé mes meilleures pratiques (skills)
 
@@ -146,6 +149,6 @@ Et c’est peut-être là son vrai pouvoir : non pas produire à notre place, ma
 
 Et vous : l’IA vous aide-t-elle surtout à mieux penser, à mieux agir, ou enfin à relier les deux ?
 
-\[^1\]: Dans la typologie du [Myers Briggs Type Indicator](https://fr.wikipedia.org/wiki/Myers_Briggs_Type_Indicator)
+[^1]: Dans la typologie du [Myers Briggs Type Indicator](https://fr.wikipedia.org/wiki/Myers_Briggs_Type_Indicator)
 
-\[^2\]:  Dans Lettres à Lucilius, lettre 16. Il utilise le mot Philosophie qui était utilisé à l'époque pour toute pensée réfléchie. 
+[^2]: Dans *Lettres à Lucilius, lettre 16*. Il utilise le mot Philosophie qui était utilisé à l'époque pour toute pensée réfléchie. 
