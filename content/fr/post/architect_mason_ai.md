@@ -14,7 +14,7 @@ Des années à avoir une multitude d’idées
 
 - sur des systèmes d’analyse (Blockchain, Productivité)
 - sur des méthodes de développement personnel (Mémoire, Discipline, Apprentissage)
-- des algorithmes (routage, compression, chiffrement)
+- des algorithmes (routage, metacompression, chiffrement)
 - des outils (conversion de formats, gestion de projet, administration système)
 
 Des années à produire des centaines d’idées à la chaîne pour rien ou pire pour en voir certaines réalisées par d’autres des années plus tard.
@@ -77,6 +77,8 @@ Mal utilisée, l’IA devient une chambre d’écho et d'amplification : elle ai
 
 Mais bien utilisée elle fait exactement l'inverse : Les idées vagues ou déconnectées du contexte s’effondrent sous les premières questions. Les idées solides, elles, se précisent, s’affinent, prennent une forme finale de plus en plus efficace. Chaque interaction affine et matérialise un peu plus cette idée qui devient de plus en plus concrète dans le code et les documents produits.
 
+*Attention cependant* : l'IA amplifie ce que vous exprimez, pas forcément la valeur d'une idée. **C'est le piège du biais de confirmation. Une mauvaise idée bien formulée sort de l'échange renforcée, pas corrigée.**
+
 Pour l’Architecte, le vrai pouvoir de l’IA n’est donc pas de penser plus, mais de faciliter la matérialisation des idées en action.
 
 ## L’IA pour le Maçon
@@ -132,7 +134,24 @@ une action qui sert efficacement un objectif sensé.
 
 ## Poser enfin les bonnes briques
 
-J’utilise de plus en plus l’IA, j’ai commencé pour affiner mes idées, les challenger à travers des points de vue différents (“tu es un spécialiste du marketing/expert des ventes en ligne, évalue…”) mais maintenant je systématise son usage pour produire plus :
+Au début, je demandais surtout :
+
+> Est-ce que cette idée est bonne ?
+
+C’était une mauvaise question. Elle invitait l’IA à valider, reformuler, embellir.
+
+Aujourd’hui, je demande plutôt :
+
+> Quelle est la faille dans cette idée ?
+
+Puis, si rien de rédhibitoire ne ressort :
+
+> Comment commencer à l’implémenter le plus efficacement possible ?
+
+Ce simple changement de question transforme l’IA :
+De un miroir flatteur pour *l’Architecte*, elle devient un filtre, puis un levier pour le *Maçon*.
+
+C’est ainsi que je l’utilise désormais pour produire davantage d’actions inspirées :
 
 - En déléguant, en supervisant et personnalisant, les travaux auxquels je rechignais (frontend, marketing…)
 - En m’aidant à organiser les tâches prioritaires indépendamment de mes biais/préférences
@@ -140,7 +159,7 @@ J’utilise de plus en plus l’IA, j’ai commencé pour affiner mes idées, le
 
 L’IA ne m’a pas rendu moins *Architecte*.
 
-Elle m’a surtout obligé à devenir un peu Maçon : transformer mes plans en murs, mes idées en livrables, mes intuitions en preuves.
+Elle m’a surtout obligé à devenir un peu *Maçon* : transformer mes plans en murs, mes idées en livrables, mes intuitions en preuves.
 
 Pendant dix ans, la [metacompression](https://blog.assad.fr/post/what_is_metacompression/) est restée une idée élégante dans mes notes.  
 En un week-end avec l’IA, elle est devenue un [prototype](https://github.com/arhuman/metarc-go), une expérimentation, et surtout [des résultats mesurables](https://github.com/arhuman/metarc-go/blob/main/docs/benchmarks.md).
