@@ -16,6 +16,15 @@ Ces algorithmes sont puissants, et ce n'est pas un hasard s'ils sont sans cesse 
 
 Mais ils partagent tous la même philosophie : les données sont un flux d'octets.
 
+> **Mise à jour: 08 Mai 2026**
+>
+> Depuis la première version de cet article, Metarc a changé de statut :
+> les benchmarks actuels montrent des archives plus petites que `tar+zstd`
+> sur tous les dépôts open-source testés.
+>
+> La métacompression n’est plus une intuition à valider,
+> mais une approche démontrée sur ce périmètre. Une approche qu'il faut améliorer, durcir et caractériser.
+
 ## La métacompression : comprimer avant les octets
 
 La metacompression exploite les structures au-dessus du flux d'octets pour préparer et amplifier la compression classique.
@@ -40,23 +49,33 @@ Sur certains types de répertoires avec beaucoup de redondance on observe déjà
 Bien sûr mon répertoire utilisateur n'est pas forcément représentatif, mais vous pouvez, par vous-même, constater les mêmes ratios de compression sur un backup de répertoire JavaScript.  
 Si vous avez 50 projets JavaScript, vous stockez 50 fois les mêmes versions de Lodash. la metacompression le voit, `tar + zstd` voit surtout une archive comme un long flux continu; il peut exploiter des répétitions proches, mais il ne conserve pas explicitement la notion de “ce fichier est le même que cet autre à tel endroit de l’arborescence”. C’est précisément cette information que la métacompression utilise.  
   
-Il faut noter que sur les usages courants, les taux, sans être meilleurs, sont prometteurs à cette phase du projet. Voici une comparaison effectuée sur différents dépots github populaires utilisant différents langages[^1] :
+Il faut noter que les premiers benchmarks étaient seulement prometteurs :
+Metarc était alors globalement équivalent à `tar+zstd`, parfois légèrement meilleur,
+parfois légèrement moins bon.
 
-| Repo | Original size | Files | tar+zstd | marc | **% of tar** |
-|------|---------------|-------|----------|------|----------|
-| kubernetes | 374M | 29254 | 81.2M | 81.5M | **100.3%** |
-| docker-compose | 4.5M | 706 | 1.1M | 1.1M | **102.1%** |
-| vuejs | 9.8M | 732 | 3.2M | 3.3M | **101.2%** |
-| numpy | 50M | 2372 | 18.4M | 18.6M | **100.9%** |
-| redis | 28M | 1784 | 8.9M | 9.0M | **100.7%** |
-| bootstrap | 27M | 820 | 13.9M | 13.8M | **99.5%** |
-| express | 1.6M | 242 | 345.8K | 356.1K | **103.0%** |
-| react | 65M | 6888 | 18.4M | 18.4M | **100.1%** |
-| prometheus | 37M | 1627 | 9.6M | 9.6M | **100.8%** |
+Ce n’est plus le cas aujourd’hui.
 
-En moyenne sur ces dépôts : `Metarc` est globalement équivalent à `tar + zstd` (entre 99 % et 103 % de la taille). 
+Sur les benchmarks actuels, réalisés sur plusieurs dépôts open-source populaires,
+`Metarc` produit désormais des archives plus petites que `tar+zstd` sur tous les dépôts testés[^1] :
 
-Important : la métacompression est particulièrement efficace sur les corpus de multiples fichiers avec redondances inter-fichiers. Sur un fichier unique, déjà fortement compressé ou aléatoire, elle n'apporte pas de gain supplémentaire par rapport à `zstd` seul, et son analyse préalable peut même ajouter un léger surcoût temporel.
+| Repo | Original size | Files | tar+zstd | marc | marc / tar |
+|---|---:|---:|---:|---:|---:|
+| kubernetes | 376M | 29838 | 81.1M | 74.2M | 91.4% |
+| docker-compose | 4.5M | 702 | 1.1M | 1.1M | 99.1% |
+| vuejs | 9.9M | 728 | 3.2M | 3.2M | 97.5% |
+| numpy | 50M | 2364 | 18.4M | 17.5M | 95.3% |
+| redis | 29M | 1780 | 8.9M | 8.4M | 93.7% |
+| bootstrap | 27M | 816 | 13.9M | 13.3M | 95.9% |
+| express | 1.6M | 238 | 345.6K | 339.3K | 98.2% |
+| react | 65M | 6884 | 18.5M | 17.1M | 92.4% |
+
+Ces chiffres ne prouvent pas que `Metarc` est meilleur sur tous les usages.
+Ils prouvent quelque chose de plus précis, mais plus important :
+sur des arbres de code réels, la compression structurelle en amont peut battre
+un pipeline classique `tar+zstd`.
+
+La question n’est donc plus seulement : “est-ce que l’idée fonctionne ?”
+La question devient : “jusqu’où peut-on pousser cette approche, et sur quels corpus ?”
 
 Pour les corpus importants et fortement redondants les méthodes de metacompression ont leur utilité.  
 Voici quelques-une de ces méthodes
@@ -86,16 +105,19 @@ On peut ne stocker qu'un format de date et un timestamp, un niveau (DEBUG, INFO,
 JSON, CSV, et même le code source ont des informations structurelles et redondances connues qui permettent de compresser avant le traitement au niveau du flux d'octets.  
 A ce niveau on peut compresser des régularités que les octets seuls expriment mal
 
-## Metarc : explorer cette couche oubliée
+## Metarc : exploiter cette couche oubliée
 
 Ce ne sont là que quelques exemples d’un champ bien plus vaste
 
-La metacompression est un domaine relativement jeune où il reste beaucoup à inventer.
+La métacompression reste un domaine largement sous-exploré.
+Les premiers résultats pratiques montrent que l’approche fonctionne, mais il reste beaucoup à inventer pour la rendre plus générale, plus robuste et plus efficace selon les types de corpus.
 
-C'est pourquoi j'ai écrit [Metarc](https://github.com/arhuman/metarc-go), un archiveur écrit en Go permettant une exploration pratique de la metacompression : un outil qui cherche à réduire certaines redondances avant d'appliquer et optimiser une compression standard (`zstd`)
+C'est pourquoi j'ai écrit [Metarc](https://github.com/arhuman/metarc-go), un archiveur écrit en Go permettant une exploration pratique de la metacompression : un outil qui réduit certaines redondances avant d'appliquer et optimiser une compression standard (`zstd`)
 
-Bien qu'il présente des taux de compression au moins équivalents, et des temps de compression/décompression plus réduits[^2], Metarc ne vise pas pour autant à remplacer les archiveurs standards.  
+Bien qu’il produise désormais, sur les dépôts testés, des archives plus petites que `tar+zstd`, Metarc ne vise pas encore à remplacer les archiveurs standards.
 Il n'a pas (encore) leur robustesse, ni leur richesse fonctionnelle.
+
+`Metarc` est conçu pour rendre praticable une compression au-delà du simple flux d’octets :
 
 - Normalisation de formats structurés
 - Extractions de motifs
@@ -121,15 +143,17 @@ Je n’avais alors aucune connaissance particulière des travaux préexistants s
 Pourquoi ?  
 Parce que compression sémantique me paraît trop étroit. La metacompression ne travaille pas seulement sur le sens : elle peut aussi exploiter la structure, les relations entre fichiers, les répétitions, les formes, ou même des transformations purement techniques qui améliorent la compression sans relever à proprement parler de la sémantique.  
   
-Metarc prolonge aujourd’hui cette intuition dans un cadre plus ambitieux : non plus comme simple proof of concept, mais comme terrain d’expérimentation concret pour explorer la compression au-delà du flux d’octets. 
+`Metarc` prolonge aujourd’hui cette intuition dans un cadre plus ambitieux : non plus comme simple proof of concept, mais comme terrain d’expérimentation concret pour exploiter la compression au-delà du flux d’octets. 
 
 ## La bonne question n’est peut-être plus “comment mieux compresser les octets ?”
 
 La compression classique a atteint un niveau impressionnant,  mais la metacompression nous permet d'atteindre un tout autre niveau en changeant de cadre.  
   
-En éliminant la redondance en amont ou en transformant les données à compresser nous pouvons obtenir, sur certains corpus très redondants, de meilleurs résultats, tout en restant comparables sur les cas plus généraux.  
-  
-Si le sujet vous intéresse, installez Metarc, testez son efficacité sur vos répertoires, proposez vos idées de metacompression, ou partagez vos cas d’usage via une [issue github](https://github.com/arhuman/metarc-go/issues). Le domaine reste largement ouvert et attend vos contributions.
+En éliminant les redondances en amont, Metarc montre désormais que la compression structurelle peut surpasser un pipeline classique `tar+zstd` sur les dépôts de code source testés.
+
+Si le sujet vous intéresse, essayez `Metarc` sur vos propres arborescences de code source, comparez-le à `tar+zstd`, et partagez vos résultats, cas limites ou idées de métacompression via une [issue github](https://github.com/arhuman/metarc-go/issues).
+
+Si vous pensez que cette approche mérite davantage d’attention, ajouter une étoile au dépôt est aussi un moyen simple de l’aider à toucher plus de développeurs.
 
 [^1]: Le détail des versions, et le moyen de reproduire ces benchmarks est disponible dans la documentation du [dépôt github de Metarc](https://github.com/arhuman/metarc-go)
 

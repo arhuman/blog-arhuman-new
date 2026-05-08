@@ -16,6 +16,16 @@ These algorithms are powerful, and it is no coincidence that they are continuous
 
 But they all share the same philosophy: data is a stream of bytes.
 
+> **Update — May 2026**
+>
+> Since the first version of this article, `Metarc` has moved to a different stage.
+> Current benchmarks now show smaller archives than `tar+zstd`
+> on every open-source repository tested.
+>
+> Metacompression is no longer just an intuition to validate:
+> it is now a demonstrated approach within this scope — one that needs to be improved,
+> hardened, and better characterized.
+
 ## Metacompression: compressing before the bytes
 
 Metacompression exploits structures above the byte stream to prepare and amplify classical compression.
@@ -40,23 +50,33 @@ On certain types of directories with a lot of redundancy, we already observe bet
 Of course my home directory is not necessarily representative, but you can see for yourself the same compression ratios on a JavaScript directory backup.  
 If you have 50 JavaScript projects, you store 50 times the same versions of Lodash. Metacompression sees this; `tar + zstd` mostly sees an archive as one long continuous stream — it can exploit nearby repetitions, but it does not explicitly retain the notion of "this file is the same as that other one at such a location in the tree". That is precisely the information metacompression uses.  
   
-It should be noted that for common use cases, the ratios, while not better, are promising at this stage of the project. Here is a comparison performed on various popular GitHub repositories using different languages[^1]:
+It is worth noting that the first benchmarks were only promising:
+at that stage, `Metarc` was broadly equivalent to `tar+zstd` — sometimes slightly better,
+sometimes slightly worse.
 
-| Repo | Original size | Files | tar+zstd | marc | **% of tar** |
-|------|---------------|-------|----------|------|----------|
-| kubernetes | 374M | 29254 | 81.2M | 81.5M | **100.3%** |
-| docker-compose | 4.5M | 706 | 1.1M | 1.1M | **102.1%** |
-| vuejs | 9.8M | 732 | 3.2M | 3.3M | **101.2%** |
-| numpy | 50M | 2372 | 18.4M | 18.6M | **100.9%** |
-| redis | 28M | 1784 | 8.9M | 9.0M | **100.7%** |
-| bootstrap | 27M | 820 | 13.9M | 13.8M | **99.5%** |
-| express | 1.6M | 242 | 345.8K | 356.1K | **103.0%** |
-| react | 65M | 6888 | 18.4M | 18.4M | **100.1%** |
-| prometheus | 37M | 1627 | 9.6M | 9.6M | **100.8%** |
+That is no longer the case today.
 
-On average across these repositories: `Metarc` is broadly equivalent to `tar + zstd` (between 99% and 103% of the size).
+In the current benchmarks, run on several popular open-source repositories,
+`Metarc` (v0.8.0-5-g8045d64e) now produces smaller archives than `tar+zstd` on every repository tested:
 
-Important: metacompression is particularly effective on corpora of multiple files with inter-file redundancies. On a single file, already heavily compressed or random, it brings no additional gain compared to `zstd` alone, and its preliminary analysis may even add a slight time overhead.
+| Repo | Original size | Files | tar+zstd | marc | marc / tar |
+|---|---:|---:|---:|---:|---:|
+| kubernetes | 376M | 29838 | 81.1M | 74.2M | 91.4% |
+| docker-compose | 4.5M | 702 | 1.1M | 1.1M | 99.1% |
+| vuejs | 9.9M | 728 | 3.2M | 3.2M | 97.5% |
+| numpy | 50M | 2364 | 18.4M | 17.5M | 95.3% |
+| redis | 29M | 1780 | 8.9M | 8.4M | 93.7% |
+| bootstrap | 27M | 816 | 13.9M | 13.3M | 95.9% |
+| express | 1.6M | 238 | 345.6K | 339.3K | 98.2% |
+| react | 65M | 6884 | 18.5M | 17.1M | 92.4% |
+
+These numbers do not prove that `Metarc` is better for every use case.
+They prove something narrower, but more important:
+on real source-code trees, upfront structural compression can beat
+a conventional `tar+zstd` pipeline.
+
+So the question is no longer only: “does the idea work?”
+The question becomes: “how far can this approach be pushed, and on which corpora?”
 
 For large and highly redundant corpora, metacompression methods have their uses.  
 Here are some of those methods.
@@ -86,13 +106,15 @@ One can store only a date format and a timestamp, a level (DEBUG, INFO, WARN, ER
 JSON, CSV, and even source code have known structural information and redundancies that allow compressing before processing at the byte stream level.  
 At this level one can compress regularities that bytes alone express poorly.
 
-## Metarc: exploring this forgotten layer
+## Metarc: exploiting this forgotten layer
 
 These are just a few examples of a much broader field.
 
-Metacompression is a relatively young domain where there is still much to invent.
+Metacompression remains a largely under-explored field.
+Early practical results show that the approach works, but there is still a lot to invent to make it more general, more robust,
+and more effective across different types of corpora.
 
-That is why I wrote [Metarc](https://github.com/arhuman/metarc-go), an archiver written in Go enabling practical exploration of metacompression: a tool that seeks to reduce certain redundancies before applying and optimizing standard compression (`zstd`).
+That is why I wrote [Metarc](https://github.com/arhuman/metarc-go), an archiver written in Go enabling practical exploitation of metacompression: a tool that reduces certain redundancies before applying and optimizing standard compression (`zstd`).
 
 Although it offers compression ratios at least equivalent, and shorter compression/decompression times[^2], `Metarc` does not aim to replace standard archivers.  
 It does not (yet) have their robustness, nor their functional richness.
@@ -123,15 +145,17 @@ I had at that time no particular knowledge of pre-existing work on the subject.
 Why?  
 Because semantic compression seems too narrow to me. Metacompression does not only work on meaning: it can also exploit structure, relationships between files, repetitions, patterns, or even purely technical transformations that improve compression without strictly falling under semantics.  
   
-`Metarc` extends that intuition today within a more ambitious framework: no longer as a simple proof of concept, but as a concrete experimentation ground to explore compression beyond the byte stream.
+`Metarc` now takes this intuition further: not as a simple proof of concept anymore, but as a practical implementation of an idea now validated on real source-code trees.
 
 ## The right question may no longer be "how to better compress bytes?"
 
 Classical compression has reached an impressive level, but metacompression allows us to reach a whole other level by changing the frame.  
   
-By eliminating redundancy upstream or by transforming the data to be compressed, we can obtain, on certain highly redundant corpora, better results, while remaining comparable on more general cases.  
+By eliminating redundancy upstream, Metarc now shows that structural compression can outperform a conventional `tar+zstd` pipeline on the source-code repositories tested.
   
-If the subject interests you, install `Metarc`, test its effectiveness on your directories, propose your metacompression ideas, or share your use cases through a [github issue](https://github.com/arhuman/metarc-go/issues). The field remains wide open and awaits your contributions.
+If the subject interests you, try `Metarc` on your own source-code trees, compare it with `tar+zstd`, and share your results, edge cases, or metacompression ideas through a GitHub issue.
+
+If you think this approach deserves more attention, starring the repository is the simplest way to help it reach more developers.
 
 [^1]: The details of versions and the way to reproduce these benchmarks are available in the documentation of the [Metarc GitHub repository](https://github.com/arhuman/metarc-go)
 
