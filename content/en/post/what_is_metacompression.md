@@ -10,9 +10,9 @@ translationKey="what_is_metacompression"
 ## What if the real gain wasn't at the byte level?
 
 I have always been fascinated by compression algorithms — I was 15 when I "invented" Run Length Encoding (before learning it had been discovered more than 20 years before I was born).  
-I marveled at the visual simplicity of Huffman coding, at the cleverness of Lempel-Ziv which dynamically builds its dictionary.
+I marveled at the visual simplicity of Huffman coding, and at the cleverness of Lempel-Ziv which dynamically builds its dictionary.
 
-These algorithms are powerful, and it is no coincidence that they are continuously improved and combined to produce ever more powerful new algorithms: `Brotli`, `zstd`.
+These algorithms are powerful, and it is no coincidence that they are continuously improved and combined to produce increasingly more powerful algorithms: `Brotli`, `zstd`.
 
 But they all share the same philosophy: data is a stream of bytes.
 
@@ -39,7 +39,8 @@ That is why the term metacompression seems more appropriate to me than "semantic
 
 Working at a different level than the byte stream gives access to a much richer level of information, and therefore to compression levers inaccessible to the simple byte stream.
 
-On certain types of directories with a lot of redundancy, we already observe better compression ratios than standard tools. Below are some results using [Metarc](https://github.com/arhuman/metarc-go) for metacompression:
+On highly redundant directories, the effect can be significant.
+Here is one example using [Metarc](https://github.com/arhuman/metarc-go) for metacompression:
 
 ```
 6.5G	my_homedir (106442 files, mostly git repos)        
@@ -78,7 +79,7 @@ a conventional `tar+zstd` pipeline.
 So the question is no longer only: “does the idea work?”
 The question becomes: “how far can this approach be pushed, and on which corpora?”
 
-For large and highly redundant corpora, metacompression methods have their uses.  
+Metacompression is especially useful on corpora where structure and repetition exist above the byte stream.
 Here are some of those methods.
 
 ### File deduplication
@@ -116,8 +117,8 @@ and more effective across different types of corpora.
 
 That is why I wrote [Metarc](https://github.com/arhuman/metarc-go), an archiver written in Go enabling practical exploitation of metacompression: a tool that reduces certain redundancies before applying and optimizing standard compression (`zstd`).
 
-Although it offers compression ratios at least equivalent, and shorter compression/decompression times[^2], `Metarc` does not aim to replace standard archivers.  
-It does not (yet) have their robustness, nor their functional richness.
+Although `Metarc` now produces smaller archives than `tar+zstd` on the repositories tested, with shorter compression/decompression times[^2], it does not aim to replace standard archivers yet.
+It does not yet have their robustness, portability, tooling ecosystem, or functional richness.
 
 `Metarc` is designed to explore compression beyond the byte stream:
 
@@ -153,9 +154,9 @@ Classical compression has reached an impressive level, but metacompression allow
   
 By eliminating redundancy upstream, Metarc now shows that structural compression can outperform a conventional `tar+zstd` pipeline on the source-code repositories tested.
   
-If the subject interests you, try `Metarc` on your own source-code trees, compare it with `tar+zstd`, and share your results, edge cases, or metacompression ideas through a GitHub issue.
+If the subject interests you, try `Metarc` on your own source-code trees, compare it with `tar+zstd`, and share your results, edge cases, or metacompression ideas through a [GitHub issue](https://github.com/arhuman/metarc-go/issues).
 
-If you think this approach deserves more attention, starring the repository is the simplest way to help it reach more developers.
+If you think this approach deserves more attention, starring the repository is a simple way to help it reach more developers.
 
 [^1]: The details of versions and the way to reproduce these benchmarks are available in the documentation of the [Metarc GitHub repository](https://github.com/arhuman/metarc-go)
 
