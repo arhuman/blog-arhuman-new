@@ -11,7 +11,7 @@ Ce matin, je me suis amusé à compresser le temps.
 
 Mais avant que vous m'imaginiez en génie de la physique théorique ou en hurluberlu ayant besoin d'une camisole de force, laissez-moi vous expliquer.
 
-Je travaille actuellement sur [Metarc](https://github.com/arhuman/metarc-go), un outil de *metacompression* (comprendre : appliquer des transformations intelligentes à certaines structures avant de passer le relais à un compresseur classique comme `zstd`). Si vous n'avez jamais entendu ce terme, vous allez comprendre en 5 minutes. Si vous êtes expert en compression ; accrochez-vous, vous trouverez peut-être matière à débat.
+Je travaille actuellement sur [Metarc](https://github.com/arhuman/metarc-go), un outil de *metacompression* (comprendre : appliquer des transformations intelligentes à certaines structures avant de passer le relais à un compresseur classique comme `zstd`). Si vous n'avez jamais entendu ce terme, vous allez comprendre en 5 minutes. Si vous êtes expert en compression, accrochez-vous, vous trouverez peut-être matière à débat.
 
 Les dates sont un excellent terrain de jeu pour comprendre cette idée : elles ressemblent à du texte, mais elles contiennent en réalité une structure très dense qu'on peut exploiter.
 
@@ -106,13 +106,13 @@ En réorganisant le format pour regrouper la faible entropie[^1] au début, on c
 \___________________ Faible _____________________/  \___ FORTE ___/
 ```
 
-**La metacompression agit ici doublement : En compressant la date et en optimisant l'ordonnancement des octets pour une compression ultérieure par `zstd`. C'est la connaissance de la structure (ce qui change beaucoup et ce qui change peu) qui permet ce double gain.**
+**La metacompression agit ici doublement : elle compresse la date et optimise l'ordonnancement des octets pour une compression ultérieure par `zstd`. C'est la connaissance de la structure (ce qui change beaucoup et ce qui change peu) qui permet ce double gain.**
 
 Les premiers tests ont confirmé que cette simple modification améliorait la compression finale par `zstd`.
 
 Le principe étant validé, il ne me restait plus qu'à optimiser la *metacompression*, en augmentant le nombre de formats reconnus et en essayant de réduire la taille des informations de format.
 
-La réduction de la taille des informations de formats relève plus de l'optimisation : 
+La réduction des informations de format relève plus de l'optimisation : 
 Pour certaines variantes stocker une timezone ne sert à rien et plutôt que d'utiliser le format générique `[0x00][fmt_byte][int16 tz_min][uint8 subsec_digits][uint64 timestamp]`, `[0x00][fmt_byte][uint64 timestamp]` suffit, faisant gagner 3 octets par date.
 
 J'ai aussi étendu l'idée aux délimiteurs (', "), avec deux caractères supplémentaires encodés sans coût, même sur une date unique, et sans pénalité pour `zstd`.
@@ -128,6 +128,7 @@ Voici les résultats après compression par `tar+zstd` (`tar --zstd -cvf xxx.tar
 > [!NOTE]
 > Metarc archive les fichiers en appliquant des transformations de metacompression puis compresse avec zstd par défaut, c'est pourquoi les comparaisons se font avec tar + zstd.
 
+Le gain dépend directement de la proportion de dates reconnues dans le corpus. Quand Metarc détecte un format, il réduit l’information temporelle et la réorganise pour `zstd`. Quand il n’en détecte aucun, le fichier suit simplement le chemin de compression standard.
 
 | Dataset | Taille répertoire | Taille tar+zstd | Taille Metarc | Bénéfice Metacompression |
 |---|---:|---:|---:|---:|

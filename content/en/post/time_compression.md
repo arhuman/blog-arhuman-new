@@ -11,7 +11,7 @@ This morning, I had fun compressing time.
 
 But before you picture me as a theoretical physics genius or a crackpot in need of a straitjacket, let me explain.
 
-I am currently working on [Metarc](https://github.com/arhuman/metarc-go), a *metacompression* tool (understand: applying smart transformations to certain structures before handing off to a classical compressor like `zstd`). If you have never heard the term, you will understand in 5 minutes. If you are a compression expert; hang on, you might find food for debate.
+I am currently working on [Metarc](https://github.com/arhuman/metarc-go), a *metacompression* tool (understand: applying smart transformations to certain structures before handing off to a classical compressor like `zstd`). If you have never heard the term, you will understand in 5 minutes. If you are a compression expert, hang on, you might find food for debate.
 
 Dates are a great playground for understanding this idea: they look like text, but they actually contain a very dense structure that can be exploited.
 
@@ -104,13 +104,13 @@ By reorganizing the format to group low entropy[^1] at the beginning, we create 
 \____________________ Low ________________________/ \___ HIGH ___/
 ```
 
-**Metacompression acts here doubly: by compressing the date and by optimizing the byte ordering for further compression by `zstd`. It is the knowledge of the structure (what changes a lot and what changes little) that enables this double gain.**
+**Metacompression acts here doubly: it compresses the date and optimizes the byte ordering for further compression by `zstd`. It is the knowledge of the structure (what changes a lot and what changes little) that enables this double gain.**
 
 The first tests confirmed that this simple modification improved the final compression by `zstd`.
 
 The principle being validated, all that remained was to optimize *metacompression*, by increasing the number of recognized formats and trying to reduce the size of the format information.
 
-Reducing the size of format information is more of an optimization matter:
+Reducing the format information is more of an optimization matter:
 For some variants storing a timezone is useless and rather than using the generic format `[0x00][fmt_byte][int16 tz_min][uint8 subsec_digits][uint64 timestamp]`, `[0x00][fmt_byte][uint64 timestamp]` is enough, saving 3 bytes per date.
 
 I also extended the idea to delimiters (', "), with two extra characters encoded at no cost, even on a unique date, and without penalty for `zstd`.
@@ -126,6 +126,7 @@ Here are the results after compression by `tar+zstd` (`tar --zstd -cvf xxx.tar.z
 > [!NOTE]
 > Metarc archives files by applying metacompression transformations and then compresses with zstd by default, which is why comparisons are made with tar + zstd.
 
+The gain depends directly on the proportion of dates recognized in the corpus. When Metarc detects a format, it reduces the temporal information and reorganizes it for `zstd`. When it detects none, the file simply follows the standard compression path.
 
 | Dataset | Directory size | tar+zstd size | Metarc size | Metacompression benefit |
 |---|---:|---:|---:|---:|
