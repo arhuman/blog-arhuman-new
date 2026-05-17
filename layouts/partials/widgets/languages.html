@@ -5,8 +5,8 @@
 	<h4 class="widget__title">{{ T "languages_title" }}</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			{{- range .Site.Languages }}
-			{{- $lang := . }}
+			{{- range hugo.Sites }}
+			{{- $lang := .Language }}
 			{{- $href := printf "/%s/" $lang.Lang }}
 			{{- range $pageTranslations }}
 				{{- if eq .Language.Lang $lang.Lang }}
@@ -16,7 +16,7 @@
 			<li class="widget__item">
 				<a class="widget-languages__link widget__link" href="{{ $href }}">
 					<span class="widget-languages__link-btn widget__link-btn btn">{{ $lang.Lang | upper }}</span>
-					{{- with $lang.LanguageName }}
+					{{- with $lang.Label }}
 					<span class="widget-languages__link-text widget__link-text">{{ . | title | humanize }}</span>
 					{{- end }}
 				</a>

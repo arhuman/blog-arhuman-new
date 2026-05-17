@@ -5,6 +5,7 @@ date = '2026-05-16T01:38:37+01:00'
 categories = ["Article"]
 tags = ["metarc", "metacompression"]
 translationKey = "compressing_time"
+canonical_url = "https://blog.assad.fr/fr/post/time_compression/"
 +++
 
 Ce matin, je me suis amusé à compresser le temps.

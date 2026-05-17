@@ -7,8 +7,8 @@ googleAnalytics = "UA-4648696-5"
 
 [languages]
   [languages.en]
-    languageCode = "en-us"
-    languageName = "English"
+    locale = "en-us"
+    label = "English"
     weight = 1
     title = "Arhuman's Blog"
     contentDir = "content/en"
@@ -16,13 +16,16 @@ googleAnalytics = "UA-4648696-5"
       subtitle = "Ideas, rants, tutorials for those interested"
 
   [languages.fr]
-    languageCode = "fr-fr"
-    languageName = "Français"
+    locale = "fr-fr"
+    label = "Français"
     weight = 2
     title = "Le Blog d'Arhuman"
     contentDir = "content/fr"
     [languages.fr.Params]
       subtitle = "Idées, tutoriels, diatribes pour ceux que ça intéresse"
+
+[markup.goldmark.renderer]
+unsafe = true
 
 [pagination]
 pagerSize = 10 # Number of posts per page
