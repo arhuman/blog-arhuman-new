@@ -1,7 +1,7 @@
 +++
 title = "Le code fonctionne. Mais est-il de qualité ?"
 type = "post"
-date = '2026-04-30T02:00:07+01:00'
+date = '2026-05-30T02:00:07+01:00'
 categories = ["Article"]
 tags = ["AI", "Programming"]
 +++
