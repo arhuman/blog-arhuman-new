@@ -64,7 +64,7 @@ J’ai choisi de ne pas réutiliser un des modèles existants, il y a plusieurs 
 
 Je ne cherche donc pas à produire une vérité absolue, mais une grille assez stable pour comparer des dépôts, repérer les risques, et guider les améliorations.
 
-Pour mes premiers essais j’ai choisi un modèle simple avec une note sur 10[^1] sur chacun des 6 axes :
+Pour mes premiers essais j’ai choisi un modèle simple avec une note sur 10[^2] sur chacun des 6 axes :
 
 | Axe                         | Ce que je cherche                                                                                               | Signal faible typique                                                                                        |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -166,6 +166,6 @@ Certes, la complexité exponentielle de notre écosystème rend toute tentative 
 Votre projet fonctionne, mais personne n'ose plus y toucher ? C'est le moment de lever le doute. Envoyez-moi votre dépôt : je réaliserai un audit gratuit selon ces 6 axes. Votre code m’aidera à tester le modèle sur du réel et vous repartirez avec une liste concrète de risques et d’améliorations.
 
 
-[^1]: Les modèles et référentiels existants ne mesurent pas tous la même chose : DORA s’intéresse surtout à la performance de delivery, CMMI à la maturité du processus, CVSS à la sévérité des vulnérabilités, tandis que SQuaRE, CISQ, McCall ou FURPS+ proposent des grilles plus directement liées à la qualité logicielle.
+[^1]: Les modèles et référentiels existants ne mesurent pas tous la même chose : DORA vise la performance de delivery, CMMI la maturité du processus, CVSS la sévérité des vulnérabilités, tandis que SQuaRE, CISQ, McCall ou FURPS+ proposent des grilles plus directement liées à la qualité logicielle.
 
 [^2]: La notation est assistée par un LLM piloté par un ensemble de règles métier, d'agents spécialisés et de templates d'audit. Le barème évolutif et l'usage d'un modèle pose un problème de reproductibilité très similaire à la situation de deux auditeurs ISO qui peuvent ne pas donner la même note. L'important n'est pas la note absolue, mais l'ensemble des points d'amélioration remontés. La grille détaillée sera fournie avec les notes une fois le modèle stabilisé.
