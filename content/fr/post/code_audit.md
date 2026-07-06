@@ -153,9 +153,9 @@ Mais les axes eux-mêmes sont encore en cours de réflexion : la maintenance est
 Même chose pour la testabilité : un code peut avoir une excellente architecture et une bonne documentation, tout en restant difficilement testable.
 Doit-on lui dédier un axe ? L’inclure dans la maintenabilité ?
 
-Outre l’analyse statique du code, l’analyse de la dynamique du code (analyse des commits) reste aussi à finaliser.
+Outre l’analyse statique du code, l’analyse de sa dynamique, notamment via l’historique des commits, reste un chantier majeur. C’est pourquoi je développe actuellement vview (Versioned View), un outil intégré conçu pour extraire des informations clés sur le cycle de vie d’un dépôt. Je vous en dirai plus dans un prochain article dédié.
 
-Ce modèle n’est pas encore finalisé. Il a vocation à être confronté à des dépôts réels, corrigé par les cas limites, et rendu progressivement plus robuste.
+Ce modèle est en constante évolution. Il se nourrit de l’analyse de dépôts réels pour identifier ses limites, s’affiner et gagner progressivement en robustesse.
 
 ## Conclusion
 
