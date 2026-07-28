@@ -3,7 +3,7 @@ title = "Le fantôme de Solow : pourquoi l'IA ne booste (pas encore) la producti
 type = "post"
 date = '2026-07-27T04:03:07+01:00'
 categories = ["Article"]
-tags = ["AI","productivity"]
+tags = ["AI","productivity","economy"]
 draft = true
 +++
 
@@ -18,7 +18,7 @@ Ce paradoxe a été énoncé simplement par le prix Nobel d'économie Robert Sol
 Car s'il est indéniable pour beaucoup (et j'en fais partie) que l'IA apporte un gain de productivité personnelle, l'évaluation factuelle globale présente une réalité plus mitigée :
 
 - [Une étude de la Banque fédérale de réserve d’Atlanta](https://www.atlantafed.org/research-and-data/publications/working-papers/2026/03/24/03-firm-data-on-ai) de 2026 portant sur 6 000 dirigeants à travers le monde : 80% des entreprises indiquent que l'IA n'a pas eu d'effet sur l'emploi ou la productivité ces trois dernières années. Elles continuent pourtant d’anticiper des gains significatifs dans les trois prochaines années.
-- [PwC Global CEO Survey 2026](https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-global-ceo-survey.html) : sur 4 454 dirigeants dans 95 pays, 56 % ne constatent encore aucun bénéfice financier significatif lié à l’IA. Seuls 12 % déclarent simultanément une réduction des coûts et une augmentation des revenus.
+- [PwC Global CEO Survey 2026](https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-global-ceo-survey.html) : sur 4 454 dirigeants dans 95 pays, 56% ne constatent encore aucun bénéfice financier significatif lié à l’IA. Seuls 12% déclarent simultanément une réduction des coûts et une augmentation des revenus.
 
 D’autres études observent pourtant déjà des gains significatifs chez les entreprises utilisatrices. Une [étude de la Banque européenne d’investissement](https://cepr.org/voxeu/columns/how-ai-affecting-productivity-and-jobs-europe) estime notamment une amélioration moyenne de 4% de la productivité du travail. Le paradoxe ne tient donc peut-être pas à l’absence de gains, mais à leur concentration et à leur faible diffusion.
 
@@ -57,7 +57,7 @@ C'est d'ailleurs ce que souligne l’OCDE dans [un rapport](https://www.oecd.org
 Comme pour l'ordinateur en son temps, l'effet de nouveauté pousse l'utilisateur à surévaluer sa productivité avec le nouvel outil qu'est l'IA. En masquant les limites de leur usage, cette perception peut freiner leur progression.
 
 C'est ce que semblent confirmer les études :
-- [METR de 2025](https://blog.vibecoder.me/what-metr-study-found-about-ai-coding-productivity) montrait un ralentissement de 19 % chez des développeurs open source expérimentés, malgré leur perception inverse. Mais METR estime désormais que ce résultat ne doit pas être extrapolé aux outils de 2026 et ne parvient plus à mesurer proprement leur effet en raison de biais de sélection croissants.
+- [METR de 2025](https://blog.vibecoder.me/what-metr-study-found-about-ai-coding-productivity) montrait un ralentissement de 19% chez des développeurs open source expérimentés, malgré leur perception inverse. Mais METR estime désormais que ce résultat ne doit pas être extrapolé aux outils de 2026 et ne parvient plus à mesurer proprement leur effet en raison de biais de sélection croissants.
 - [Gitclear 2024](https://arc.dev/talent-blog/impact-of-ai-on-code/) qui montre un bond du code churn (code jeté ou réécrit) et de la duplication du code produit avec de l'IA. Cette tendance est de plus en plus présente de nos jours et souvent désignée par le terme "[AI slop](https://simonwillison.net/2024/May/8/slop/)".
 
 L’exemple de Meta est presque un cas d’école : [Mark Zuckerberg a reconnu](https://www.reuters.com/business/zuckerberg-says-ai-agent-development-going-slower-than-expected-2026-07-02/) que l’entreprise avait été "super optimiste" concernant des outils comme Claude Code et que le développement agentique n’avait pas accéléré comme prévu, malgré des investissements considérables dans les infrastructures d’IA.
@@ -76,7 +76,7 @@ Un mécanisme similaire semble apparaître avec l’IA. En réduisant fortement 
 
 À cette production supplémentaire s’ajoutent de nouvelles tâches de sélection, de vérification, de correction et de maintenance. Le gain d’efficacité dans la génération est alors bien réel, mais il peut être partiellement absorbé par ces coûts induits et par la faible valeur marginale d’une partie de ce qui est produit.
 
-L’IA ne supprime donc pas nécessairement le travail ; elle déplace la limite de ce qu’il devient possible, et bientôt attendu, de produire.
+L’IA ne supprime donc pas nécessairement le travail; elle déplace la limite de ce qu’il devient possible, et bientôt attendu, de produire.
 
 L’ "[AI slop](https://arxiv.org/abs/2603.27249)" en est une conséquence visible : lorsque le coût de génération devient presque nul, la quantité produite peut croître bien plus vite que sa valeur. 
 
@@ -84,15 +84,15 @@ L’ "[AI slop](https://arxiv.org/abs/2603.27249)" en est une conséquence visib
 
 ### De producteur à superviseur : la taxe d'évaluation
 
-Dans l'IT traditionnel, l'humain reste le producteur principal assisté par un outil déterministe (un compilateur, un tableur). L'IA générative inverse cette charge cognitive :
+Dans l'IT traditionnel, l'humain reste le producteur principal assisté par un outil déterministe (un compilateur, un tableur). L'IA générative déplace une partie de cette charge cognitive :
 
-La taxe de contrôle qualité : l’utilisateur passe d’un rôle de producteur principal à celui de superviseur, chargé de guider, vérifier et corriger la production de l’IA. Relire du code ou du texte généré à 90 % pour traquer les 10 % d'hallucinations, de bugs subtils ou de biais contextuels s'avère cognitivement éprouvant.
+L’utilisateur passe d’un rôle de producteur principal à celui de superviseur, chargé de guider, vérifier et corriger la production de l’IA. Relire du code ou du texte généré pour y traquer des hallucinations, des bugs subtils ou des contresens contextuels s'avère cognitivement éprouvant.
 
-Le gain attendu peut alors être fortement réduit, voire entièrement absorbé par le temps de vérification : générer 500 lignes de code prend 3 secondes, mais valider leur exactitude architecturale et fonctionnelle peut annuler une grande partie du gain, voire, dans certains cas, prendre davantage de temps qu’une conception directe.
+Le gain attendu peut alors être fortement réduit, voire entièrement absorbé par le temps de vérification : générer plusieurs centaines de lignes de code prend quelques secondes, mais valider que l'architecture est adaptée et le code est correct peut annuler une grande partie du gain, voire, dans certains cas, prendre davantage de temps qu’une conception directe.
 
 Une [étude longitudinale de Vella et Blincoe, 2026](https://arxiv.org/abs/2605.23135) vient préciser ce constat.
 
-Les développeurs interrogés y déclarent passer moins de temps à produire du code, mais davantage à diriger, vérifier et corriger les productions de l’IA. Les chercheuses proposent le terme supervisory engineering work. Dans la cohorte suivie, 84 % continuent de percevoir un gain de productivité, tandis que la proportion signalant une dégradation d’au moins une dimension de leur expérience de travail passe de 14 % à 27 %, notamment concernant la charge cognitive et l’état de flow.
+Les développeurs interrogés y déclarent passer moins de temps à produire du code, mais davantage à diriger, vérifier et corriger les productions de l’IA. Les chercheuses proposent le terme supervisory engineering work. Dans la cohorte suivie, 84% continuent de percevoir un gain de productivité, tandis que la proportion signalant une dégradation d’au moins une dimension de leur expérience de travail passe de 14% à 27%, notamment concernant la charge cognitive et l’état de flow.
 
 ### Des coûts d’exécution et d’intégration encore élevés
 
