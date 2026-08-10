@@ -2,7 +2,7 @@
 date = '2026-03-20T15:24:26+01:00'
 title = "What if your OOM was not just a memory problem?"
 categories = ["Article"]
-tags = ["Software Development", "Go", "Bug"]
+tags = ["Software Development", "Go", "Bug", "Doolta"]
 +++
 
 Sometimes an investigation tells a different story than the one you expected.

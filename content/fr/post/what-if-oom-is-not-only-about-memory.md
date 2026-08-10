@@ -2,7 +2,7 @@
 date = '2026-03-20T15:24:26+01:00'
 title = "Et si votre OOM n’était pas qu’un problème de mémoire ?"
 categories = ["Article"]
-tags = ["Software Development", "Go", "Bug"]
+tags = ["Software Development", "Go", "Bug", "Doolta"]
 +++
 
 Parfois, une investigation raconte une autre histoire que celle que vous attendez.

@@ -2,7 +2,7 @@
 date = '2026-03-30T15:24:26+01:00'
 title = "Pourquoi je code en Go de cette manière en 2026"
 categories = ["Article"]
-tags = ["Software Development", "Go"]
+tags = ["Software Development", "Go", "Doolta"]
 +++
 
 ## Pourquoi écrire encore sur le layout et les pratiques Go en 2026 ?

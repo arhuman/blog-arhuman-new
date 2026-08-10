@@ -2,7 +2,7 @@
 title = "Le supplément d'Art du programmeur"
 date = '2026-03-10T02:38:37+01:00'
 categories = ["Article"]
-tags = ["AI", "Programming"]
+tags = ["AI", "Programming", "Doolta"]
 translationKey = "extra-touch-of-art"
 +++
 

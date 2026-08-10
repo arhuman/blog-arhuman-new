@@ -3,7 +3,7 @@ title = "The Architect Who Never Laid a Brick..."
 type = "post"
 date = '2026-05-01T02:38:37+01:00'
 categories = ["Article"]
-tags = ["AI", "Psychology"]
+tags = ["AI", "Psychology", "Doolta"]
 translationKey = "architect_mason_ai"
 +++
 

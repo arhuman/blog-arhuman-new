@@ -3,7 +3,7 @@ title = "Less is More : Pourquoi j'ai remplacé Git par Jujutsu."
 type = "post"
 date = '2026-04-05T02:38:37+01:00'
 categories = ["Article"]
-tags = ["jj", "Programming", "git"]
+tags = ["jj", "Programming", "git", "Doolta"]
 +++
 
 ## Introduction 
