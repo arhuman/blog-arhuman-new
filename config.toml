@@ -13,7 +13,7 @@ googleAnalytics = "UA-4648696-5"
     title = "Arhuman's Blog"
     contentDir = "content/en"
     [languages.en.Params]
-      subtitle = "Ideas, rants, tutorials for those interested"
+      subtitle = "Arnaud Assad, Systems Alchemist at Doolta"
 
   [languages.fr]
     locale = "fr-fr"
@@ -22,7 +22,7 @@ googleAnalytics = "UA-4648696-5"
     title = "Le Blog d'Arhuman"
     contentDir = "content/fr"
     [languages.fr.Params]
-      subtitle = "Idées, tutoriels, diatribes pour ceux que ça intéresse"
+      subtitle = "Arnaud Assad, alchimiste des Systèmes chez Doolta"
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -47,9 +47,6 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   name = "Arnaud (Arhuman) ASSAD"
   bio = "Software engineer, tech enthusiast, and passionate about programming languages and development practices."
   avatar = "img/photo.jpg"
-
-[Params.logo]
-  subtitle = "Arhuman's Blog" # Logo subtitle
 
 [Params.sidebar]
   home = "right"   # Configure layout for home page
