@@ -1,6 +1,7 @@
 +++
 date = '2026-03-15T11:05:26+01:00'
 title = "Et si votre dette technique n’était pas un problème technique ?"
+description = "La dette technique n'est pas toujours un problème technique : une histoire de code freeze qui révèle des causes humaines et organisationnelles."
 categories = ["Article"]
 tags = ["Software Development", "Communication", "Psychology", "Doolta"]
 +++

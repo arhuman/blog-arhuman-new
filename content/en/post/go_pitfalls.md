@@ -1,5 +1,6 @@
 +++
 title = "Golang pitfalls"
+description = "Common Go pitfalls: pass-by-value surprises, misuse of := and embedded structs used as inheritance."
 categories = ["News"]
 tags = ["Golang", "Programming"]
 thumbnail = "img/Go_book.jpg"
@@ -8,13 +9,13 @@ date = "2023-05-29"
 draft = true
 +++
 
-# Passing parameters by value
+## Passing parameters by value
 
 You all know it: Go pass parameter by value.
 But sometimes those value are not what you might expect.
 Let's take slices.
 
-# := is convenient, when used properly
+## := is convenient, when used properly
 
 ```go
 var client string
@@ -33,7 +34,7 @@ func main() {
 
 ```
 
-# Using embedded structs to do inheritance
+## Using embedded structs to do inheritance
 
 
 ```go

@@ -1,5 +1,6 @@
 +++
 title = "Le code fonctionne. Mais est-il de qualité ?"
+description = "Comment évaluer la qualité réelle d'un dépôt de code à l'ère de l'IA : maintenabilité, sûreté et fiabilité au-delà du simple \"ça fonctionne\"."
 type = "post"
 date = '2026-05-30T02:00:07+01:00'
 categories = ["Article"]

@@ -1,9 +1,8 @@
 +++
-title = "Presentations"
+title = "Présentations"
 date = "2014-04-09"
+description = "Mes présentations et supports de talks : Go, Docker, nodeJS, interfaces vocales."
 +++
-
-## Présentations
 
 * [Présentation BNI (PDF)](/slides/presentation_bni.pdf)
 * [Discovering Go](/slides/talk-discovering_go/#/)

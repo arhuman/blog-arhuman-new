@@ -1,8 +1,9 @@
 +++
 title = "Metacompression: compressing structure before bytes"
+description = "Metacompression: exploiting data structure before handing over to zstd or Brotli, beyond treating data as a byte stream."
 type = "post"
 date = '2026-04-24T02:38:37+01:00'
-categoriee = ["Article"]
+categories = ["Article"]
 tags = ["metacompression", "go", "metarc"]
 translationKey="what_is_metacompression"
 +++

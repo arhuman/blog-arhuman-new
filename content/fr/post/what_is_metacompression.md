@@ -1,8 +1,9 @@
 +++
 title = "Metacompression : comprimer la structure avant les octets"
+description = "La metacompression : exploiter la structure des données avant de passer le relais à zstd ou Brotli, pour aller au-delà du flux d'octets."
 type = "post"
 date = '2026-04-24T02:38:37+01:00'
-categoriee = ["Article"]
+categories = ["Article"]
 tags = ["metacompression", "go", "metarc"]
 translationKey="what_is_metacompression"
 +++

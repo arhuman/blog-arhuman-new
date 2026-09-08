@@ -1,9 +1,11 @@
 +++
-title = "Now page"
+title = "Now"
 date = "2024-05-22"
+description = "What I am doing right now: where I live, what I work on and how I spend my time."
+translationKey = "now"
 +++
 
-# What am I doing NOW?
+## What am I doing NOW?
 
 This page is made to answer this question to a friend I hadn't meet since one year.
 

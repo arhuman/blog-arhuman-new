@@ -1,5 +1,6 @@
 +++
 title = "L'Architecte qui ne posait aucune brique..."
+description = "Profil INTJ, des années d'idées jamais concrétisées : comment l'IA a transformé un Architecte en maçon capable de livrer ses projets."
 type = "post"
 date = '2026-05-01T02:38:37+01:00'
 categories = ["Article"]

@@ -1,5 +1,6 @@
 +++
 title = "Réaliser le rêve d'une IA"
+description = "Comment implémenter la fonction de rêver pour un modèle d'IA ? Retour sur la mémoire à long terme des agents et l'outil open source Mnemos."
 type = "post"
 date = '2026-05-30T02:00:07+01:00'
 categories = ["Article"]

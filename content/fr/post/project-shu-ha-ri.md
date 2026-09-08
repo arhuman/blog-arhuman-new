@@ -1,5 +1,6 @@
 +++
 title = "Suivre la méthode, rater le projet"
+description = "Les méthodes de gestion de projet donnent un faux sentiment de sécurité : suivre la méthode ne suffit pas à réussir le projet."
 type = "post"
 date = '2026-04-12T02:00:07+01:00'
 categories = ["Article"]

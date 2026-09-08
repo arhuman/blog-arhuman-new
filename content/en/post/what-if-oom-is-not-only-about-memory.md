@@ -1,6 +1,7 @@
 +++
 date = '2026-03-20T15:24:26+01:00'
 title = "What if your OOM was not just a memory problem?"
+description = "A pod OOMKilled several times a day with no visible memory leak: an investigation that reveals a different cause than expected."
 categories = ["Article"]
 tags = ["Software Development", "Go", "Bug", "Doolta"]
 +++

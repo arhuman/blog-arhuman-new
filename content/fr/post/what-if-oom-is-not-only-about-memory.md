@@ -1,6 +1,7 @@
 +++
 date = '2026-03-20T15:24:26+01:00'
 title = "Et si votre OOM n’était pas qu’un problème de mémoire ?"
+description = "Un pod OOMKilled plusieurs fois par jour, pas de fuite mémoire visible : une investigation qui révèle une autre cause que celle attendue."
 categories = ["Article"]
 tags = ["Software Development", "Go", "Bug", "Doolta"]
 +++

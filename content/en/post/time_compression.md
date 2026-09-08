@@ -1,5 +1,6 @@
 +++
 title = "Compressing time to compress logs"
+description = "Compressing timestamps in logs by exploiting their structure: a concrete example of metacompression with Metarc."
 type = "post"
 date = '2026-05-16T01:38:37+01:00'
 categories = ["Article"]

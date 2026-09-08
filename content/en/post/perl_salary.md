@@ -10,7 +10,7 @@ tags = ["Perl", "2020", "Golang", "salary", "Python", "Scala", "JavaScript"]
 categories = ["Article"]
 +++
 
-# What is the average salary for Perl programmers in 2020?
+## What is the average salary for Perl programmers in 2020?
 
 If I have no definitive answer on this, the [Business Insider](https://www.businessinsider.fr/us/the-top-coding-languages-with-the-highest-salary-2020-4)
 has some insights:

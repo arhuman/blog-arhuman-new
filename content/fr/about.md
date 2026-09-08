@@ -1,6 +1,7 @@
 +++
 title = "Qui suis-je ?"
 date = "2020-06-23"
+description = "Arnaud Assad (Arhuman) : entrepreneur, développeur depuis l'adolescence, Gopher et co-animateur du podcast GoFr."
 +++
 
 Je suis un Français de 54 ans, père de 2 garçons et d'une princesse.

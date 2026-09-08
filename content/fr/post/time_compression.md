@@ -1,5 +1,6 @@
 +++
 title = "Compresser le temps pour compresser les logs"
+description = "Compresser des timestamps dans les logs en exploitant leur structure : un exemple concret de metacompression avec l'outil Metarc."
 type = "post"
 date = '2026-05-16T01:38:37+01:00'
 categories = ["Article"]

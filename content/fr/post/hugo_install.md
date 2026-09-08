@@ -1,12 +1,13 @@
 +++
 title = "Installer Hugo"
+description = "Pourquoi et comment j'ai quitté Medium et Blogger pour autohéberger mon blog avec Hugo : installation et premiers pas."
 categories = ["Article"]
 tags = ["Hugo"]
 type = "post"
 date = "2019-07-28"
 +++
 
-# Hugo
+## Hugo
 
 Cette semaine, sur les bons conseils de mes amis de la [frenchgo](https://frenchgo.fr), j'installe Hugo pour héberger mon blog.
 

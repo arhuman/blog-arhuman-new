@@ -1,6 +1,7 @@
 +++
 title = "Presentations"
 date = "2014-04-09"
+description = "My talks and slide decks: Go, Docker, nodeJS, voice interfaces."
 +++
 
 * [BNI Presentation (PDF)](/slides/presentation_bni.pdf)

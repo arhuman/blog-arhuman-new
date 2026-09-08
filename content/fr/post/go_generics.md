@@ -1,5 +1,6 @@
 +++
 title = "Pourquoi j'aime les generics Golang"
+description = "Pourquoi j'aime les generics de Go : simples et cohérents avec la philosophie du langage, à la lecture des drafts de Taylor et Griesemer."
 categories = ["News"]
 tags = ["Golang", "Programming", "Generics"]
 thumbnail = "img/Go_book.jpg"
@@ -8,7 +9,7 @@ date = "2020-07-31"
 draft = false
 +++
 
-# Pourquoi j'aime les generics golang ?
+## Pourquoi j'aime les generics golang ?
 
 Je relisais l'excellent article de ian Taylon et Robert Grisemeer ([The next step for generics](https://blog.golang.org/generics-next-step)) et je ne pouvais m'empêcher de penser que j'adorais le sens vers lequel ça allait. En fait j'aime tellement ces nouveaux generics que j'ai décidé d'écrire un article pour le dire.
 

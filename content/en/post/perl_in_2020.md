@@ -10,7 +10,7 @@ tags = ["Perl", "2020", "Golang", "testing"]
 categories = ["Article"]
 +++
 
-# Why Perl in 2020?
+## Why Perl in 2020?
 
 "Nobody use it. It's a dead language. It's a technology of the past..."
 Are the kind of statement you'll be likely to hear about Perl nowadays.
@@ -25,7 +25,7 @@ That doesn't mean I'll stop exploring new languages (like Kotlin) or even loving
 
 But you know, when I love it's forever...
 
-# What Perl in 2020?
+## What Perl in 2020?
 
 For me it will be maintaining and improving an impressive code base used by thousands of people in a great University.
 
@@ -34,7 +34,7 @@ Improving Net::Whois::RIPE, as some people are still using it.
 
 Probably more testing (setting up a CPAN smoker?) and always some more tools...
 
-# And then?
+## And then?
 
 It will probably be like that for a long time...
 I heard decades ago people talking about the death of COBOL but it's still present.

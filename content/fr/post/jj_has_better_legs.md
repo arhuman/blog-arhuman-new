@@ -1,5 +1,6 @@
 +++
 title = "Less is More : Pourquoi j'ai remplacé Git par Jujutsu."
+description = "Pourquoi j'ai remplacé Git par Jujutsu (jj) : un modèle mental plus simple qui réduit la friction quotidienne, démontré sur un cas concret."
 type = "post"
 date = '2026-04-05T02:38:37+01:00'
 categories = ["Article"]

@@ -1,9 +1,11 @@
 +++
-title = "Page now"
+title = "Actuellement"
 date = "2024-05-22"
+description = "Ce que je fais en ce moment : où je vis, sur quoi je travaille et ce qui occupe mon temps."
+translationKey = "now"
 +++
 
-#Qu'est ce que je fais actuellement ?
+## Qu'est ce que je fais actuellement ?
 
 Cette page est faite pour répondre à un ami qui ne m'aurait pas vu depuis un an qui me poserait cette question.
 

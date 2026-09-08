@@ -1,5 +1,6 @@
 +++
 title = "The Programmer's Extra Touch of Art"
+description = "Programming is not only science: what remains art in the programmer's craft when AI can compile our intentions into working code."
 date = '2026-03-10T02:38:37+01:00'
 categories = ["Article"]
 tags = ["AI", "Programming", "Doolta"]

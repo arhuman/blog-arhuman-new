@@ -10,7 +10,7 @@ tags = ["Scrum", "Agile", "XP", "Values"]
 categories = ["Article"]
 +++
 
-# How could you pretend to be Agile if you don't even know Scrum rituals?
+## How could you pretend to be Agile if you don't even know Scrum rituals?
 
 That's more or less what I've been asked in a recent (failed) interview.
 That was more subtle of course, but after being corrected on Scrum terminology,

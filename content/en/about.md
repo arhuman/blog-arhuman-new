@@ -1,6 +1,7 @@
 +++
 title = "Who am I?"
 date = "2020-06-23"
+description = "Arnaud Assad (Arhuman): entrepreneur, coding since his teens, proud Gopher and co-host of the GoFr podcast."
 +++
 
 I'm a 52 years old French guy, father of 2 boys and a princess.

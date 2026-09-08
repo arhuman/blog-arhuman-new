@@ -1,5 +1,6 @@
 +++
 title = "Le supplément d'Art du programmeur"
+description = "La programmation n'est pas qu'une science : face à l'IA qui compile nos intentions, ce qui relève de l'art dans le métier de programmeur."
 date = '2026-03-10T02:38:37+01:00'
 categories = ["Article"]
 tags = ["AI", "Programming", "Doolta"]

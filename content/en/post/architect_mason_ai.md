@@ -1,5 +1,6 @@
 +++
 title = "The Architect Who Never Laid a Brick..."
+description = "An INTJ profile, years of ideas that never shipped: how AI turned an Architect into a mason who actually lays bricks."
 type = "post"
 date = '2026-05-01T02:38:37+01:00'
 categories = ["Article"]

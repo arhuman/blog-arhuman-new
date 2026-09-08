@@ -1,5 +1,6 @@
 +++
 title = "Apprendre Rust en 2022"
+description = "Un an de projets exclusivement en Rust pour apprendre le langage en immersion : retour sur ma méthode et mes premières impressions."
 categories = ["Article"]
 tags = ["Rust"]
 type = "post"
@@ -8,7 +9,7 @@ featured ="rust-logo-256x256-blk.png"
 draft = false
 +++
 
-# Apprendre Rust en 2022
+## Apprendre Rust en 2022
 
 Si vous suivez mes blogs/podcasts vous savez déjà que je suis un fan du langage Go, aprés avoir été pendant plusieurs années un utilisateur passionné de Perl.
 

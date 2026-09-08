@@ -1,5 +1,6 @@
 +++
 title = "[Podcast] GoFr - 08"
+description = "L'épisode 08 du podcast GoFr est en ligne : Machine Learning, outils écrits en Go et évènements de la communauté."
 categories = ["News"]
 tags = ["GoFr","Podcast", "Golang", "Machine Learning"]
 thumbnail = "img/microphone_unsplash_matt_botsford.jpg"

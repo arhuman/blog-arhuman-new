@@ -12,7 +12,7 @@ tags = ["Vim", "Tutorial", "Configuration"]
 categories = ["Article"]
 +++
 
-# Configure Vim from scratch
+## Configure Vim from scratch
 
 From time to time, I review my tools/processes to keep what’s useful, ditch what is no longer necessary or even convenient, and improve what can be improved. As a developer, I spend a lot of time using the Vim text editor, so in this article I’ll spend some time rewriting my `.vimrc`.
 
