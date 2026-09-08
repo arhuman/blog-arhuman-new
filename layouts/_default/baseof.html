@@ -40,9 +40,17 @@
 	{{- end }}
 	{{- end }}
 	{{- end }}
+	{{- if and (eq .Kind "term") (eq .Data.Plural "tags") (lt (len .Pages) 3) }}
+	<meta name="robots" content="noindex,follow">
+	{{- end }}
 	{{- if .Site.Params.opengraph }}
 		{{ template "_internal/opengraph.html" . }}
+		{{- /* The internal template only reads .Params.images; posts use thumbnail. */}}
+		{{- if not .Params.images }}
+	<meta property="og:image" content="{{ .Params.thumbnail | default .Site.Params.Author.avatar | absURL }}">
+		{{- end }}
 	{{- end }}
+	{{ partial "jsonld.html" . }}
 	{{- if .Site.Params.schema }}
 		{{ template "_internal/schema.html" . }}
 	{{- end }}

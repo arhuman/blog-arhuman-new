@@ -1,7 +1,7 @@
 +++
 author = "Arnaud (Arhuman) ASSAD"
 date = "2020-06-02"
-description = ""
+description = "Pourquoi écrire les tests en premier ? L'avantage ignoré du test driven development, au-delà de la couverture de code et des débats sur sa mort."
 thumbnail = "img/ferenc-almasi-EWLHA4T-mso-unsplash.jpg"
 linktitle = "L'avantage ignoré du TDD"
 title = "L'avantage ignoré du TDD"

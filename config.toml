@@ -13,6 +13,7 @@ theme = "mainroad"
     contentDir = "content/en"
     [languages.en.Params]
       subtitle = "Arnaud Assad, Systems Alchemist at Doolta"
+      description = "Ideas, field notes and tutorials: Go, AI, Jujutsu, development practices. By Arnaud Assad (Arhuman)."
 
   [languages.fr]
     locale = "fr-fr"
@@ -22,6 +23,7 @@ theme = "mainroad"
     contentDir = "content/fr"
     [languages.fr.Params]
       subtitle = "Arnaud Assad, alchimiste des Systèmes chez Doolta"
+      description = "Idées, retours d'expérience et tutoriels : Go, IA, Jujutsu, pratiques de développement. Par Arnaud Assad (Arhuman)."
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -36,7 +38,7 @@ pagerSize = 10 # Number of posts per page
   readmore = false # Show "Read more" button in list if true
   authorbox = true
   pager = true
-  post_meta = ["date", "categories"] # Order of post meta information
+  post_meta = ["author", "date", "categories"] # Order of post meta information
   mainSections = ["post"]
   customCSS = ["css/custom.css"] # Include custom CSS
 
