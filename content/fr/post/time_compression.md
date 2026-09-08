@@ -6,7 +6,7 @@ date = '2026-05-16T01:38:37+01:00'
 categories = ["Article"]
 tags = ["metarc", "metacompression"]
 translationKey = "compressing_time"
-canonical_url = "https://blog.assad.fr/fr/post/time_compression/"
+lastmod = '2026-09-08T12:00:00+07:00'
 +++
 
 Ce matin, je me suis amusé à compresser le temps.
@@ -179,6 +179,12 @@ Ajouter un format peut parfois se résumer à encoder une variante simple, comme
 Mais il reste encore aussi de nombreuses optimisations à implémenter et de nouveaux gains à trouver.
 
 Je vais par exemple probablement fragmenter les formats de stockage compressés pour optimiser chaque format : inutile par exemple de conserver des timestamps au format uint64 pour des formats ne nécessitant pas de nanosecondes.
+
+## Pourquoi la compression de logs est un cas à part
+
+Si j'ai choisi les logs comme terrain de jeu, ce n'est pas un hasard : la compression de logs est probablement le cas le plus rentable de toute l'industrie. Des fichiers énormes, produits en continu, archivés par obligation légale ou opérationnelle, et remplis de redondance structurelle : timestamps, niveaux de log, chemins, identifiants.
+
+Les compresseurs généralistes comme `zstd` y obtiennent déjà d'excellents ratios, justement grâce à cette redondance. Mais ils restent aveugles à la structure : ils voient des octets qui se répètent, pas des dates, des niveaux ou des formats. C'est exactement l'angle mort que la metacompression exploite, et j'explique le concept en détail dans [Metacompression : comprimer la structure avant les octets](/post/what_is_metacompression/).
 
 ## La quintessence de la metacompression
 

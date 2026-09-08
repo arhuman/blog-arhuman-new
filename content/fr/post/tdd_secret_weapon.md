@@ -1,6 +1,8 @@
 +++
 author = "Arnaud (Arhuman) ASSAD"
 date = "2020-06-02"
+lastmod = "2026-09-08"
+translationKey = "tdd_secret_weapon"
 description = "Pourquoi écrire les tests en premier ? L'avantage ignoré du test driven development, au-delà de la couverture de code et des débats sur sa mort."
 thumbnail = "img/ferenc-almasi-EWLHA4T-mso-unsplash.jpg"
 linktitle = "L'avantage ignoré du TDD"
@@ -31,6 +33,16 @@ Pour le TDD il convient d'aborder les questions spécifiques suivantes :
 Cette dernière question permet en effet de toucher le principal intérêt du TDD par rapport aux autres méthodologie de test.
 
 Mais avant d'y venir, éclaircissons certains points.
+
+## Le test driven development en deux mots
+
+Pour ceux qui découvrent : le Test Driven Development (TDD, parfois traduit en "développement piloté par les tests") est une méthode de développement en trois temps, la fameuse boucle red/green/refactor :
+
+1. **Red** : écrire un test qui échoue, décrivant le comportement attendu.
+2. **Green** : écrire le code minimal qui fait passer ce test.
+3. **Refactor** : améliorer le code, protégé par le test.
+
+Rien de plus. Et si vous avez croisé l'expression "development driven testing", il s'agit le plus souvent d'une inversion accidentelle : c'est le test qui pilote le développement, pas l'inverse.
 
 ## Les différents types de tests
 
@@ -163,4 +175,6 @@ C'est un cercle vertueux, plus on écrit de tests plus on va vite et plus on a c
 Le pourcentage de couverture de code ne cesse d'augmenter renforçant ce sentiment de confiance, en témoignant non pas de la qualité du code mais au moins de l'amélioration de celle-ci.
 
 Même ceux qui souffrent du syndrome de l'imposteur, et ils sont nombreux parmi les codeurs que j'ai rencontrés, y voient non une indication absolue de leur talent (ça serait si simple...) mais la certitude et le réconfort de voir la qualité de leur code se hisser vers les niveaux de qualité qu'ils imaginent être la norme.
+
+Des années plus tard, cette dimension psychologique du développement reste au coeur de mes réflexions : [Et si votre dette technique n'était pas un problème technique ?](/post/what-if-tech-is-not-the-answer/) et [Le code fonctionne. Mais est-il de qualité ?](/post/code_audit/) en sont les prolongements directs.
 

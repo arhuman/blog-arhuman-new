@@ -3,8 +3,10 @@ title = "Less is More : Pourquoi j'ai remplacé Git par Jujutsu."
 description = "Pourquoi j'ai remplacé Git par Jujutsu (jj) : un modèle mental plus simple qui réduit la friction quotidienne, démontré sur un cas concret."
 type = "post"
 date = '2026-04-05T02:38:37+01:00'
+lastmod = '2026-09-08T12:00:00+07:00'
 categories = ["Article"]
 tags = ["jj", "Programming", "git", "Doolta"]
+translationKey = "jj_has_better_legs"
 +++
 
 ## Introduction 
@@ -586,7 +588,25 @@ Mais les opérations simples avec `git` le restent avec `jj` :
 * `jj log -r 'diff_lines("CreatedAt")'` (équivalent de `git log -G 'CreatedAt'`)
 * `jj log -r 'diff_lines("empty title", "main.go")'` (équivalent de `git log -G 'empty title' -- main.go`)
 
-## Conclusion — changement de paradigme
+## jj vs git : la table de correspondance
+
+C'est la question qu'on me pose le plus souvent : "quel est l'équivalent jj de ma commande git ?"
+Voici de quoi couvrir l'essentiel du quotidien :
+
+| Opération | git | jj |
+|-----------|-----|-----|
+| Voir l'état | `git status` | `jj st` |
+| Historique | `git log --graph` | `jj log` |
+| Mettre de côté | `git stash` | inutile : `jj new` |
+| Préparer un commit | `git add -p` puis `git commit` | `jj commit` (ou `jj split` après coup) |
+| Corriger le dernier commit | `git commit --amend` | modifier le changeset, rien d'autre |
+| Déplacer un commit | `git rebase -i` | `jj rebase -r <id> -d <dest>` |
+| Annuler une commande | `git reflog` et des prières | `jj undo` |
+| Créer une branche | `git switch -c` | `jj bookmark create` |
+
+Et non, vous n'avez pas à choisir entre jj et git : comme montré plus haut avec le mode colocated, jj travaille sur un dépôt git standard. Vos collègues, votre CI et Github ne verront jamais la différence.
+
+## Conclusion : changement de paradigme
 
 J'espère vous avoir donné envie d'essayer `jj` : un outil qui ne punit pas les erreurs et rend les corrections faciles.
 
@@ -605,6 +625,8 @@ Je peux réorganiser mon historique, scinder un commit, en changer la descriptio
 Bien sûr, `jj` n'est pas parfait. Il est plus jeune que `git`, son écosystème est plus petit et les bonnes pratiques restent à définir. Mais sur le plan du confort quotidien, il change vraiment la donne.
 
 Car si Git est pratique quand vous ne faites pas d'erreur, Jujutsu l'est surtout quand vous vous trompez.
+
+Pour voir ce workflow en contexte : [ma manière de coder en Go en 2026](/post/why-i-code-go-this-way-2026/) l'applique au quotidien, et [Le code fonctionne. Mais est-il de qualité ?](/post/code_audit/) prolonge la réflexion sur l'intérêt de commits atomiques et relisibles.
 
 [^1]: Article qui est une réécriture d'une présentation un peu trop sommaire à mon goût donnée à mes collègues de l'EPFL.
 

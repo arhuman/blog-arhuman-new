@@ -1,5 +1,6 @@
 +++
 date = '2026-03-20T15:24:26+01:00'
+lastmod = '2026-09-08T12:00:00+07:00'
 title = "Et si votre OOM n’était pas qu’un problème de mémoire ?"
 description = "Un pod OOMKilled plusieurs fois par jour, pas de fuite mémoire visible : une investigation qui révèle une autre cause que celle attendue."
 categories = ["Article"]
@@ -158,4 +159,15 @@ Tant qu’à faire, compléter avec le tuning de la mémoire des pods (qui étai
 
 On peut tirer plusieurs leçons de cet incident, mais pour ma part je retiendrai surtout que cet OOM est quasiment un cas d’école : ce pod ne mourait pas d’une simple fuite mémoire. Il mourait d’un système qui faisait trop de travail, trop longtemps, avec trop de concurrence, pour traiter trop de données inutiles.
 
-Et si, en tant que lecteur avisé, vous vous demandez pourquoi je n’ai pas simplement utilisé pprof pour identifier ces problèmes plus tôt... la réponse mérite un article à elle seule. Spoiler : la raison n'est pas technique.
+## Comment diagnostiquer un pod OOMKilled : ma checklist
+
+Ce que cet incident m'a laissé comme réflexes, dans l'ordre :
+
+1. **Confirmer la nature de l'OOM** : `kubectl describe pod` (raison OOMKilled), les events, puis la courbe mémoire. Une pente continue signe une fuite ; des pics signent un problème de charge.
+2. **Chercher les suspects habituels dans le code** : `resp.Body` non fermés, goroutines qui fuient, slices sur-allouées, caches sans borne.
+3. **Regarder au-delà de la mémoire** : concurrence non bornée, volume de données traitées, travail inutile qui s'accumule. C'est là que se cachait mon coupable.
+4. **Ajuster les garde-fous** : requests et limits réalistes sur le pod, `GOMEMLIMIT` autour de 85% de la limite mémoire.
+
+Si vous codez en Go, la plupart de ces réflexes découlent de pratiques que je détaille dans [Pourquoi je code en Go de cette manière en 2026](/post/why-i-code-go-this-way-2026/).
+
+Et si, en tant que lecteur avisé, vous vous demandez pourquoi je n’ai pas simplement utilisé pprof pour identifier ces problèmes plus tôt... la réponse mérite un article à elle seule. Spoiler : la raison n'est pas technique. En attendant, [Et si votre dette technique n'était pas un problème technique ?](/post/what-if-tech-is-not-the-answer/) donne un aperçu de ce genre de causes.
