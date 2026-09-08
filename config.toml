@@ -3,7 +3,6 @@ title = "Arhuman's Blog"
 defaultContentLanguage = "fr"
 defaultContentLanguageInSubdir = false
 theme = "mainroad"
-googleAnalytics = "UA-4648696-5"
 
 [languages]
   [languages.en]
@@ -29,8 +28,6 @@ unsafe = true
 
 [pagination]
 pagerSize = 10 # Number of posts per page
-disqusShortname = "" # Enable comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 [Params]
   description = "Ideas, rants, tutorials for those interested" # Description of your site
