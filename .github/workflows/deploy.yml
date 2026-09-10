@@ -30,7 +30,7 @@ jobs:
 
       - name: Build for Staging (GitHub Pages)
         if: github.ref == 'refs/heads/develop'
-        run: hugo --gc --minify --baseURL "https://blog-test.assad.fr/"
+        run: hugo --gc --minify --environment staging --baseURL "https://blog-test.assad.fr/"
 
       # --- ÉTAPE DE DÉPLOIEMENT CONDITIONNELLE ---
 
