@@ -21,7 +21,7 @@ D'autant plus que les puissants filtres ne règlent pas le problème, au mieux i
 
 **Le vrai problème est qu'on doit décider avant l’incident quels logs méritent d’être conservés, alors qu’on ne sait qu’après lesquels étaient réellement utiles.**
 
-D'où l'idée d'un niveau « dynamique » par opération implémenté par dllog (c'est le DL, Dynamic Level, de dllog) : 
+D'où l'idée d'un niveau « dynamique » par opération implémenté par [dllog](https://github.com/arhuman/dllog) (c'est le DL, Dynamic Level, de dllog) : 
 les logs en erreur modifient rétroactivement le niveau de log pour faire apparaître les logs de debug qui les précèdent. 
 Quand tout va bien on ne voit que les logs du niveau courant (Info par exemple) mais en cas d'erreur les logs de niveau Debug qui précèdent ou suivent l'erreur sont aussi affichés.
 
