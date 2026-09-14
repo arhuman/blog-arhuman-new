@@ -4,6 +4,7 @@ title = "Le dilemme des logs"
 description = "Noyé sous les logs quand tout va bien ou condamné à en manquer en cas d'incident. On n'est plus obligé de choisir : le niveau dynamique offre le meilleur des deux approches."
 categories = ["Article"]
 tags = ["Software Development", "Go", "Logging", "dllog"]
+translationKey = "log_dilemma"
 +++
 
 Tous les développeurs ont déjà vécu cette scène : le pic d'adrénaline à l'annonce de l'incident en production. Ce mélange d'angoisse de ce que l'on va découvrir et de frénésie à collecter toute information qui nous permettra de comprendre puis corriger le problème. Cela m'est à nouveau arrivé il y a quelques jours, je me revois me précipiter sur les logs et je me souviens encore de la frustration de n'y trouver que des infos basiques et un message d'erreur peu explicatif "Impossible de charger le cache".
