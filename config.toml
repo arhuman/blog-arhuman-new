@@ -25,6 +25,14 @@ theme = "mainroad"
       subtitle = "Arnaud Assad, alchimiste des Systèmes chez Doolta"
       description = "Idées, retours d'expérience et tutoriels : Go, IA, Jujutsu, pratiques de développement. Par Arnaud Assad (Arhuman)."
 
+# Taxonomy pages emitted 77 uncanonicalized RSS feeds that Google indexed as
+# duplicates. Keep RSS on the home page and post sections only.
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
 [markup.goldmark.renderer]
 unsafe = true
 
