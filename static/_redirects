@@ -1,0 +1,61 @@
+# Legacy URLs from the pre-2026 site structure.
+# French now lives at the root, English under /en/.
+# Cloudflare Pages: first match wins, so specific rules precede wildcards.
+
+# --- Old English posts: /blog/<slug> -> /en/post/<slug>
+/blog/agile_without_scrum        /en/post/agile_without_scrum/         301
+/blog/configure_vim_from_scratch /en/post/configure_vim_from_scratch/  301
+/blog/javascript_for_perl_lovers /en/post/javascript_for_perl_lovers/  301
+/blog/just_enough_vim_macro      /en/post/just_enough_vim_macro/       301
+/blog/perl_in_2020               /en/post/perl_in_2020/                301
+/blog/perl_salary                /en/post/perl_salary/                 301
+
+# Retired posts, no equivalent content: send to the English post list.
+/blog/5th_freedom                /en/post/                             301
+/blog/go_for_perl_lovers         /en/post/                             301
+
+# --- Old French posts: /fr/blog/<slug> and /fr/post/<slug> -> /post/<slug>
+/fr/blog/20241122_back_to_the_blog /post/20241122_back_to_the_blog/     301
+/fr/blog/go_generics              /post/go_generics/                   301
+/fr/blog/gofr_episode_08          /post/gofr_episode_08/               301
+/fr/blog/hugo_install             /post/hugo_install/                  301
+/fr/blog/learning_rust_in_2022    /post/learning_rust_in_2022/         301
+/fr/blog/tdd_secret_weapon        /post/tdd_secret_weapon/             301
+
+# --- Old English section and taxonomy roots
+/blog/page/*                     /en/post/                             301
+/blog                            /en/post/                             301
+
+# --- Old French tree: everything under /fr/ now lives at the root
+# Cloudflare Pages serves existing static files before applying redirects,
+# so the real /fr/ language-switch page is not shadowed by the catch-all.
+/fr/post/*                       /post/:splat                          301
+/fr/blog/*                       /post/:splat                          301
+/fr/tags/*                       /tags/:splat                          301
+/fr/categories/*                 /categories/:splat                    301
+/fr/about                        /about/                               301
+/fr/now                          /now/                                 301
+/fr/pres                         /pres/                                301
+/fr/*                            /:splat                               301
+
+# --- Old English tags that moved under /en/
+/tags/2020                       /en/tags/2020/                        301
+/tags/agile                      /en/tags/agile/                       301
+/tags/configuration              /en/tags/configuration/               301
+/tags/javascript                 /en/tags/javascript/                  301
+/tags/macros                     /en/tags/macros/                      301
+/tags/perl                       /en/tags/perl/                        301
+/tags/python                     /en/tags/python/                      301
+/tags/salary                     /en/tags/salary/                      301
+/tags/scala                      /en/tags/scala/                       301
+/tags/testing                    /en/tags/testing/                     301
+/tags/tips                       /en/tags/tips/                        301
+/tags/tutorial                   /en/tags/tutorial/                    301
+/tags/values                     /en/tags/values/                      301
+/tags/vim                        /en/tags/vim/                         301
+/tags/xp                         /en/tags/xp/                          301
+
+# --- Misc
+/categories/article/page/*       /categories/                          301
+/slides                          /pres/                                301
+/slides/                         /pres/                                301
