@@ -59,3 +59,21 @@
 /categories/article/page/*       /categories/                          301
 /slides                          /pres/                                301
 /slides/                         /pres/                                301
+
+# --- Blogger URLs from blog.old.assad.fr, for posts imported into this site.
+# Hugo aliases already emit these under /en/ for English posts, but the
+# original Blogger paths have no language prefix, so map them explicitly.
+/2018/07/the-fourth-virtue-of-programmer.html        /en/post/fourth_virtue_of_the_programmer/  301
+/2016/07/the-devil-codes-in-pramda-wandering-in.html /en/post/the_devil_codes_in_pramda/        301
+/2016/06/javascript-for-perl-lovers.html             /en/post/javascript_for_perl_lovers/       301
+/2016/05/why-javascript-in-2016.html                 /en/post/why_javascript_in_2016/           301
+/2014/02/review-enterprise-games-by-michael-hugos.html /en/post/review_enterprise_games/        301
+/2011/06/cpan-modules-you-love-to-hate-or.html       /en/post/cpan_modules_you_love_to_hate/    301
+/2018/01/2018-new-year-to-go.html                    /en/post/2018_a_new_year_to_go/            301
+/2010/06/becoming-iron-man-enfr.html                 /en/post/becoming_an_iron_man/             301
+/2020/01/perl-in-2020.html                           /en/post/perl_in_2020/                     301
+/2020/05/what-is-average-salary-for-perl.html        /en/post/perl_salary/                      301
+/2009/02/2009-lannee-du-serpent.html                 /post/2009_annee_du_serpent/               301
+/2016/01/annee-de-javascript.html                    /post/annee_de_javascript/                 301
+/2010/06/ameliorer-la-roue.html                      /post/ameliorer_la_roue/                   301
+/2020/02/gofr-episode-08.html                        /post/gofr_episode_08/                     301
