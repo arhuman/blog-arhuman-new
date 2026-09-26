@@ -26,6 +26,11 @@
 /blog/page/*                     /en/post/                             301
 /blog                            /en/post/                             301
 
+# The sitemap index references /fr/sitemap.xml, a real file that the /fr/*
+# catch-all would otherwise redirect to the index itself, hiding every French
+# URL from crawlers. First match wins, so let it through first.
+/fr/sitemap.xml                  /fr/sitemap.xml                       200
+
 # --- Old French tree: everything under /fr/ now lives at the root
 # Cloudflare Pages serves existing static files before applying redirects,
 # so the real /fr/ language-switch page is not shadowed by the catch-all.
