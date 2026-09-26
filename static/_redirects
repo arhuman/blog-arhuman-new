@@ -1,6 +1,8 @@
 # Legacy URLs from the pre-2026 site structure.
 # French now lives at the root, English under /en/.
 # Cloudflare Pages: first match wins, so specific rules precede wildcards.
+# A matching redirect also wins over a real file at the same path, so any
+# built file sitting under a wildcard needs an explicit 200 passthrough first.
 
 # --- Old English posts: /blog/<slug> -> /en/post/<slug>
 /blog/agile_without_scrum        /en/post/agile_without_scrum/         301
@@ -32,8 +34,10 @@
 /fr/sitemap.xml                  /fr/sitemap.xml                       200
 
 # --- Old French tree: everything under /fr/ now lives at the root
-# Cloudflare Pages serves existing static files before applying redirects,
-# so the real /fr/ language-switch page is not shadowed by the catch-all.
+# These rules DO shadow real built files: a matching redirect wins over a file
+# that exists at the same path. /fr/index.html is only a meta-refresh stub
+# pointing at /, so the catch-all replacing it with a 301 is fine, but any
+# other real file under /fr/ needs a 200 passthrough above (see sitemap).
 /fr/post/*                       /post/:splat                          301
 /fr/blog/*                       /post/:splat                          301
 /fr/tags/*                       /tags/:splat                          301
