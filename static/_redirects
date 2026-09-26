@@ -61,6 +61,11 @@
 /tags/xp                         /en/tags/xp/                          301
 
 # --- Misc
+# /categories/article/ paginates for real, and its "next page" link points at
+# page/2, so let the existing pages through before the legacy catch-all below
+# collapses the rest onto /categories/.
+/categories/article/page/1/      /categories/article/page/1/           200
+/categories/article/page/2/      /categories/article/page/2/           200
 /categories/article/page/*       /categories/                          301
 /slides                          /pres/                                301
 /slides/                         /pres/                                301
