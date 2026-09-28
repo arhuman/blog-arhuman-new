@@ -5,7 +5,6 @@ type = "post"
 date = '2026-07-27T04:03:07+01:00'
 categories = ["Article"]
 tags = ["AI","productivity","economy"]
-draft = true
 +++
 
 En 1993, "The Productivity Paradox of IT"[^1] soulignait les faibles gains de productivité observés malgré l’essor de l’informatique, alors présentée comme une révolution industrielle majeure.
@@ -120,4 +119,3 @@ Le prochain levier de productivité n’est plus seulement technologique. Il dé
 
 
 [^1]: ["The productivity paradox of information technology"](https://dl.acm.org/doi/10.1145/163298.163309) - Brynjolfsson, Erik (1993) dans Communications of the ACM.
-
