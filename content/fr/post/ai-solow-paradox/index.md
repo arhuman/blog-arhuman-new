@@ -2,9 +2,10 @@
 title = "Le fantôme de Solow : pourquoi l'IA ne booste (pas encore) la productivité"
 description = "Le paradoxe de Solow appliqué à l'IA : pourquoi les gains de productivité promis ne se voient pas encore dans les statistiques."
 type = "post"
-date = '2026-07-27T04:03:07+01:00'
+date = '2026-09-28T10:10:49+02:00'
 categories = ["Article"]
 tags = ["AI","productivity","economy"]
+translationKey = "ai_solow_paradox"
 +++
 
 En 1993, "The Productivity Paradox of IT"[^1] soulignait les faibles gains de productivité observés malgré l’essor de l’informatique, alors présentée comme une révolution industrielle majeure.
