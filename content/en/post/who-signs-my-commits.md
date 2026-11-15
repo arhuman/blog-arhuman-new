@@ -1,6 +1,6 @@
 +++
 date = '2026-09-23T06:30:00+02:00'
-title = "When Anthropic Decides On Your Behalf"
+title = "Claude Code Co-Authored-By: Who Signs My Commits?"
 description = "Claude Code co-signs my commits despite a written rule forbidding it. I am accountable for my commits and for the form I choose to give them, not the tool and not its vendor."
 categories = ["Article"]
 tags = ["AI", "Claude Code", "Git", "Software Development"]

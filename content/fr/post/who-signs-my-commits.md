@@ -1,6 +1,6 @@
 +++
 date = '2026-09-23T06:30:00+02:00'
-title = "Quand Anthropic se croit en droit de décider à votre place"
+title = "Claude Code et Co-Authored-By : qui signe mes commits ?"
 description = "Claude Code co-signe mes commits malgré une consigne écrite qui l'interdit. Je porte la responsabilité de mes commits et du choix de leur forme, pas l'outil ni la compagnie éditrice."
 categories = ["Article"]
 tags = ["AI", "Claude Code", "Git", "Software Development"]
