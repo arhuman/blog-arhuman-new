@@ -2,7 +2,7 @@
 author = "Arnaud ASSAD"
 date = "2011-06-20"
 description = "Dependency bloat is not about the number of dependencies: it is about functional duplication voiding the very benefits of code reuse."
-title = "CPAN modules you love to hate"
+title = "Dependency Bloat: CPAN Modules You Love to Hate"
 linktitle = "cpan_modules_you_love_to_hate"
 type = "post"
 tags = ["Perl", "CPAN", "dependencies"]
