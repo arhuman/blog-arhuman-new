@@ -13,4 +13,23 @@
 }}
 {{- with .Params.thumbnail }}{{ $data = merge $data (dict "image" (. | absURL)) }}{{ end }}
 <script type="application/ld+json">{{ $data | jsonify | safeJS }}</script>
+{{- else if .IsHome }}
+{{- $social := .Site.Params.widgets.social }}
+{{- $person := dict
+	"@type" "Person"
+	"name" .Site.Params.Author.name
+	"url" (printf "%sabout/" .Site.BaseURL)
+	"image" (.Site.Params.Author.avatar | absURL)
+	"sameAs" (slice (printf "https://github.com/%s" $social.github) (printf "https://www.linkedin.com/in/%s" $social.linkedin))
+}}
+{{- $data := dict
+	"@context" "https://schema.org"
+	"@type" "WebSite"
+	"name" .Site.Title
+	"description" .Site.Params.description
+	"url" .Permalink
+	"inLanguage" .Site.Language.Lang
+	"author" $person
+}}
+<script type="application/ld+json">{{ $data | jsonify | safeJS }}</script>
 {{- end }}
