@@ -10,7 +10,7 @@ tags = ["Software Development", "Go", "Doolta"]
 
 En 2018, Mat Ryer écrivait un article de référence [How I write HTTP services after 8 years](https://pace.dev/blog/2018/05/09/how-I-write-http-services-after-eight-years.html) qu’il a mis à jour quelques années plus tard : ["How I write HTTP services in Go after 13 years"](https://grafana.com/blog/2024/02/09/how-i-write-http-services-in-go-after-13-years/).
 
-En 2019, je présentais déjà ma manière de coder en Go dans plusieurs [présentations d’introduction au langage](https://blog.assad.fr/slides/talk-how_I_code_in_go).
+En 2019, je présentais déjà ma manière de coder en Go dans plusieurs [présentations d’introduction au langage](/slides/talk-how_I_code_in_go/).
 
 Ce texte est une version révisée de cette présentation, nourrie par mon expérience et mes contraintes en 2026.
 
