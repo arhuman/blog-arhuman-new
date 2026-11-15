@@ -1,7 +1,7 @@
 +++
 author = "Arnaud ASSAD"
 date = "2020-01-21"
-description = ""
+description = "Vim macros in practice: record and replay keystrokes to turn file names into Markdown links, extract data from XML and generate IP ranges."
 thumbnail = "img/vim_macros/keyboard_pexels_lukas_mayer.jpg"
 linktitle = "perl_in_2020"
 title = "Vim Macros: Just Enough to Be Productive"
