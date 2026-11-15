@@ -20,7 +20,8 @@
 		{{- end }}
 	{{- end }}
 	{{- .Store.Set "pageNumber" $pageNumber }}
-	<title>{{ block "title" . }}{{ if not .IsHome }}{{ with .Title }}{{ . }} - {{ end }}{{ end }}{{ .Site.Title }}{{ if gt (.Store.Get "pageNumber") 1 }} - Page {{ .Store.Get "pageNumber" }}{{ end }}{{ end }}</title>
+	{{- /* Google shows about 60 characters: inner pages get a short suffix so the page title keeps the room. */}}
+	<title>{{ block "title" . }}{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Params.titleSuffix | default .Site.Title }}{{ end }}{{ if gt (.Store.Get "pageNumber") 1 }} - Page {{ .Store.Get "pageNumber" }}{{ end }}{{ end }}</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	{{- $desc := .Description }}
 	{{- if not $desc }}

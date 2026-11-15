@@ -41,6 +41,7 @@ pagerSize = 10 # Number of posts per page
 
 [Params]
   description = "Ideas, rants, tutorials for those interested" # Description of your site
+  titleSuffix = "Arhuman" # Short suffix appended to inner page titles
   opengraph = true
   twitter_cards = false
   readmore = false # Show "Read more" button in list if true
