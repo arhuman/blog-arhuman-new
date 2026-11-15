@@ -7,6 +7,8 @@ tags = ["Software Development", "Go", "Logging", "dllog"]
 translationKey = "log_dilemma"
 +++
 
+*Un niveau de log dynamique permet de n'afficher les logs de debug qu'en cas d'erreur : silencieux quand tout va bien, détaillé quand ça compte.*
+
 Tous les développeurs ont déjà vécu cette scène : le pic d'adrénaline à l'annonce de l'incident en production. Ce mélange d'angoisse de ce que l'on va découvrir et de frénésie à collecter toute information qui nous permettra de comprendre puis corriger le problème. Cela m'est à nouveau arrivé il y a quelques jours, je me revois me précipiter sur les logs et je me souviens encore de la frustration de n'y trouver que des infos basiques et un message d'erreur peu explicatif "Impossible de charger le cache".
 
 La frustration a vite laissé place à la colère : on avait réduit le niveau de log il y a quelques mois, lassés d'être noyés jour après jour par les logs de debug qui nous répétaient que tout allait bien, que nos sondes se connectaient sans souci, et que les infos étaient bien retournées par les bases de données.

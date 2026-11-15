@@ -7,6 +7,8 @@ tags = ["Software Development", "Go", "Logging", "dllog"]
 translationKey = "log_dilemma"
 +++
 
+*A dynamic log level shows debug logs only when an error occurs: quiet when everything is fine, detailed when it matters.*
+
 Every developer has lived through this scene: the adrenaline spike when a production incident is announced. That mix of dread about what you are going to find and frenzy to collect any piece of information that will let you understand and then fix the problem. It happened to me again a few days ago. I can still picture myself rushing to the logs, and I still remember the frustration of finding nothing but basic information and an unhelpful error message: "Unable to load cache".
 
 Frustration quickly gave way to anger: we had lowered the log level a few months earlier, tired of being drowned day after day in debug logs telling us that everything was fine, that our probes were connecting without trouble, and that the databases were returning their data just fine.
