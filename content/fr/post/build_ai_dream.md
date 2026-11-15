@@ -15,7 +15,7 @@ Mais pour comprendre pourquoi et comment je suis arrivé à cette hypothèse de 
 
 ## La mémoire n’est pas du stockage
 
-Tout part d'un travail sur la mémoire à long terme des agents que j'essaie d'implémenter via l'outil Open Source Mnemos[^1].
+Tout part d'un travail sur la mémoire à long terme des agents que j'essaie d'implémenter via l'outil Open Source [Mnemos](https://www.doolta.com/fr/project/mnemos/)[^1].
 
 Le stockage des informations se fait via un bundle OKF[^2] local qui représente les connaissances.
 

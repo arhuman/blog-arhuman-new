@@ -116,7 +116,7 @@ Metacompression remains a largely under-explored field.
 Early practical results show that the approach works, but there is still a lot to invent to make it more general, more robust,
 and more effective across different types of corpora.
 
-That is why I wrote [Metarc](https://github.com/arhuman/metarc-go), an archiver written in Go enabling practical exploitation of metacompression: a tool that reduces certain redundancies before applying and optimizing standard compression (`zstd`).
+That is why I wrote [Metarc](https://www.doolta.com/en/project/metarc/), an archiver written in Go enabling practical exploitation of metacompression: a tool that reduces certain redundancies before applying and optimizing standard compression (`zstd`).
 
 Although `Metarc` now produces smaller archives than `tar+zstd` on the repositories tested, with shorter compression/decompression times[^2], it does not aim to replace standard archivers yet.
 It does not yet have their robustness, portability, tooling ecosystem, or functional richness.

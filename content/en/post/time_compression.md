@@ -12,7 +12,7 @@ This morning, I had fun compressing time.
 
 But before you picture me as a theoretical physics genius or a crackpot in need of a straitjacket, let me explain.
 
-I am currently working on [Metarc](https://github.com/arhuman/metarc-go), a *metacompression* tool (understand: applying smart transformations to certain structures before handing off to a classical compressor like `zstd`). If you have never heard the term, you will understand in 5 minutes. If you are a compression expert, hang on, you might find food for debate.
+I am currently working on [Metarc](https://www.doolta.com/en/project/metarc/), a *metacompression* tool (understand: applying smart transformations to certain structures before handing off to a classical compressor like `zstd`). If you have never heard the term, you will understand in 5 minutes. If you are a compression expert, hang on, you might find food for debate.
 
 Dates are a great playground for understanding this idea: they look like text, but they actually contain a very dense structure that can be exploited.
 

@@ -113,7 +113,7 @@ Ce ne sont là que quelques exemples d’un champ bien plus vaste.
 La métacompression reste un domaine largement sous-exploré.
 Les premiers résultats pratiques montrent que l’approche fonctionne, mais il reste beaucoup à inventer pour la rendre plus générale, plus robuste et plus efficace selon les types de corpus.
 
-C’est pourquoi j’ai écrit [Metarc](https://github.com/arhuman/metarc-go), un archiveur en Go qui rend la métacompression praticable : il réduit certaines redondances structurelles avant de transmettre le résultat à une compression standard (`zstd`).
+C’est pourquoi j’ai écrit [Metarc](https://www.doolta.com/fr/project/metarc/), un archiveur en Go qui rend la métacompression praticable : il réduit certaines redondances structurelles avant de transmettre le résultat à une compression standard (`zstd`).
 
 Bien qu’il produise désormais, sur les dépôts testés, des archives plus petites que `tar+zstd`, Metarc ne vise pas encore à remplacer les archiveurs standards.
 Il n'a pas (encore) leur robustesse, ni leur richesse fonctionnelle.

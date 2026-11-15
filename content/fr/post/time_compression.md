@@ -13,7 +13,7 @@ Ce matin, je me suis amusé à compresser le temps.
 
 Mais avant que vous m'imaginiez en génie de la physique théorique ou en hurluberlu ayant besoin d'une camisole de force, laissez-moi vous expliquer.
 
-Je travaille actuellement sur [Metarc](https://github.com/arhuman/metarc-go), un outil de *metacompression* (comprendre : appliquer des transformations intelligentes à certaines structures avant de passer le relais à un compresseur classique comme `zstd`). Si vous n'avez jamais entendu ce terme, vous allez comprendre en 5 minutes. Si vous êtes expert en compression, accrochez-vous, vous trouverez peut-être matière à débat.
+Je travaille actuellement sur [Metarc](https://www.doolta.com/fr/project/metarc/), un outil de *metacompression* (comprendre : appliquer des transformations intelligentes à certaines structures avant de passer le relais à un compresseur classique comme `zstd`). Si vous n'avez jamais entendu ce terme, vous allez comprendre en 5 minutes. Si vous êtes expert en compression, accrochez-vous, vous trouverez peut-être matière à débat.
 
 Les dates sont un excellent terrain de jeu pour comprendre cette idée : elles ressemblent à du texte, mais elles contiennent en réalité une structure très dense qu'on peut exploiter.
 
