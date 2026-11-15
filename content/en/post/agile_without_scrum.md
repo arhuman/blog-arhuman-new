@@ -1,7 +1,7 @@
 +++
 author = "Arnaud ASSAD"
 date = "2019-08-28"
-description = ""
+description = "Can you be agile without knowing Scrum rituals? Agility comes from values: the Agile Manifesto, eXtreme Programming, Scrum and Kanban compared."
 thumbnail = "img/pexel-agile-7376.jpg"
 linktitle = "agile_without_scrum"
 title = "Agile Without Scrum: Do You Need the Rituals?"
