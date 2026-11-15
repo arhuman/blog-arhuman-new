@@ -6,7 +6,7 @@ translationKey = "tdd_secret_weapon"
 description = "Why write tests first? The ignored advantage of test driven development, beyond code coverage and the endless is-TDD-dead debates."
 thumbnail = "img/ferenc-almasi-EWLHA4T-mso-unsplash.jpg"
 linktitle = "TDD's Ignored Advantage"
-title = "TDD's Ignored Advantage"
+title = "TDD: Why Write the Tests First?"
 type = "post"
 tags = ["TDD", "test driven development", "test", "tests", "development"]
 categories = ["Article"]
@@ -31,6 +31,7 @@ For TDD, the questions worth asking are these:
 * *What does TDD bring beyond the technical?*
 
 That last question is the one that touches the main advantage of TDD over other testing methodologies.
+It is TDD's ignored advantage.
 
 But before we get there, let's clear up a few points.
 

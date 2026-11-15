@@ -6,7 +6,7 @@ translationKey = "tdd_secret_weapon"
 description = "Pourquoi écrire les tests en premier ? L'avantage ignoré du test driven development, au-delà de la couverture de code et des débats sur sa mort."
 thumbnail = "img/ferenc-almasi-EWLHA4T-mso-unsplash.jpg"
 linktitle = "L'avantage ignoré du TDD"
-title = "L'avantage ignoré du TDD"
+title = "TDD : pourquoi écrire les tests en premier"
 type = "post"
 tags = ["TDD", "test driven development", "test", "tests", "développement"]
 categories = ["Article"]
@@ -31,6 +31,7 @@ Pour le TDD il convient d'aborder les questions spécifiques suivantes :
 * *Quel est l'apport du TDD au-delà de la technique ?*
 
 Cette dernière question permet en effet de toucher le principal intérêt du TDD par rapport aux autres méthodologie de test.
+C'est l'avantage ignoré du TDD.
 
 Mais avant d'y venir, éclaircissons certains points.
 
