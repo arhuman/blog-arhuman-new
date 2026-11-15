@@ -1,6 +1,6 @@
 +++
 date = '2026-03-15T11:05:26+01:00'
-title = "Et si votre dette technique n’était pas un problème technique ?"
+title = "Dette technique : et si le problème était humain ?"
 description = "La dette technique n'est pas toujours un problème technique : une histoire de code freeze qui révèle des causes humaines et organisationnelles."
 categories = ["Article"]
 tags = ["Software Development", "Communication", "Psychology", "Doolta"]
@@ -9,6 +9,7 @@ tags = ["Software Development", "Communication", "Psychology", "Doolta"]
 Alors que les méthodes se font toujours plus nombreuses, les livres toujours plus prescriptifs, les outils toujours plus performants, la démarche toujours plus industrielle, l’industrie du logiciel continue à produire autant de dette, de retard et de bugs qu’auparavant.  
 C’est un secret de polichinelle et pourtant rien ne change. Pourquoi ?  
 Peut-être est-il temps de chercher la cause là où trop peu regardent.
+Et si votre dette technique n’était pas un problème technique ?
 
 Laissez-moi vous raconter une histoire.
 
