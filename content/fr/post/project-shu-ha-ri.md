@@ -1,5 +1,5 @@
 +++
-title = "Suivre la méthode, rater le projet"
+title = "Gestion de projet : suivre la méthode ne suffit pas"
 description = "Les méthodes de gestion de projet donnent un faux sentiment de sécurité : suivre la méthode ne suffit pas à réussir le projet."
 type = "post"
 date = '2026-04-12T02:00:07+01:00'
@@ -12,6 +12,7 @@ tags = ["Scrum", "Project management", "Doolta"]
 Est-ce la faute de votre méthode de gestion de projet ?
 
 Non, bien sûr. Chaque méthode a ses forces et son utilité et offre un cadre plus efficace que le développement au fil de l'eau et au doigt mouillé.  
+Et pourtant, on peut suivre la méthode à la lettre et rater le projet.  
   
 Mais toute méthode a deux effets pervers : 
 
