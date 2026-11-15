@@ -12,6 +12,8 @@ En 1993, "The Productivity Paradox of IT"[^1] soulignait les faibles gains de pr
 
 Ce paradoxe a été énoncé simplement par le prix Nobel d'économie Robert Solow : "On voit l'ère informatique partout, sauf dans les statistiques de productivité."
 
+Trente ans plus tard, le fantôme de Solow revient hanter l'IA.
+
 ## Paradoxe de Solow et IA
 
 "Pourquoi voit-on l'IA partout, sauf dans les statistiques de productivité ?"
