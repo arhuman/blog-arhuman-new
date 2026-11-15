@@ -5,5 +5,8 @@ sitemap all call this so they never disagree. */}}
 	{{- $noindex = true }}
 {{- else if and (eq .Kind "term") (eq .Data.Plural "tags") (lt (len .Pages) 3) }}
 	{{- $noindex = true }}
+{{- else if eq .Type "categories" }}
+	{{- /* Only Article and News exist: both duplicate the post list. */}}
+	{{- $noindex = true }}
 {{- end }}
 {{- return $noindex }}
