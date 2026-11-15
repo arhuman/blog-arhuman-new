@@ -1,0 +1,5 @@
+# Archived reveal.js decks: kept online for the posts that cite them, not for search.
+/slides/talk-*
+  X-Robots-Tag: noindex
+/slides/voice_interface/*
+  X-Robots-Tag: noindex
