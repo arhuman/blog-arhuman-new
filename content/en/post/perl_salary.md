@@ -1,7 +1,7 @@
 +++
 author = "Arnaud (Arhuman) ASSAD"
 date = "2020-04-26"
-description = ""
+description = "Perl developers earned an average of $84,025 in 2020, 54% above the global average and ahead of Scala, Go and Python, according to a HackerRank survey."
 thumbnail = "img/yana-yuzvenko-B-rnDwqZ_g8-unsplash.jpg"
 linktitle = "Average salary for Perl programmers in 2020"
 title = "Perl average salary"
