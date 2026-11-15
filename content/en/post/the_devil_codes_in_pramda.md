@@ -2,7 +2,7 @@
 author = "Arnaud ASSAD"
 date = "2016-07-06"
 description = "Functional programming in JavaScript seen by a Perl coder: why Ramda's auto-currying and data-last design make composition explode, and where to look next."
-title = "The devil codes in Pramda"
+title = "The Devil Codes in Pramda: Functional JS With Ramda"
 linktitle = "the_devil_codes_in_pramda"
 type = "post"
 tags = ["JavaScript", "Perl", "functional programming"]
