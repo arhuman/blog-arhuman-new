@@ -1,5 +1,5 @@
 +++
-title = "Installer Hugo"
+title = "Installer Hugo : quitter Medium pour un blog autohébergé"
 description = "Pourquoi et comment j'ai quitté Medium et Blogger pour autohéberger mon blog avec Hugo : installation et premiers pas."
 categories = ["Article"]
 tags = ["Hugo"]
