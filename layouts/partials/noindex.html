@@ -1,0 +1,9 @@
+{{- /* Single source of truth for noindex: the robots meta, hreflang and the
+sitemap all call this so they never disagree. */}}
+{{- $noindex := false }}
+{{- if eq hugo.Environment "staging" }}
+	{{- $noindex = true }}
+{{- else if and (eq .Kind "term") (eq .Data.Plural "tags") (lt (len .Pages) 3) }}
+	{{- $noindex = true }}
+{{- end }}
+{{- return $noindex }}

@@ -41,10 +41,8 @@
 	{{- end }}
 	{{- end }}
 	{{- end }}
-	{{- if eq hugo.Environment "staging" }}
-	<meta name="robots" content="noindex, nofollow">
-	{{- else if and (eq .Kind "term") (eq .Data.Plural "tags") (lt (len .Pages) 3) }}
-	<meta name="robots" content="noindex,follow">
+	{{- if partial "noindex.html" . }}
+	<meta name="robots" content="{{ if eq hugo.Environment "staging" }}noindex, nofollow{{ else }}noindex,follow{{ end }}">
 	{{- end }}
 	{{- if .Site.Params.opengraph }}
 		{{ template "_internal/opengraph.html" . }}
