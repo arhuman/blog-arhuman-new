@@ -2,7 +2,7 @@
 author = "Arnaud ASSAD"
 date = "2018-07-25"
 description = "Larry Wall named laziness, impatience and hubris. The fourth virtue that actually makes you productive is consistency: in rhythm, style, tests, process and automation."
-title = "The fourth virtue of the programmer"
+title = "Consistency, the Fourth Virtue of the Programmer"
 linktitle = "fourth_virtue_of_the_programmer"
 type = "post"
 tags = ["Programming", "Productivity", "Perl"]
