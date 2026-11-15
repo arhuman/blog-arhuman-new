@@ -1,6 +1,6 @@
 +++
 date = '2026-03-30T15:24:26+01:00'
-title = "Pourquoi je code en Go de cette manière en 2026"
+title = "Coder en Go en 2026 : layout et conventions"
 description = "Layout, pratiques et conventions : ma manière de coder en Go en 2026, version révisée de ma présentation de 2019."
 categories = ["Article"]
 tags = ["Software Development", "Go", "Doolta"]
