@@ -131,7 +131,7 @@ But beware: good `.gitignore` hygiene matters even more, to avoid versioning you
 
 After this commit we can see a child changeset added, with a description matching the commit message.
 
-![](/img/jj_log_after_api_minimal_commit.png)
+![jj log output after the minimal API commit](/img/jj_log_after_api_minimal_commit.png)
 
 Also note that parts of the changeid (**n**loxqvts) and of the hash (**3**355af0e) are in bold: that is the minimal prefix guaranteeing the uniqueness of the identifier.
 Put differently, you will be able to manipulate your changesets with identifiers (or fragments) of just a few characters.

@@ -131,7 +131,7 @@ Mais attention, une bonne gestion du .gitignore est donc encore plus à l'ordre 
 
 Après ce commit on voit bien un changeset enfant ajouté avec une description correspondant au message de commit.
 
-![](/img/jj_log_after_api_minimal_commit.png)
+![Sortie de jj log après le commit minimal de l'API](/img/jj_log_after_api_minimal_commit.png)
 
 Au passage, notez que certaines parties du changeid (**n**loxqvts) et du hash (**3**355af0e) sont en gras, c'est le préfixe minimal qui garantit l'unicité de l'identifiant.
 Dis autrement vous allez pouvoir manipuler vos changesets avec des (parties d') identifiants de quelques caractères seulement.
