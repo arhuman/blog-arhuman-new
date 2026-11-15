@@ -1,5 +1,5 @@
 +++
-title = "Pourquoi j'aime les generics Golang"
+title = "Generics en Go : pourquoi je les aime"
 description = "Pourquoi j'aime les generics de Go : simples et cohérents avec la philosophie du langage, à la lecture des drafts de Taylor et Griesemer."
 categories = ["News"]
 tags = ["Golang", "Programming", "Generics"]
