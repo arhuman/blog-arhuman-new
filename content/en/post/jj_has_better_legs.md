@@ -16,7 +16,7 @@ With Jujutsu (jj), it takes a very concrete form: a simpler mental model can red
 
 In this article[^1], I will not try to "prove" that `jj` is superior to `git`. I will show, on a concrete case, why some common operations: interrupting work in progress, reorganizing changes, fixing a non-atomic commit or resolving a conflict, become more natural with jj.
 
-## Jujutsu
+## Why Jujutsu Rather Than Git
 
 Jujutsu is a version control tool written by Martin von Zweigbergk that made simplicity its defining quality.
 It was born from a simple observation: Git is hard to use, not because of its syntax but because of the complexity of its architecture and the mental model that comes with it.
