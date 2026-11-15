@@ -1,6 +1,6 @@
 +++
-title = "Less is More: Why I Replaced Git with Jujutsu."
-description = "Why I replaced Git with Jujutsu (jj): a simpler mental model that removes day-to-day friction, shown on a concrete example."
+title = "Jujutsu (jj) vs Git: Why I Replaced Git"
+description = "Jujutsu (jj) vs Git: why I replaced Git with jj. A simpler mental model that removes day-to-day friction, shown on a concrete example."
 type = "post"
 date = '2026-04-05T02:38:37+01:00'
 lastmod = '2026-09-08T12:00:00+07:00'

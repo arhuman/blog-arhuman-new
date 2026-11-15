@@ -1,5 +1,5 @@
 +++
-title = "Le fantôme de Solow : pourquoi l'IA ne booste (pas encore) la productivité"
+title = "Paradoxe de Solow et IA : où sont les gains de productivité ?"
 description = "Le paradoxe de Solow appliqué à l'IA : pourquoi les gains de productivité promis ne se voient pas encore dans les statistiques."
 type = "post"
 date = '2026-09-28T10:10:49+02:00'

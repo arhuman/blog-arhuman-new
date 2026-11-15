@@ -1,7 +1,7 @@
 +++
 date = '2026-09-13T10:30:00+02:00'
-title = "The Logging Dilemma"
-description = "Drowning in logs when everything is fine, or doomed to miss them during an incident. You no longer have to choose: dynamic level gives you the best of both approaches."
+title = "Dynamic Log Levels: Debug Logs Only on Error"
+description = "Too many debug logs when all is well, too few during an incident? A dynamic log level shows debug logs only around errors. Here is how dllog does it."
 categories = ["Article"]
 tags = ["Software Development", "Go", "Logging", "dllog"]
 translationKey = "log_dilemma"

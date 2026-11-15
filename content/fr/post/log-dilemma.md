@@ -1,7 +1,7 @@
 +++
 date = '2026-09-13T10:30:00+02:00'
-title = "Le dilemme des logs"
-description = "Noyé sous les logs quand tout va bien ou condamné à en manquer en cas d'incident. On n'est plus obligé de choisir : le niveau dynamique offre le meilleur des deux approches."
+title = "Niveau de log dynamique : le debug seulement en cas d'erreur"
+description = "Trop de logs debug quand tout va bien, pas assez en incident ? Le niveau de log dynamique n'affiche le debug qu'autour des erreurs, avec dllog."
 categories = ["Article"]
 tags = ["Software Development", "Go", "Logging", "dllog"]
 translationKey = "log_dilemma"
